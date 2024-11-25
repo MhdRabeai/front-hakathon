@@ -9,6 +9,8 @@ import Home from "./pages/Home";
 import { Dashboard } from "./pages/Dashboard";
 import { Register } from "./pages/Register";
 import { useEffect } from "react";
+import { VideoCall } from "./pages/VideoCall";
+import { VideoRoom } from "./pages/VideoRoom";
 
 function App() {
   const location = useLocation();
@@ -36,6 +38,8 @@ function App() {
           <Route index element={<Home />} />
           <Route path="register" element={<Register />} />
           <Route path="dashboard" element={<Dashboard />} />
+          <Route path="video" element={<VideoCall />} />
+          <Route path="video/:room" element={<VideoRoom />} />
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
