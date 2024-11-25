@@ -11,12 +11,11 @@ import { Register } from "./pages/Register";
 import { useEffect } from "react";
 import { VideoCall } from "./pages/VideoCall";
 import { VideoRoom } from "./pages/VideoRoom";
-
+import "preline/preline";
 function App() {
   const location = useLocation();
 
   useEffect(() => {
-    require("preline/preline");
     window.HSStaticMethods.autoInit();
   }, [location.pathname]);
   return (
