@@ -18,7 +18,7 @@ const BlogCard = ({ id, date, CardTitle, CardDescription, image }) => {
                 By: John Doe
               </p>
             </div>
-
+            
             <div className="block sm:shrink-0">
               <img
                 alt=""
