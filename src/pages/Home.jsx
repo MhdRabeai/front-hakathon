@@ -384,8 +384,8 @@ const Home = () => {
                       id="registerEmail"
                       type="email"
                       className="peer py-2 px-4 ps-11 block w-full
-                            border-2  border-gray-200 rounded-lg text-sm 
-                            focus:border-[#4f9451] focus:ring-0 disabled:opacity-50 disabled:pointer-events-none "
+                          border-2  border-gray-200 rounded-lg text-sm 
+                          focus:border-[#7D7CEC] focus:ring-0 disabled:opacity-50 disabled:pointer-events-none "
                       placeholder="Enter Email..."
                       name="email"
                     />
@@ -407,7 +407,7 @@ const Home = () => {
                   </div>
                   <div className=" mb-6">
                     <textarea
-                      className="resize-none py-3 px-4 block w-full border-2 border-gray-200 rounded-lg text-xs  text-gray-500 focus:border-[#4f9451] focus:ring-0 disabled:opacity-50 disabled:pointer-events-none "
+                      className="resize-none py-3 px-4 block w-full border-2 border-gray-200 rounded-lg text-xs  text-gray-500 focus:border-[#7D7CEC] focus:ring-0 disabled:opacity-50 disabled:pointer-events-none "
                       rows="3"
                       name="feedback"
                       placeholder="Write Your Message..."
