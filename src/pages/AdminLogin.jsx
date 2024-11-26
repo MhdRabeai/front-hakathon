@@ -15,8 +15,6 @@ const AdminLogin = () => {
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
   const handleSubmit = async (e) => {
-    console.log(email);
-    console.log(password);
     e.preventDefault();
     try {
       const res = await fetch("http://localhost:4000/adminLogin", {
@@ -28,12 +26,11 @@ const AdminLogin = () => {
         body: JSON.stringify({ email, password }),
       });
 
-      const msg = await res.json();
-      console.log(res);
+      const data = await res.json();
       if (res.ok) {
         await loginUser();
         navigate("/newDashbard");
-        return toast.success(msg["message"], {
+        return toast.success(data["message"], {
           position: "bottom-right",
           autoClose: 1000,
           closeOnClick: true,
@@ -47,7 +44,7 @@ const AdminLogin = () => {
         setIsLoading(false);
         navigate("/adminLogin");
 
-        return toast.error(msg["message"], {
+        return toast.error(data["message"], {
           position: "bottom-right",
           autoClose: 750,
           hideProgressBar: false,
@@ -69,9 +66,9 @@ const AdminLogin = () => {
   ) : (
     <>
       <section className="flex items-center   auth-body">
-        <div className="grid grid-cols-1 md:grid-cols-3   lg:py-0 w-full h-full">
+        <div className=" lg:py-0 w-full h-full">
           <div className="flex  md:col-span-2 flex-col items-center justify-center">
-            <div className="w-full bg-white roundedLg  md:mt-0 sm:max-w-md xl:p-0 ">
+            <div className="w-[60%] bg-white rounded-lg  md:mt-0 xl:p-0 ">
               <div className="p-6  sm:p-8 ">
                 <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl ">
                   Admin Login
@@ -96,7 +93,7 @@ const AdminLogin = () => {
                         type="email"
                         className="peer py-2 px-4 ps-11 block w-full
                             border-2  border-gray-200 rounded-lg text-sm 
-                            focus:border-[#4f9451] focus:ring-0 disabled:opacity-50 disabled:pointer-events-none "
+                            focus:border-[#0b0b43] focus:ring-0 disabled:opacity-50 disabled:pointer-events-none "
                         placeholder="Enter Email..."
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
@@ -121,7 +118,7 @@ const AdminLogin = () => {
                         type="password"
                         className="peer py-2 px-4 ps-11 block w-full
  border-2  border-gray-200 rounded-lg text-sm 
- focus:border-[#4f9451] focus:ring-0 disabled:opacity-50 disabled:pointer-events-none"
+ focus:border-[#0b0b43] focus:ring-0 disabled:opacity-50 disabled:pointer-events-none"
                         placeholder="Enter password"
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
@@ -136,7 +133,7 @@ const AdminLogin = () => {
                         data-hs-toggle-password='{
       "target": "#hs-toggle-password"
     }'
-                        className="absolute inset-y-0 end-0 flex items-center z-20 px-3 cursor-pointer text-gray-400 rounded-e-md focus:outline-none focus:text-[#4f9451]"
+                        className="absolute inset-y-0 end-0 flex items-center z-20 px-3 cursor-pointer text-gray-400 rounded-e-md focus:outline-none focus:text-[#0b0b43]"
                       >
                         <svg
                           className="shrink-0 size-3.5"
@@ -185,7 +182,7 @@ const AdminLogin = () => {
 
                   <button
                     type="button"
-                    className="w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-0 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center  bg-[#4F9451]"
+                    className="w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-0 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center  bg-[#0b0b43]"
                     onClick={(e) => {
                       handleSubmit(e);
                       setIsLoading(true);

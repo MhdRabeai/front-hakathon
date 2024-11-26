@@ -2,8 +2,10 @@
 /* eslint-disable react/prop-types */
 import { createContext, useContext, useEffect, useState } from "react";
 const UserContext = createContext();
+
 export const UserProvider = ({ children }) => {
   const [user, setUser] = useState(null);
+
   const loginUser = async () => {
     try {
       const response = await fetch("http://localhost:4000/checkToken", {

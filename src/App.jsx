@@ -16,8 +16,16 @@ import RootChat from "./pages/Chat/RootChat";
 import LoginChat from "./pages/Chat/LoginChat";
 import MainDash from "./pages/Dashbard/MainDash";
 import AdminLogin from "./pages/AdminLogin";
+import ProtectedRoute from "./pages/Dashbard/ProtectedRoute";
+import { useState } from "react";
 // import { useEffect } from "react";
 function App() {
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+  const handleAuthSuccess = () => {
+    setIsAuthenticated(true);
+  };
+
   // const location = useLocation();
 
   // useEffect(() => {
@@ -45,12 +53,29 @@ function App() {
           <Route path="dashboard" element={<Dashboard />} />
           <Route path="*" element={<NotFound />} />
         </Route>
-        <Route path="/newDashbard" element={<RootDash />}>
+        <Route
+          path="/newDashbard"
+          element={
+            <ProtectedRoute>
+              <RootDash />
+            </ProtectedRoute>
+          }
+        >
           <Route index element={<MainDash />} />
         </Route>
         <Route path="/videoCall" element={<RootChat />}>
-          <Route index element={<LoginChat />} />
-          <Route path=":roomName" element={<VideoRoom />} />
+          <Route
+            index
+            element={<LoginChat onAuthSuccess={handleAuthSuccess} />}
+          />
+          <Route
+            path=":roomName"
+            element={
+              <ProtectedRoute isAuthenticated={isAuthenticated}>
+                <VideoRoom />
+              </ProtectedRoute>
+            }
+          />
         </Route>
       </Routes>
     </div>
