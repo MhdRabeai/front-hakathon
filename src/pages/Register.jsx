@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from "react";
 import { FaUser, FaCheck } from "react-icons/fa";
+import { IoPhonePortraitOutline } from "react-icons/io5";
 import { MdOutlineEmail } from "react-icons/md";
 const steps = [
   { id: 1, title: "Info", icon: FaUser },
@@ -137,8 +138,36 @@ export const Register = () => {
                   </div>
                 </div>
                 <div className="sm:col-span-3">
+                  <div className="inline-block">
+                    <label
+                      htmlFor="af-account-phone"
+                      className="inline-block text-sm font-medium text-gray-800 mt-2.5 dark:text-neutral-200"
+                    >
+                      Phone:
+                    </label>
+                  </div>
+                </div>
+
+                <div className="sm:col-span-9">
+                  <div className="relative">
+                    <input
+                      id="account"
+                      type="text"
+                      className="peer py-2 px-4 ps-11 block w-full
+border-2  border-gray-200 rounded-lg text-sm 
+focus:border-[#4f9451] focus:ring-0 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-700 dark:border-transparent 
+dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
+                      placeholder="Enter Number..."
+                      name="phone"
+                    />
+                    <div className="absolute inset-y-0 start-0 flex items-center pointer-events-none ps-4 peer-disabled:opacity-50 peer-disabled:pointer-events-none ">
+                      <IoPhonePortraitOutline className="fill-gray-500" />
+                    </div>
+                  </div>
+                </div>
+                <div className="sm:col-span-3">
                   <label className="inline-block text-sm text-gray-800 mt-2.5  font-medium">
-                    Profile photo:
+                    Cv:
                   </label>
                 </div>
 
@@ -177,6 +206,7 @@ export const Register = () => {
                     </div>
                   </div>
                 </div>
+
                 <div className="sm:col-span-3 ">
                   <label
                     htmlFor="registerAge"
