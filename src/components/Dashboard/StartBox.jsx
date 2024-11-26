@@ -8,6 +8,10 @@ const StatBox = ({ title, subtitle, icon, progress, increase }) => {
       400: "#1e293b",
       100: "#f8fafc",
     },
+    text:{
+      main: "#E2E2EB",
+      200: "#0B0B43"
+    },
     grey: {
       100: "#e2e8f0",
       500: "#64748b",
@@ -21,7 +25,7 @@ const StatBox = ({ title, subtitle, icon, progress, increase }) => {
       500: "#ef4444",
     },
     greenAccent: {
-      500: "#22c55e",
+      500: "#E2E2EB",
     },
   };
 

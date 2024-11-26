@@ -60,11 +60,17 @@ export const Dashboard = () => {
 
   const colors = {
     primary: {
-      400: "#0B0B43",
-      100: "#7D7CEC",
+      main: "#0B0B43",
     },
     secondary: {
       main: "#7D7CEC"
+    },
+    text:{
+      main: "#E2E2EB",
+      200: "#0B0B43"
+    },
+    icons:{
+      main: "#E2E2EB",
     },
     grey: {
       100: "#e2e8f0",
@@ -95,7 +101,7 @@ export const Dashboard = () => {
           <Box>
             <Button
               sx={{
-                backgroundColor: colors.blueAccent[700],
+                backgroundColor: colors.icons.main,
                 color: colors.grey[100],
                 fontSize: "14px",
                 fontWeight: "bold",
@@ -118,7 +124,7 @@ export const Dashboard = () => {
           {/* ROW 1 */}
           <Box
             gridColumn="span 3"
-            backgroundColor={colors.primary[400]}
+            backgroundColor={colors.primary.main}
             boxShadow="0px 4px 10px rgba(0, 0, 0, 0.1)"
             borderRadius="12px"
             display="flex"
@@ -133,7 +139,7 @@ export const Dashboard = () => {
               icon={
                 <FaBriefcase
                   style={{
-                    color: colors.primary[100],
+                    color: colors.icons.main,
                     fontSize: "36px",
                     marginBottom: "10px",
                   }}
@@ -144,7 +150,7 @@ export const Dashboard = () => {
 
           <Box
             gridColumn="span 3"
-            backgroundColor={colors.primary[400]}
+            backgroundColor={colors.primary.main}
             boxShadow="0px 4px 10px rgba(0, 0, 0, 0.1)"
             borderRadius="12px"
             display="flex"
@@ -159,7 +165,7 @@ export const Dashboard = () => {
               icon={
                 <FaFileAlt
                   style={{
-                    color: colors.primary[100],
+                    color: colors.icons.main,
                     fontSize: "36px",
                     marginBottom: "10px",
                   }}
@@ -170,7 +176,7 @@ export const Dashboard = () => {
 
           <Box
             gridColumn="span 3"
-            backgroundColor={colors.primary[400]}
+            backgroundColor={colors.primary.main}
             boxShadow="0px 4px 10px rgba(0, 0, 0, 0.1)"
             borderRadius="12px"
             display="flex"
@@ -185,7 +191,7 @@ export const Dashboard = () => {
               icon={
                 <FaUser
                   style={{
-                    color: colors.primary[100],
+                    color: colors.icons.main,
                     fontSize: "36px",
                     marginBottom: "10px",
                   }}
@@ -196,7 +202,7 @@ export const Dashboard = () => {
 
           <Box
             gridColumn="span 3"
-            backgroundColor={colors.primary[400]}
+            backgroundColor={colors.primary.main}
             boxShadow="0px 4px 10px rgba(0, 0, 0, 0.1)"
             borderRadius="12px"
             display="flex"
@@ -211,7 +217,7 @@ export const Dashboard = () => {
               icon={
                 <FaCheckCircle
                   style={{
-                    color: colors.primary[100],
+                    color: colors.icons.main,
                     fontSize: "36px",
                     marginBottom: "10px",
                   }}
@@ -219,7 +225,7 @@ export const Dashboard = () => {
               }
             />
           </Box>
-        </Box>
+        
 
 
         {/* ROW 2 */}
@@ -227,7 +233,7 @@ export const Dashboard = () => {
         <Box
           gridColumn="span 8"
           gridRow="span 3"
-          backgroundColor={colors.primary[400]}
+          backgroundColor={colors.primary.main}
         >
           <Box
             mt="25px"
@@ -240,14 +246,14 @@ export const Dashboard = () => {
               <Typography
                 variant="h5"
                 fontWeight="600"
-                color={colors.grey[100]}
+                color={colors.text.main}
               >
                 Order Status:
               </Typography>
               <Typography
                 variant="h3"
                 fontWeight="bold"
-                color={colors.blueAccent[500]}
+                color={colors.text[100]}
               >
                 Statistics on requests by status
               </Typography>
@@ -255,7 +261,7 @@ export const Dashboard = () => {
             <Box>
 
               <FaDownload
-                sx={{ fontSize: "26px", color: colors.blueAccent[500] }}
+                sx={{ fontSize: "26px", color: colors.icons.main }}
               />
 
             </Box>
@@ -274,7 +280,7 @@ export const Dashboard = () => {
         <Box
           gridColumn="span 4"
           gridRow="span 3"
-          backgroundColor={colors.primary[400]}
+          backgroundColor={colors.primary.main}
           overflow="auto"
           borderRadius="8px"
           className="scrollbar-thin scrollbar-thumb-green-500 scrollbar-track-gray-700"
@@ -284,10 +290,10 @@ export const Dashboard = () => {
             display="flex"
             justifyContent="space-between"
             alignItems="center"
-            borderBottom={`4px solid ${colors.primary[400]}`}
+            borderBottom={`4px solid ${colors.primary.main}`}
             p="15px"
           >
-            <Typography color={colors.grey[100]} variant="h5" fontWeight="600">
+            <Typography color={colors.text.main} variant="h5" fontWeight="600">
               Latest Users
             </Typography>
           </Box>
@@ -298,25 +304,25 @@ export const Dashboard = () => {
               display="flex"
               justifyContent="space-between"
               alignItems="center"
-              backgroundColor={colors.blueAccent[800]}
+              backgroundColor={colors.secondary}
               borderRadius="8px"
               p="15px"
               m="10px"
             >
               <Box display="flex" alignItems="center" gap="15px">
-                <FaUser style={{ color: colors.blueAccent[500], fontSize: "30px" }} />
+                <FaUser style={{ color: colors.icons.main, fontSize: "30px" }} />
                 <Box>
                   <Typography
-                    color={colors.blueAccent[500]}
+                    color={colors.text.main}
                     variant="h5"
                     fontWeight="600"
                   >
                     {dashboardData.latestUsers.name}
                   </Typography>
-                  <Typography color={colors.grey[100]} display="flex" alignItems="center" gap="5px">
+                  <Typography color={colors.text[100]} display="flex" alignItems="center" gap="5px">
                     <fePhone fontSize="small" /> {user.phone}
                   </Typography>
-                  <Typography color={colors.grey[100]} display="flex" alignItems="center" gap="5px">
+                  <Typography color={colors.text[100]} display="flex" alignItems="center" gap="5px">
                     <feLocation fontSize="small" /> {dashboardData.latestUsers.location}
                   </Typography>
                 </Box>
@@ -339,7 +345,7 @@ export const Dashboard = () => {
               </Box>
 
               <Typography
-                color={colors.grey[100]}
+                color={colors.text.main}
                 backgroundColor={colors.blueAccent[500]}
                 p="5px 10px"
                 borderRadius="4px"
@@ -353,9 +359,9 @@ export const Dashboard = () => {
 
         {/* ROW 3 */}
         <Box
-          gridColumn="span 3"
+          gridColumn="span 6"
           gridRow="span 2"
-          backgroundColor={colors.primary[400]}
+          backgroundColor={colors.primary.main}
           p="30px"
           borderRadius="8px"
           boxShadow="0 4px 8px rgba(0, 0, 0, 0.1)"
@@ -364,14 +370,14 @@ export const Dashboard = () => {
           <Typography
             variant="h5"
             fontWeight="600"
-            color={colors.primary[100]}
+            color={colors.text.main}
             textAlign="center"
           >
             Active & Inactive
           </Typography>
           <Typography
             variant="body2"
-            color={colors.grey[100]}
+            color={colors.text[100]}
             textAlign="center"
             mt="8px"
           >
@@ -398,7 +404,7 @@ export const Dashboard = () => {
                     backgroundColor: colors.blueAccent[500],
                   }}
                 />
-                <Typography variant="body1" color={colors.primary[100]}>
+                <Typography variant="body1" color={colors.text.main}>
                   Active Users: 75%
                 </Typography>
               </Box>
@@ -412,7 +418,7 @@ export const Dashboard = () => {
                     backgroundColor: colors.grey[500],
                   }}
                 />
-                <Typography variant="body1" color={colors.primary[100]}>
+                <Typography variant="body1" color={colors.primary.main[100]}>
                   Inactive Users: 25%
                 </Typography>
               </Box>
@@ -424,9 +430,9 @@ export const Dashboard = () => {
 
 
         <Box
-          gridColumn="span 3"
+          gridColumn="span 6"
           gridRow="span 2"
-          backgroundColor={colors.primary[400]}
+          backgroundColor={colors.primary.main}
         >
           <Typography
             variant="h5"
@@ -440,7 +446,7 @@ export const Dashboard = () => {
           </Box>
         </Box>
 
-
+</Box>
       </Box>
     </div>
   );
