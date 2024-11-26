@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { IoChatbubbles } from "react-icons/io5";
 import { IoIosBook } from "react-icons/io";
 import { FaChartLine, FaLeaf } from "react-icons/fa";
+import welcomeImage from '../images/welcome.avif'
 
 const Home = () => {
   return (
@@ -31,7 +32,7 @@ const Home = () => {
           <div className="lg:col-span-4 mt-10 lg:mt-0">
             <img
               className="w-full rounded-3xl "
-              src="hero.png"
+              src={welcomeImage}
               alt="Hero Image"
             />
           </div>

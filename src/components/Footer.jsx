@@ -3,7 +3,7 @@ import logo from '../images/Logo.svg'
 
 const Footer = () => {
   return (
-    <footer className=" relative overflow-hidden bg-[#0B0B43] mt-10 rounded-t-3xl">
+    <footer className=" relative overflow-hidden bg-[#0B0B43] mt-10">
       <svg
         className="absolute -bottom-20 start-1/2 w-[1900px] transform -translate-x-1/2"
         width="2745"

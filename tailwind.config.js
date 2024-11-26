@@ -5,7 +5,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        custom: ['Bar Con', 'sans-serif'], // Add custom font here
+        barcon: ['Bar Con', 'sans-serif'], // Add custom font here
       },
     },
   },
