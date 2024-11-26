@@ -9,9 +9,12 @@ import Home from "./pages/Home";
 import { Dashboard } from "./pages/Dashboard";
 import { Register } from "./pages/Register";
 import { useEffect } from "react";
-import { VideoCall } from "./pages/VideoCall";
-import { VideoRoom } from "./pages/VideoRoom";
+import { VideoRoom } from "./pages/Chat/VideoRoom";
 import "preline/preline";
+import RootDash from "./pages/Dashbard/RootDash";
+import RootChat from "./pages/Chat/RootChat";
+import LoginChat from "./pages/Chat/LoginChat";
+import MainDash from "./pages/Dashbard/MainDash";
 function App() {
   const location = useLocation();
 
@@ -37,9 +40,14 @@ function App() {
           <Route index element={<Home />} />
           <Route path="register" element={<Register />} />
           <Route path="dashboard" element={<Dashboard />} />
-          <Route path="video" element={<VideoCall />} />
-          <Route path="video/:room" element={<VideoRoom />} />
           <Route path="*" element={<NotFound />} />
+        </Route>
+        <Route path="/newDashbard" element={RootDash}>
+          <Route index element={<MainDash />} />
+        </Route>
+        <Route path="/videoCall" element={RootChat}>
+          <Route index element={<LoginChat />} />
+          <Route path=":roomName" element={<VideoRoom />} />
         </Route>
       </Routes>
     </div>
