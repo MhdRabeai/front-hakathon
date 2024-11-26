@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
+import logo from '../images/Logo.svg'
 
 const Footer = () => {
   return (
-    <footer className=" relative overflow-hidden bg-[#4f9451] mt-10 rounded-t-3xl">
+    <footer className=" relative overflow-hidden bg-[#0B0B43] mt-10 rounded-t-3xl">
       <svg
         className="absolute -bottom-20 start-1/2 w-[1900px] transform -translate-x-1/2"
         width="2745"
@@ -95,9 +96,9 @@ const Footer = () => {
 
       <div className="relative z-10">
         <div className="w-full max-w-5xl px-4 xl:px-0 py-2 lg:pt-6 mx-auto flex justify-center">
-          <div className="inline-flex items-center border-x px-5 mx-5">
+          <div className="inline-flex items-center px-5 mx-5">
             <Link to={"/"}>
-              <img src="/logo.png" alt="logo" width={135} />
+              <img src={logo} alt="logo" width={135} />
             </Link>
           </div>
         </div>
