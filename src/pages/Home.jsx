@@ -10,7 +10,7 @@ import welcomeImage from "../images/welcome.avif";
 const Home = () => {
   return (
     <div className="">
-      <div className=" container max-w-[86rem] w-full mx-auto px-4 ">
+      <div className=" container max-w-[86rem] w-full mx-auto px-4 pb-2">
         <div className="grid lg:grid-cols-7 lg:gap-x-4 xl:gap-x-12  lg:items-center pb-6 mb-6 border-b-2 border-[#ddd]">
           <div className="lg:col-span-3 flex flex-col ">
             <h1 className="block text-3xl font-semibold text-gray-800 sm:text-4xl md:text-5xl lg:text-6xl text-center lg:text-left">
@@ -109,9 +109,7 @@ const Home = () => {
               There are many variations of passages of Lorem Ipsum available but
               the majority have suffered alteration in some form.{" "}
             </p>
-<<<<<<< HEAD
-            
-=======
+
           </div>
           <div
             data-hs-carousel='{
@@ -140,7 +138,7 @@ const Home = () => {
 
             <button
               type="button"
-              className="hs-carousel-prev hs-carousel-disabled:opacity-50 hs-carousel-disabled:pointer-events-none absolute inset-y-0 start-0 inline-flex justify-start items-center w-[25px] h-full text-gray-800 bg-gray-700/10 focus:outline-none focus:bg-gray-800/10 rounded-s-lg dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10"
+              className="hs-carousel-prev hs-carousel-disabled:opacity-50 hs-carousel-disabled:pointer-events-none absolute inset-y-0 start-0 inline-flex justify-start items-center w-[25px] h-full text-gray-800 bg-gray-700/10 focus:outline-none focus:bg-gray-800/10 rounded-s-lg "
             >
               <span className="text-2xl" aria-hidden="true">
                 <svg
@@ -150,7 +148,7 @@ const Home = () => {
                   height="24"
                   viewBox="0 0 24 24"
                   fill="none"
-                  stroke="#4f9451"
+                  stroke="#7D7CEC"
                   strokeWidth="2"
                   strokeLinecap="round"
                   strokeLinejoin="round"
@@ -173,7 +171,7 @@ const Home = () => {
                   height="24"
                   viewBox="0 0 24 24"
                   fill="none"
-                  stroke="#4f9451"
+                  stroke="#7D7CEC"
                   strokeWidth="2"
                   strokeLinecap="round"
                   strokeLinejoin="round"
@@ -183,7 +181,7 @@ const Home = () => {
               </span>
             </button>
 
-            <div className="hs-carousel-pagination flex justify-center absolute bottom-[-25px] start-0 end-0 space-x-2"></div>
+            <div className="hs-carousel-pagination flex justify-center absolute bottom-[-19px] start-0 end-0 space-x-2 "></div>
           </div>
         </div>
       </div>
@@ -230,7 +228,7 @@ const Home = () => {
                 Expert Doctors
               </p>
             </div>
->>>>>>> d931b88 (up)
+
           </div>
         </div>
       </div>
@@ -356,7 +354,7 @@ const Home = () => {
                       type="text"
                       className="peer py-2 px-4 ps-11 block w-full
                           border-2  border-gray-200 rounded-lg text-sm 
-                          focus:border-[#4f9451] focus:ring-0 disabled:opacity-50 disabled:pointer-events-none "
+                          focus:border-[#7D7CEC] focus:ring-0 disabled:opacity-50 disabled:pointer-events-none "
                       placeholder="Enter Name..."
                       name="name"
                     />
