@@ -25,7 +25,7 @@ const Home = () => {
               <li>Level Up Your Tech Team</li>
             </ul>
             <div className="mt-5 lg:mt-8 flex ">
-              <Link className="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-[#0B0B43] text-white hover:bg-[rgba(79,148,81,0.84)] focus:outline-none focus:bg-[rgba(79,148,81,0.84)]  ">
+              <Link className="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-[#0B0B43] text-white hover:bg-white hover:text-[#7D7CEC] hover:border-[#7D7CEC] hover: focus:outline-none focus:bg-[#7D7CEC]  ">
                 Get Started
               </Link>
             </div>
