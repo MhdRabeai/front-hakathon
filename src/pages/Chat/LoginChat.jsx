@@ -20,7 +20,7 @@ const TabContent = ({
   button,
 }) => (
   <section className="flex items-center   ">
-    <div className="   lg:py-0 w-full">
+    <div className="max-w-xl   lg:py-0 w-full">
       <div className="flex  md:col-span-2 flex-col items-center justify-center">
         <div className="w-full bg-white roundedLg  md:mt-0  xl:p-0  ">
           <div className="p-6  sm:p-8 ">
@@ -397,8 +397,8 @@ focus:border-[#4f9451] focus:ring-0 disabled:opacity-50 disabled:pointer-events-
           <div className="hidden md:flex items-center justify-center login-img"></div>
         </div>
       </section> */}
-      <div className="max-w-4xl mx-auto p-4 bg-white rounded-lg shadow-lg">
-        <div className="flex flex-wrap -mb-px" role="tablist">
+      <div className=" p-4 w-[50%] border-2 border-gray-300 rounded-lg">
+        <div className="flex flex-wrap justify-center -mb-px" role="tablist">
           {tabs.map((tab, index) => (
             <button
               key={tab.id}

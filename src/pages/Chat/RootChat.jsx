@@ -8,12 +8,8 @@ import Footer from "../../components/Footer";
 
 const RootChat = () => {
   return (
-    <div className=" min-h-screen bg-[#F6F6F6]  flex flex-col justify-between font-sans">
-      <Navbar />
-      <div className=" relative ">
-        <Outlet />
-      </div>
-      <Footer />
+    <div className=" relative w-full flex items-center justify-center">
+      <Outlet />
     </div>
   );
 };

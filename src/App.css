@@ -7,3 +7,6 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
+.my-section {
+  height: calc(100vh - 60px);
+}
