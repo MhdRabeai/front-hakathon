@@ -1,4 +1,7 @@
 /* eslint-disable no-unused-vars */
+import { Link } from "react-router-dom";
+
+
 import { NavLink } from "react-router-dom";
 import logo from "../../public/Logo.svg";
 // import { useUserInfo } from "../Services/UserContext";
@@ -139,6 +142,13 @@ const Navbar = () => {
             >
               Dashboard
             </NavLink>
+
+            <div className="flex">
+              <Link className="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-bold rounded-lg border border-transparent bg-[#7D7CEC] text-[#E2E2EB] hover:bg-[#E2E2EB] hover:text-[#7D7CEC] duration-300 ml-6">
+                Hire Me
+              </Link>
+            </div>
+            
           </div>
         </div>
       </nav>
