@@ -18,6 +18,9 @@ import MainDash from "./pages/Dashbard/MainDash";
 import AdminLogin from "./pages/AdminLogin";
 import ProtectedRoute from "./pages/Dashbard/ProtectedRoute";
 import { useState } from "react";
+import { Candidate } from "./pages/Dashbard/Candidate";
+import { InterViews } from "./pages/Dashbard/InterViews";
+import { Employees } from "./pages/Dashbard/Employees";
 // import { useEffect } from "react";
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -54,7 +57,9 @@ function App() {
           <Route path="videoCall" element={<RootChat />}>
             <Route
               index
-              element={<LoginChat onAuthSuccess={handleAuthSuccess} />}
+              element={
+                <LoginChat role={"user"} onAuthSuccess={handleAuthSuccess} />
+              }
             />
             <Route
               path=":roomName"
@@ -75,11 +80,16 @@ function App() {
             </ProtectedRoute>
           }
         >
-          <Route path="overview" element={<MainDash />} />
+          <Route index element={<MainDash />} />
+          <Route path="candidate" element={<Candidate />} />
+          <Route path="interViews" element={<InterViews />} />
+          <Route path="employees" element={<Employees />} />
           <Route path="videoCall" element={<RootChat />}>
             <Route
               index
-              element={<LoginChat onAuthSuccess={handleAuthSuccess} />}
+              element={
+                <LoginChat role={"admin"} onAuthSuccess={handleAuthSuccess} />
+              }
             />
             <Route
               path=":roomName"
