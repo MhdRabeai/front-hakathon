@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 
 import { NavLink } from "react-router-dom";
-import logo from '../../public/Logo.svg'
+import logo from "../../public/Logo.svg";
 // import { useUserInfo } from "../Services/UserContext";
 
 const Navbar = () => {
@@ -14,9 +14,7 @@ const Navbar = () => {
   // };
 
   return (
-
     <header className="flex flex-wrap sm:justify-start sm:flex-nowrap w-full bg-[#0B0B43] text-sm py-2 shadow-2xl mb-10 dark:drop-shadow-[0_5px_10px_rgba(255,255,255,0.5)] font-barcon">
-
       <nav className="max-w-[86rem] w-full mx-auto px-4 sm:flex items-center sm:justify-between ">
         <div className="flex justify-between items-center md:flex-none">
           <NavLink
@@ -28,7 +26,7 @@ const Navbar = () => {
           <div className="sm:hidden">
             <button
               type="button"
-              className="hs-collapse-toggle relative size-7 flex justify-center items-center gap-2 rounded-lg border border-white/20 font-medium bg-[#4aa34d] text-white shadow-sm align-middle hover:bg-white/10 focus:outline-none focus:bg-white/10 text-sm"
+              className="hs-collapse-toggle relative size-7 flex justify-center items-center gap-2 rounded-lg border border-white/20 font-medium bg-[#0b0b43] text-white shadow-sm align-middle hover:bg-white/10 focus:outline-none focus:bg-white/10 text-sm"
               id="hs-navbar-primary-collapse"
               aria-expanded="false"
               aria-controls="hs-navbar-primary"
@@ -86,15 +84,16 @@ const Navbar = () => {
             >
               Home
             </NavLink>
+
             <NavLink
               className={({ isActive }) =>
                 isActive
                   ? "active font-medium text-white focus:outline-none"
                   : "font-medium text-gray-300 hover:text-white focus:outline-none focus:text-white transition"
               }
-              to="/about"
+              to="#Services"
             >
-              About
+              Services
             </NavLink>
             <NavLink
               className={({ isActive }) =>
@@ -102,9 +101,9 @@ const Navbar = () => {
                   ? "active font-medium text-white focus:outline-none"
                   : "font-medium text-gray-300 hover:text-white focus:outline-none focus:text-white transition"
               }
-              to="/team"
+              to="#Features"
             >
-              Team
+              Features
             </NavLink>
             <NavLink
               className={({ isActive }) =>
@@ -112,9 +111,9 @@ const Navbar = () => {
                   ? "active font-medium text-white focus:outline-none"
                   : "font-medium text-gray-300 hover:text-white focus:outline-none focus:text-white transition"
               }
-              to="/blogs"
+              to="#Projects"
             >
-              Blogs
+              Projects
             </NavLink>
             <NavLink
               className={({ isActive }) =>
@@ -122,7 +121,7 @@ const Navbar = () => {
                   ? "active font-medium text-white focus:outline-none"
                   : "font-medium text-gray-300 hover:text-white focus:outline-none focus:text-white transition"
               }
-              to="/contact"
+              to="#Contact"
             >
               Contact
             </NavLink>
@@ -136,10 +135,8 @@ const Navbar = () => {
             </button> */}
 
             <NavLink
-              className={({ isActive }) =>
-                isActive
-                  ? "active font-medium text-white focus:outline-none"
-                  : "font-medium text-gray-300 hover:text-white focus:outline-none focus:text-white transition"
+              className={
+                "active font-medium text-white focus:outline-none  hover:text-white  focus:text-white transition"
               }
               to="/dashboard"
             >

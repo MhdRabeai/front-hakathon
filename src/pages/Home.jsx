@@ -4,14 +4,18 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { IoChatbubbles } from "react-icons/io5";
 import { IoIosBook } from "react-icons/io";
+
 import { FaChartLine, FaLeaf } from "react-icons/fa";
-import welcomeImage from '../../public/welcome.avif'
+import welcomeImage from "../../public/welcome.avif";
 
 const Home = () => {
   return (
     <div className="">
       <div className=" container max-w-[86rem] w-full mx-auto px-4 pb-2">
-        <div className="grid lg:grid-cols-7 lg:gap-x-4 xl:gap-x-12  lg:items-center pb-6 mb-6 border-b-2 border-[#ddd]">
+        <div
+          className="grid lg:grid-cols-7 lg:gap-x-4 xl:gap-x-12  lg:items-center pb-6 mb-6 border-b-2 border-[#ddd]"
+          id="Home"
+        >
           <div className="lg:col-span-3 flex flex-col ">
             <h1 className="block text-3xl font-semibold text-gray-800 sm:text-4xl md:text-5xl lg:text-6xl text-center lg:text-left">
               Recruit Smarter, Discover the Best Programmers!
@@ -37,7 +41,7 @@ const Home = () => {
             />
           </div>
         </div>
-        <div className="pb-6 mb-6 border-b-2 border-[#ddd] ">
+        <div className="pb-6 mb-6 border-b-2 border-[#ddd] " id="Services">
           <div className="mb-6 lg:mb-10 flex justify-center items-center flex-col gap-x-0 gap-y-6 lg:gap-y-0 lg:flex-row lg:justify-between max-md:max-w-lg max-md:mx-auto">
             <div className="w-full px-4">
               <div className="mx-auto  max-w-[510px] text-center">
@@ -94,7 +98,13 @@ const Home = () => {
             </div>
           </div>
         </div>
-        <div className="w-full px-4 pb-6 mb-6 border-b-2 border-[#ddd]">
+
+        {/* Our Projects */}
+
+        <div
+          className="w-full px-4 pb-6 mb-6 border-b-2 border-[#ddd]"
+          id="Projects"
+        >
           <div className="mx-auto my-10  max-w-[510px] text-center ">
             <span className="mb-2 block text-lg font-semibold text-primary text-[#7D7CEC]">
               Our Projects{" "}
@@ -227,7 +237,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div className="container mx-auto">
+      <div className="container mx-auto" id="Contact">
         <div className="max-w-[86rem] mx-auto px-4">
           <div className="grid lg:grid-cols-7 lg:gap-x-4 xl:gap-x-12  lg:items-center  ">
             <div className="lg:col-span-4 flex  h-full">
@@ -377,8 +387,8 @@ const Home = () => {
                       id="registerEmail"
                       type="email"
                       className="peer py-2 px-4 ps-11 block w-full
-                            border-2  border-gray-200 rounded-lg text-sm 
-                            focus:border-[#4f9451] focus:ring-0 disabled:opacity-50 disabled:pointer-events-none "
+                          border-2  border-gray-200 rounded-lg text-sm 
+                          focus:border-[#7D7CEC] focus:ring-0 disabled:opacity-50 disabled:pointer-events-none "
                       placeholder="Enter Email..."
                       name="email"
                     />
@@ -400,7 +410,7 @@ const Home = () => {
                   </div>
                   <div className=" mb-6">
                     <textarea
-                      className="resize-none py-3 px-4 block w-full border-2 border-gray-200 rounded-lg text-xs  text-gray-500 focus:border-[#4f9451] focus:ring-0 disabled:opacity-50 disabled:pointer-events-none "
+                      className="resize-none py-3 px-4 block w-full border-2 border-gray-200 rounded-lg text-xs  text-gray-500 focus:border-[#7D7CEC] focus:ring-0 disabled:opacity-50 disabled:pointer-events-none "
                       rows="3"
                       name="feedback"
                       placeholder="Write Your Message..."
