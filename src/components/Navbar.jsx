@@ -49,45 +49,6 @@ const Navbar = () => {
       });
     }
   };
-  const { logoutUser, user } = useUserInfo();
-  const navigate = useNavigate();
-  const handleLogout = async () => {
-    try {
-      const res = await fetch("http://localhost:4000/logout", {
-        method: "GET",
-        credentials: "include",
-      });
-
-      if (res.ok) {
-        await logoutUser();
-        navigate("/");
-        return toast.success("Logout successful", {
-          position: "bottom-right",
-          autoClose: 2500,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: false,
-          draggable: false,
-          progress: undefined,
-          theme: "light",
-          transition: Bounce,
-        });
-      }
-    } catch (err) {
-      navigate("/");
-      return toast.error(err.message, {
-        position: "bottom-right",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: false,
-        draggable: true,
-        progress: undefined,
-        theme: "light",
-        transition: Bounce,
-      });
-    }
-  };
   // const [isDark, setIsDark] = useState(false);
   // const toggleTheme = () => {
   //   setIsDark(!isDark);
