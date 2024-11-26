@@ -1,11 +1,54 @@
 /* eslint-disable no-unused-vars */
 import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { NavLink } from "react-router-dom";
+import { useUserInfo } from "../Providers/UserContext";
+import { IoMdLogOut } from "react-icons/io";
+import { Bounce, toast } from "react-toastify";
 import { useUserInfo } from "../Providers/UserContext";
 import { IoMdLogOut } from "react-icons/io";
 import { Bounce, toast } from "react-toastify";
 
 const Navbar = () => {
+  const { logoutUser, user } = useUserInfo();
+  const navigate = useNavigate();
+  const handleLogout = async () => {
+    try {
+      const res = await fetch("http://localhost:4000/logout", {
+        method: "GET",
+        credentials: "include",
+      });
+
+      if (res.ok) {
+        await logoutUser();
+        navigate("/");
+        return toast.success("Logout successful", {
+          position: "bottom-right",
+          autoClose: 2500,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: false,
+          draggable: false,
+          progress: undefined,
+          theme: "light",
+          transition: Bounce,
+        });
+      }
+    } catch (err) {
+      navigate("/");
+      return toast.error(err.message, {
+        position: "bottom-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        transition: Bounce,
+      });
+    }
+  };
   const { logoutUser, user } = useUserInfo();
   const navigate = useNavigate();
   const handleLogout = async () => {
@@ -172,24 +215,26 @@ const Navbar = () => {
               )}
             </button> */}
 
-            <NavLink
-              className={
-                "active font-medium text-white focus:outline-none  hover:text-white  focus:text-white transition"
-              }
-              to="/dashboard"
-            >
-              Dashboard
-            </NavLink>
-{/* <Link
-                className="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-[#0B0B43] text-white 
-                hover:bg-white hover:text-[#7D7CEC] hover:border-[#7D7CEC] 
-                transition-transform duration-300 ease-in-out 
-                transform hover:scale-105 hover:shadow-lg 
-                focus:outline-none"
-              >
-                Get Started
-              </Link> */}
-            <div className="flex  ">
+            {user && (
+              <>
+                <NavLink
+                  className={
+                    "active font-medium text-white focus:outline-none  hover:text-white  focus:text-white transition"
+                  }
+                  to="/dashboard"
+                >
+                  Dashboard
+                </NavLink>
+                <button
+                  className="font-medium text-white focus:outline-none"
+                  onClick={handleLogout}
+                >
+                  <IoMdLogOut />
+                </button>
+              </>
+            )}
+
+            <div className="flex">
               <Link
                 to={"/register"}
                 className="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-bold rounded-lg border border-transparent bg-[#7D7CEC] text-[#E2E2EB] hover:bg-[#E2E2EB] hover:text-[#7D7CEC] ml-6 transition-transform duration-300 ease-in-out 
