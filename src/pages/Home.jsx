@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { IoChatbubbles } from "react-icons/io5";
 import { IoIosBook } from "react-icons/io";
 import { FaChartLine, FaLeaf } from "react-icons/fa";
-import welcomeImage from "../images/welcome.avif";
+import welcomeImage from '../../public/welcome.avif'
 
 const Home = () => {
   return (
