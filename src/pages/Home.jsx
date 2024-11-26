@@ -4,6 +4,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { IoChatbubbles } from "react-icons/io5";
 import { IoIosBook } from "react-icons/io";
+import BlogCard from "../components/BlogCard" 
 import { FaLeaf } from "react-icons/fa";
 
 const Home = () => {
@@ -131,11 +132,13 @@ const Home = () => {
             <div className="hs-carousel w-full overflow-hidden rounded-lg">
               <div className="relative min-h-[450px] -mx-1">
                 <div className="hs-carousel-body  absolute top-0 bottom-0 start-0 flex flex-nowrap transition-transform duration-700 opacity-0">
-                  <div className="hs-carousel-slide px-1 ">1</div>
-                  <div className="hs-carousel-slide px-1 ">2</div>
-                  <div className="hs-carousel-slide px-1 ">3</div>
-                  <div className="hs-carousel-slide px-1 ">4</div>
-                  <div className="hs-carousel-slide px-1 ">5</div>
+
+                  <div className="hs-carousel-slide px-1 "> <BlogCard  /></div>
+                  <div className="hs-carousel-slide px-1 "> <BlogCard  /></div>
+                  <div className="hs-carousel-slide px-1 "> <BlogCard  /></div>
+                  <div className="hs-carousel-slide px-1 "> <BlogCard  /></div>
+                  <div className="hs-carousel-slide px-1 "> <BlogCard  /></div>
+                
                 </div>
               </div>
             </div>
