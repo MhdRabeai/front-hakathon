@@ -52,8 +52,8 @@ const Home = () => {
             </div>
           </div>
           <div className="flex justify-center items-center  gap-x-5 gap-y-8 lg:gap-y-0 flex-wrap md:flex-wrap lg:flex-nowrap lg:flex-row lg:justify-between lg:gap-x-8">
-            <div className="group relative w-full bg-[#ffffff] rounded-2xl p-4 transition-all duration-500 max-md:max-w-md max-md:mx-auto md:w-2/5 md:h-72 xl:p-7 xl:w-1/4 hover:bg-[#7D7CEC]">
-              <div className="bg-[#f6f6f6] rounded-full flex justify-center items-center mb-5 w-14 h-14 ">
+            <div className="group relative w-full shadow-lg bg-[#ffffff] rounded-2xl p-4 transition-all duration-500 max-md:max-w-md max-md:mx-auto md:w-2/5 md:h-72 xl:p-7 xl:w-1/4 hover:bg-[#7D7CEC]">
+              <div className="bg-[#f6f6f6] shadow-lg rounded-full flex justify-center items-center mb-5 w-14 h-14 ">
                 <IoChatbubbles className="scale-150 text-[#7D7CEC]" />
               </div>
               <h4 className="text-xl font-semibold text-gray-900 mb-3 capitalize transition-all duration-500 group-hover:text-white">
@@ -63,8 +63,8 @@ const Home = () => {
               "We delight in working with discerning clients who value quality, service, integrity, and aesthetics."
               </p>
             </div>
-            <div className="group relative w-full bg-[#ffffff] rounded-2xl p-4 transition-all duration-500 max-md:max-w-md max-md:mx-auto md:w-2/5 md:h-72 xl:p-7 xl:w-1/4 hover:bg-[#7D7CEC]">
-              <div className="bg-[#f6f6f6] rounded-full flex justify-center items-center mb-5 w-14 h-14 ">
+            <div className="group relative shadow-lg w-full bg-[#ffffff] rounded-2xl p-4 transition-all duration-500 max-md:max-w-md max-md:mx-auto md:w-2/5 md:h-72 xl:p-7 xl:w-1/4 hover:bg-[#7D7CEC]">
+              <div className="bg-[#f6f6f6] shadow-lg rounded-full flex justify-center items-center mb-5 w-14 h-14 ">
                 <IoIosBook className="scale-150 text-[#7D7CEC]" />
               </div>
               <h4 className="text-xl font-semibold text-gray-900 mb-3 capitalize transition-all duration-500 group-hover:text-white">
@@ -73,8 +73,8 @@ const Home = () => {
               <p className="text-sm font-normal text-gray-500 transition-all duration-500 leading-5 group-hover:text-white">
               We delight in working with discerning clients who value quality, service, integrity, and aesthetics.              </p>
             </div>
-            <div className="group relative w-full bg-[#ffffff] rounded-2xl p-4 transition-all duration-500 max-md:max-w-md max-md:mx-auto md:w-2/5 md:h-72 xl:p-7 xl:w-1/4 hover:bg-[#7D7CEC]">
-              <div className="bg-[#f6f6f6] rounded-full flex justify-center items-center mb-5 w-14 h-14 ">
+            <div className="group relative w-full  shadow-lg bg-[#ffffff] rounded-2xl p-4 transition-all duration-500 max-md:max-w-md max-md:mx-auto md:w-2/5 md:h-72 xl:p-7 xl:w-1/4 hover:bg-[#7D7CEC]">
+              <div className="bg-[#f6f6f6] shadow-lg rounded-full flex justify-center items-center mb-5 w-14 h-14 ">
                 <FaLeaf className="scale-150 text-[#7D7CEC]" />
               </div>
               <h4 className="text-xl font-semibold text-gray-900 mb-3 capitalize transition-all duration-500 group-hover:text-white">
@@ -83,54 +83,7 @@ const Home = () => {
               <p className="text-sm font-normal text-gray-500 transition-all duration-500 leading-5 group-hover:text-white">
               "We delight in working with discerning clients who value quality, service, integrity, and aesthetics."
               </p>
-            </div>
-            
-          </div>
-        </div>
-      </div>
-      <div className={`relative Facts mb-10`}>
-        <div className=" -inset-0 w-full h-full pt-8 pb-10">
-          <div className="mx-auto  max-w-[510px] text-center ">
-            <span className="mb-2 block text-base font-semibold text-primary text-[#7D7CEC]">
-              Fun Facts
-            </span>
-            <h2 className="mb-3 text-xl font-semibold leading-[1.2] text-white  sm:text-4xl md:text-[40px]">
-              Our achievements
-            </h2>
-          </div>
-          <div className="pt-4 container grid justify-center gap-4 max-w-[800px] mx-auto grid-cols-2 lg:grid-cols-4 text-white">
-            <div className="flex flex-col items-center">
-              <h2 className="mb-1 md:text-4xl font-semibold sm:text-xl title-font ">
-                50+
-              </h2>
-              <p className="flex-1  text-light text-base leading-relaxed ">
-                Happy Patients
-              </p>
-            </div>
-            <div className="flex flex-col  items-center">
-              <h2 className="mb-1 md:text-4xl font-semibold sm:text-xl title-font ">
-                15+
-              </h2>
-              <p className="flex-1  text-light text-base leading-relaxed ">
-                Campaign Complete
-              </p>
-            </div>
-            <div className="flex flex-col items-center">
-              <h2 className="mb-1 md:text-4xl font-semibold sm:text-xl title-font ">
-                30+
-              </h2>
-              <p className="flex-1  text-light text-base leading-relaxed ">
-                Award Won
-              </p>
-            </div>
-            <div className="flex flex-col items-center">
-              <h2 className="mb-1 md:text-4xl font-semibold sm:text-xl title-font ">
-                25+
-              </h2>
-              <p className="flex-1  text-light text-base leading-relaxed ">
-                Expert Doctors
-              </p>
-            </div>
+            </div>    
           </div>
         </div>
       </div>
