@@ -141,7 +141,7 @@ const Home = () => {
                   <div className="hs-carousel-slide px-1 ">
                     <BlogCard
                       id={0}
-                      image={"https://i.ibb.co/r2zns1m/image-01.jpg"}
+                      image={"/public/img1.avif"}
                       CardTitle={"50+ Best creative website themes & templates"}
                       CardDescription={"project 1"}
                       Button={"View Details"}
@@ -151,7 +151,7 @@ const Home = () => {
                     {" "}
                     <BlogCard
                       id={1}
-                      image={"https://i.ibb.co/0nbbWM9/image-02-1.jpg"}
+                      image={"/public/img6.jpg"}
                       CardTitle={
                         "Creative Card Component designs graphic elements"
                       }
@@ -163,7 +163,7 @@ const Home = () => {
                     {" "}
                     <BlogCard
                       id={2}
-                      image={"https://i.ibb.co/dL9fH7N/image-03-1.jpg"}
+                      image={"/public/img3.avif"}
                       CardTitle={"The ultimate UX and UI guide to card design"}
                       CardDescription={"project 3"}
                       Button={"View Details"}
@@ -173,7 +173,7 @@ const Home = () => {
                     {" "}
                     <BlogCard
                       id={3}
-                      image={"https://i.ibb.co/0nbbWM9/image-02-1.jpg"}
+                      image={"/public/img2.avif"}
                       CardTitle={
                         "Creative Card Component designs graphic elements"
                       }
@@ -185,7 +185,7 @@ const Home = () => {
                     {" "}
                     <BlogCard
                       id={4}
-                      image={"https://i.ibb.co/dL9fH7N/image-03-1.jpg"}
+                      image={"/public/img5.jpg"}
                       CardTitle={
                         "Creative Card Component designs graphic elements"
                       }
