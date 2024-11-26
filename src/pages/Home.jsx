@@ -130,16 +130,14 @@ const Home = () => {
             className="relative "
           >
             <div className="hs-carousel w-full overflow-hidden rounded-lg ">
-              <div className="relative min-h-[450px] -mx-1 mb-[7rem]">
+              <div className="relative min-h-[400px] -mx-1 mb-[7rem]">
                 <div className="hs-carousel-body  absolute top-0 bottom-0 start-0 flex flex-nowrap transition-transform duration-700 opacity-0">
                   <div className="hs-carousel-slide px-1 ">
                     <BlogCard
                       id={0}
                       image={"https://i.ibb.co/r2zns1m/image-01.jpg"}
                       CardTitle={"50+ Best creative website themes & templates"}
-                      CardDescription={
-                        "project 1"
-                      }
+                      CardDescription={"project 1"}
                       Button={"View Details"}
                     />
                   </div>
@@ -151,9 +149,7 @@ const Home = () => {
                       CardTitle={
                         "Creative Card Component designs graphic elements"
                       }
-                      CardDescription={
-                        "project 2"
-                      }
+                      CardDescription={"project 2"}
                       Button={"View Details"}
                     />
                   </div>
@@ -163,9 +159,7 @@ const Home = () => {
                       id={2}
                       image={"https://i.ibb.co/dL9fH7N/image-03-1.jpg"}
                       CardTitle={"The ultimate UX and UI guide to card design"}
-                      CardDescription={
-                        "project 3"
-                      }
+                      CardDescription={"project 3"}
                       Button={"View Details"}
                     />
                   </div>
@@ -177,9 +171,7 @@ const Home = () => {
                       CardTitle={
                         "Creative Card Component designs graphic elements"
                       }
-                      CardDescription={
-                        "project 4 "
-                      }
+                      CardDescription={"project 4 "}
                       Button={"View Details"}
                     />
                   </div>
@@ -188,13 +180,10 @@ const Home = () => {
                     <BlogCard
                       id={4}
                       image={"https://i.ibb.co/dL9fH7N/image-03-1.jpg"}
-                      
                       CardTitle={
                         "Creative Card Component designs graphic elements"
                       }
-                      CardDescription={
-                        "project 5 "
-                      }
+                      CardDescription={"project 5 "}
                       Button={"View Details"}
                     />
                   </div>
@@ -275,7 +264,7 @@ const Home = () => {
                 15+
               </h2>
               <p className="flex-1  text-light text-base leading-relaxed ">
-              Project Complete
+                Project Complete
               </p>
             </div>
             <div className="flex flex-col items-center">
@@ -291,8 +280,8 @@ const Home = () => {
                 25+
               </h2>
               <p className="flex-1  text-light text-base leading-relaxed ">
-              Expert Developers
-                            </p>
+                Expert Developers
+              </p>
             </div>
           </div>
         </div>
