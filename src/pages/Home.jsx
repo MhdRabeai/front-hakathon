@@ -10,7 +10,7 @@ import welcomeImage from '../../public/welcome.avif'
 const Home = () => {
   return (
     <div className="">
-      <div className=" container max-w-[86rem] w-full mx-auto px-4 ">
+      <div className=" container max-w-[86rem] w-full mx-auto px-4 pb-2">
         <div className="grid lg:grid-cols-7 lg:gap-x-4 xl:gap-x-12  lg:items-center pb-6 mb-6 border-b-2 border-[#ddd]">
           <div className="lg:col-span-3 flex flex-col ">
             <h1 className="block text-3xl font-semibold text-gray-800 sm:text-4xl md:text-5xl lg:text-6xl text-center lg:text-left">
@@ -94,7 +94,7 @@ const Home = () => {
             </div>
           </div>
         </div>
-        <div className="w-full px-4">
+        <div className="w-full px-4 pb-6 mb-6 border-b-2 border-[#ddd]">
           <div className="mx-auto my-10  max-w-[510px] text-center ">
             <span className="mb-2 block text-lg font-semibold text-primary text-[#7D7CEC]">
               Our Projects{" "}
@@ -106,6 +106,78 @@ const Home = () => {
               There are many variations of passages of Lorem Ipsum available but
               the majority have suffered alteration in some form.{" "}
             </p>
+          </div>
+          <div
+            data-hs-carousel='{
+  "loadingClasses": "opacity-0",
+  "dotsItemClasses": "hs-carousel-active:bg--700 hs-carousel-active:border--700 size-3 border border-gray-400 rounded-full cursor-pointer dark:border-neutral-600 dark:hs-carousel-active:bg--500 dark:hs-carousel-active:border--500",
+  "isInfiniteLoop":true,
+  "slidesQty": {
+    "xs": 1,
+    "md": 2,
+    "lg": 3
+  }
+}'
+            className="relative "
+          >
+            <div className="hs-carousel w-full overflow-hidden rounded-lg">
+              <div className="relative min-h-[450px] -mx-1">
+                <div className="hs-carousel-body  absolute top-0 bottom-0 start-0 flex flex-nowrap transition-transform duration-700 opacity-0">
+                  <div className="hs-carousel-slide px-1 ">1</div>
+                  <div className="hs-carousel-slide px-1 ">2</div>
+                  <div className="hs-carousel-slide px-1 ">3</div>
+                  <div className="hs-carousel-slide px-1 ">4</div>
+                  <div className="hs-carousel-slide px-1 ">5</div>
+                </div>
+              </div>
+            </div>
+
+            <button
+              type="button"
+              className="hs-carousel-prev hs-carousel-disabled:opacity-50 hs-carousel-disabled:pointer-events-none absolute inset-y-0 start-0 inline-flex justify-start items-center w-[25px] h-full text-gray-800 bg-gray-700/10 focus:outline-none focus:bg-gray-800/10 rounded-s-lg "
+            >
+              <span className="text-2xl" aria-hidden="true">
+                <svg
+                  className="shrink-0 size-5"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#7D7CEC"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="m15 18-6-6 6-6"></path>
+                </svg>
+              </span>
+              <span className="sr-only">Previous</span>
+            </button>
+            <button
+              type="button"
+              className="hs-carousel-next hs-carousel-disabled:opacity-50 hs-carousel-disabled:pointer-events-none absolute inset-y-0 end-0 inline-flex justify-end items-center w-[25px] h-full text-gray-800 bg-gray-700/10 focus:outline-none focus:bg-gray-800/10 rounded-e-lg dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10"
+            >
+              <span className="sr-only">Next</span>
+              <span className="text-2xl" aria-hidden="true">
+                <svg
+                  className="shrink-0 size-5"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#7D7CEC"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="m9 18 6-6-6-6"></path>
+                </svg>
+              </span>
+            </button>
+
+            <div className="hs-carousel-pagination flex justify-center absolute bottom-[-19px] start-0 end-0 space-x-2 "></div>
           </div>
         </div>
       </div>
@@ -277,7 +349,7 @@ const Home = () => {
                       type="text"
                       className="peer py-2 px-4 ps-11 block w-full
                           border-2  border-gray-200 rounded-lg text-sm 
-                          focus:border-[#4f9451] focus:ring-0 disabled:opacity-50 disabled:pointer-events-none "
+                          focus:border-[#7D7CEC] focus:ring-0 disabled:opacity-50 disabled:pointer-events-none "
                       placeholder="Enter Name..."
                       name="name"
                     />
