@@ -54,7 +54,7 @@ const Home = () => {
             </div>
           </div>
           <div className="flex justify-center items-center  gap-x-5 gap-y-8 lg:gap-y-0 flex-wrap md:flex-wrap lg:flex-nowrap lg:flex-row lg:justify-between lg:gap-x-8">
-            <div className="group relative w-full shadow-lg bg-[#ffffff] rounded-2xl p-4 transition-all duration-500 max-md:max-w-md max-md:mx-auto md:w-2/5 md:h-72 xl:p-7 xl:w-1/4 hover:bg-[#7D7CEC]">
+            <div className="group relative w-full shadow-lg bg-[#ffffff] rounded-2xl p-4 transition-all duration-500 max-md:max-w-md max-md:mx-auto md:w-2/5 md:h-72 xl:p-7 x:w-[32%] hover:bg-[#7D7CEC]">
               <div className="bg-[#f6f6f6] shadow-lg rounded-full flex justify-center items-center mb-5 w-14 h-14 ">
                 <IoChatbubbles className="scale-150 text-[#7D7CEC]" />
               </div>
@@ -67,7 +67,7 @@ const Home = () => {
               </p>
             </div>
 
-            <div className="group relative shadow-lg w-full bg-[#ffffff] rounded-2xl p-4 transition-all duration-500 max-md:max-w-md max-md:mx-auto md:w-2/5 md:h-72 xl:p-7 xl:w-1/4 hover:bg-[#7D7CEC]">
+            <div className="group relative shadow-lg w-full bg-[#ffffff] rounded-2xl p-4 transition-all duration-500 max-md:max-w-md max-md:mx-auto md:w-2/5 md:h-72 xl:p-7 x:w-[32%] hover:bg-[#7D7CEC]">
               <div className="bg-[#f6f6f6] shadow-lg rounded-full flex justify-center items-center mb-5 w-14 h-14 ">
                 <IoIosBook className="scale-150 text-[#7D7CEC]" />
               </div>
@@ -80,7 +80,7 @@ const Home = () => {
               </p>
             </div>
 
-            <div className="group relative w-full  shadow-lg bg-[#ffffff] rounded-2xl p-4 transition-all duration-500 max-md:max-w-md max-md:mx-auto md:w-2/5 md:h-72 xl:p-7 xl:w-1/4 hover:bg-[#7D7CEC]">
+            <div className="group relative w-full  shadow-lg bg-[#ffffff] rounded-2xl p-4 transition-all duration-500 max-md:max-w-md max-md:mx-auto md:w-2/5 md:h-72 xl:p-7 x:w-[32%] hover:bg-[#7D7CEC]">
               <div className="bg-[#f6f6f6] shadow-lg rounded-full flex justify-center items-center mb-5 w-14 h-14 ">
                 <FaLeaf className="scale-150 text-[#7D7CEC]" />
               </div>
