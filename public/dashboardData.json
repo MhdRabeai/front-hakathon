@@ -1,0 +1,43 @@
+{
+    "stats": {
+      "activeJobs": 12,
+      "totalApplications": 250,
+      "candidatesInProcess": 35,
+      "closedJobs": 8
+    },
+    "latestUsers": [
+      {
+        "id": 1,
+        "name": "John Doe",
+        "phone": "+123456789",
+        "location": "New York, USA",
+        "active": true,
+        "accessLevel": "Admin"
+      },
+      {
+        "id": 2,
+        "name": "Jane Smith",
+        "phone": "+987654321",
+        "location": "Los Angeles, USA",
+        "active": false,
+        "accessLevel": "User"
+      },
+      {
+        "id": 3,
+        "name": "Ahmed Ali",
+        "phone": "+201234567890",
+        "location": "Cairo, Egypt",
+        "active": true,
+        "accessLevel": "Recruiter"
+      },
+      {
+        "id": 4,
+        "name": "Maria Gonzalez",
+        "phone": "+55123456789",
+        "location": "São Paulo, Brazil",
+        "active": true,
+        "accessLevel": "Manager"
+      }
+    ]
+  }
+  
