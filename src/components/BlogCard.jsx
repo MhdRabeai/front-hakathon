@@ -1,4 +1,4 @@
-import React from "react";
+/* eslint-disable react/prop-types */
 
 const BlogCard = ({ id, date, CardTitle, CardDescription, image, Button }) => {
   return (

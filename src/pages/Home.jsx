@@ -136,7 +136,7 @@ const Home = () => {
             className="relative "
           >
             <div className="hs-carousel w-full overflow-hidden rounded-lg ">
-              <div className="relative min-h-[450px] -mx-1 mb-[7rem]">
+              <div className="relative min-h-[400px] -mx-1 mb-[7rem]">
                 <div className="hs-carousel-body  absolute top-0 bottom-0 start-0 flex flex-nowrap transition-transform duration-700 opacity-0">
                   <div className="hs-carousel-slide px-1 ">
                     <BlogCard
