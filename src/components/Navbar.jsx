@@ -10,9 +10,9 @@ const Navbar = () => {
   // };
 
   return (
-    <header className="flex flex-wrap sm:justify-start sm:flex-nowrap w-full bg-[#0B0B43] text-sm py-2 shadow-2xl mb-10 dark:drop-shadow-[0_5px_10px_rgba(255,255,255,0.5)] font-barcon">
-      <nav className="max-w-[86rem] w-full mx-auto px-4 sm:flex items-center sm:justify-between ">
-        <div className="flex justify-between items-center md:flex-none">
+    <header className=" rounded-b-3xl  flex flex-wrap sm:justify-start sm:flex-nowrap w-full bg-[#0B0B43] text-sm py-2 shadow-2xl mb-10 dark:drop-shadow-[0_5px_2px_rgba(165,165,174,0.5)] font-barcon">
+      <nav className="  max-w-[86rem] w-full mx-auto px-4 sm:flex items-center sm:justify-between ">
+        <div className=" flex justify-between items-center md:flex-none">
           <NavLink
             className="flex-none text-xl font-semibold text-white focus:outline-none focus:opacity-80"
             to="/"
