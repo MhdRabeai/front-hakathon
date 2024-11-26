@@ -9,6 +9,7 @@ const Footer = () => {
   return (
     <footer className=" relative overflow-hidden bg-[#0B0B43] mt-10">
       <div className=" flex justify-around text-[#E2E2EB] items-center">
+
         <div className="flex flex-col mt-3 mb-3">
           <div>Contact:</div>
           <div>240-334-3377</div>
@@ -31,6 +32,7 @@ const Footer = () => {
         </div>
       </div>
         </div>
+
         <div className="flex flex-col mt-3 mb-3">
           <div className='font-semibold'>Sections</div>
           <div>Home</div>
