@@ -1,10 +1,6 @@
 /* eslint-disable no-unused-vars */
 import { Link } from "react-router-dom";
-
-
 import { NavLink } from "react-router-dom";
-import logo from "../../public/Logo.svg";
-// import { useUserInfo } from "../Services/UserContext";
 
 const Navbar = () => {
   // const [isDark, setIsDark] = useState(false);
@@ -21,7 +17,7 @@ const Navbar = () => {
             className="flex-none text-xl font-semibold text-white focus:outline-none focus:opacity-80"
             to="/"
           >
-            <img src={logo} alt="logo" width={135} />
+            <img src="/Logo.svg" alt="logo" width={135} />
           </NavLink>
           <div className="sm:hidden">
             <button
@@ -144,11 +140,13 @@ const Navbar = () => {
             </NavLink>
 
             <div className="flex">
-              <Link className="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-bold rounded-lg border border-transparent bg-[#7D7CEC] text-[#E2E2EB] hover:bg-[#E2E2EB] hover:text-[#7D7CEC] duration-300 ml-6">
+              <Link
+                to={"/register"}
+                className="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-bold rounded-lg border border-transparent bg-[#7D7CEC] text-[#E2E2EB] hover:bg-[#E2E2EB] hover:text-[#7D7CEC] duration-300 ml-6"
+              >
                 Hire Me
               </Link>
             </div>
-            
           </div>
         </div>
       </nav>
