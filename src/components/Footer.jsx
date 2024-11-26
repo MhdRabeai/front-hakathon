@@ -7,22 +7,12 @@ import github from '../../public/github.svg'
 
 const Footer = () => {
   return (
-    <footer className=" relative overflow-hidden bg-[#0B0B43] mt-10">
-      <div className=" flex justify-around text-[#E2E2EB] items-center">
-        <div className="flex flex-col mt-3 mb-3">
-          <div>Contact:</div>
-          <div>240-334-3377</div>
-          <div>plugin@gmail.com</div>
-          <br />
-          <div className="flex justify-between">
-            <img src={facebook} />
-            <img src={github} />
-            <img src={instagram} />
-          </div>
-        </div>
+    <footer className=" relative overflow-hidden bg-[#0B0B43] mt-10 rounded-[15px_15px_0px_0px]">
+      <div className=" max-w-[86rem] w-full mx-auto px-4 sm:flex justify-center items-center sm:justify-between ">
+       
         <div className="flex flex-col">
         <div className="relative z-10">
-        <div className="w-full max-w-5xl px-4 xl:px-0 py-2 lg:pt-6 mx-auto flex justify-center">
+        <div className="w-full max-w-5xl px-4 xl:px-0 py-2 mx-auto flex justify-center">
           <div className="inline-flex items-center px-5 mx-5">
             <Link to={"/"}>
               <img src={logo} alt="logo" width={135} />
@@ -31,13 +21,12 @@ const Footer = () => {
         </div>
       </div>
         </div>
-        <div className="flex flex-col mt-3 mb-3">
-          <div className='font-semibold'>Sections</div>
-          <div>Home</div>
-          <div>Services</div>
-          <div>Projects</div>
-          <div>Features</div>
-          <div>Contact</div>
+        <div className="flex  mt-3 mb-3 px-5 justify-center">
+        <div className="flex gap-x-4 ">
+            <img src={facebook} />
+            <img src={github} />
+            <img src={instagram} />
+          </div>
         </div>
       </div>
       <svg
