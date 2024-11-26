@@ -1,0 +1,9 @@
+.hs-carousel-pagination .active {
+  background-color: #4f9451;
+  border: none;
+}
+.Facts {
+  background-image: url(/public/Facts.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
