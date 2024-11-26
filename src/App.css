@@ -1,4 +1,16 @@
+<<<<<<< HEAD
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+=======
+.hs-carousel-pagination .active {
+  background-color: #0b0b43;
+  border: none;
+}
+.Facts {
+  background-image: url(/Facts.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+>>>>>>> kamel_old
