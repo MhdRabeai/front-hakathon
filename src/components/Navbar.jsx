@@ -138,11 +138,21 @@ const Navbar = () => {
             >
               Dashboard
             </NavLink>
-
-            <div className="flex">
+{/* <Link
+                className="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-[#0B0B43] text-white 
+                hover:bg-white hover:text-[#7D7CEC] hover:border-[#7D7CEC] 
+                transition-transform duration-300 ease-in-out 
+                transform hover:scale-105 hover:shadow-lg 
+                focus:outline-none"
+              >
+                Get Started
+              </Link> */}
+            <div className="flex  ">
               <Link
                 to={"/register"}
-                className="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-bold rounded-lg border border-transparent bg-[#7D7CEC] text-[#E2E2EB] hover:bg-[#E2E2EB] hover:text-[#7D7CEC] duration-300 ml-6"
+                className="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-bold rounded-lg border border-transparent bg-[#7D7CEC] text-[#E2E2EB] hover:bg-[#E2E2EB] hover:text-[#7D7CEC] ml-6 transition-transform duration-300 ease-in-out 
+                transform hover:scale-105 hover:shadow-lg 
+                focus:outline-none"
               >
                 Hire Me
               </Link>
