@@ -13,7 +13,7 @@ const Home = () => {
         <div className="grid lg:grid-cols-7 lg:gap-x-4 xl:gap-x-12  lg:items-center pb-6 mb-6 border-b-2 border-[#ddd]">
           <div className="lg:col-span-3 flex flex-col ">
             <h1 className="block text-3xl font-semibold text-gray-800 sm:text-4xl md:text-5xl lg:text-6xl text-center lg:text-left">
-              Recruit Smarter, Discover the Best Programmers!
+              Recruit Smarter , Discover the Best Programmers !
             </h1>
             <h1 className="block text-3xl font-semibold text-[#7D7CEC] sm:text-4xl md:text-5xl lg:text-6xl  text-center lg:text-left">
               Starts Here
