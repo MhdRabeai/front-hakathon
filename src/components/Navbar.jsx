@@ -1,14 +1,6 @@
 /* eslint-disable no-unused-vars */
 import { Link, useNavigate } from "react-router-dom";
-import { Link, useNavigate } from "react-router-dom";
-import { Link, useNavigate } from "react-router-dom";
 import { NavLink } from "react-router-dom";
-import { useUserInfo } from "../Providers/UserContext";
-import { IoMdLogOut } from "react-icons/io";
-import { Bounce, toast } from "react-toastify";
-import { useUserInfo } from "../Providers/UserContext";
-import { IoMdLogOut } from "react-icons/io";
-import { Bounce, toast } from "react-toastify";
 import { useUserInfo } from "../Providers/UserContext";
 import { IoMdLogOut } from "react-icons/io";
 import { Bounce, toast } from "react-toastify";
@@ -202,9 +194,7 @@ const Navbar = () => {
             <div className="flex">
               <Link
                 to={"/register"}
-                className="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-bold rounded-lg border border-transparent bg-[#7D7CEC] text-[#E2E2EB] hover:bg-[#E2E2EB] hover:text-[#7D7CEC] ml-6 transition-transform duration-300 ease-in-out 
-                transform hover:scale-105 hover:shadow-lg 
-                focus:outline-none"
+                className="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-bold rounded-lg border border-transparent bg-[#7D7CEC] text-[#E2E2EB] hover:bg-[#E2E2EB] hover:text-[#7D7CEC] duration-300 ml-6"
               >
                 Hire Me
               </Link>
