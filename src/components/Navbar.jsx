@@ -215,15 +215,6 @@ const Navbar = () => {
               )}
             </button> */}
 
-            <NavLink
-              className={
-                "active font-medium text-white focus:outline-none  hover:text-white  focus:text-white transition"
-              }
-              to="/dashboard"
-            >
-              Dashboard
-            </NavLink>
-            <div className="flex  ">
             {user && (
               <>
                 <NavLink
