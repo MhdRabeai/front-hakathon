@@ -51,6 +51,20 @@ function App() {
           <Route path="adminLogin" element={<AdminLogin />} />
           <Route path="register" element={<Register />} />
           <Route path="dashboard" element={<Dashboard />} />
+          <Route path="videoCall" element={<RootChat />}>
+            <Route
+              index
+              element={<LoginChat onAuthSuccess={handleAuthSuccess} />}
+            />
+            <Route
+              path=":roomName"
+              element={
+                <ProtectedRoute isAuthenticated={isAuthenticated}>
+                  <VideoRoom />
+                </ProtectedRoute>
+              }
+            />
+          </Route>
           <Route path="*" element={<NotFound />} />
         </Route>
         <Route
@@ -61,21 +75,21 @@ function App() {
             </ProtectedRoute>
           }
         >
-          <Route index element={<MainDash />} />
-        </Route>
-        <Route path="/videoCall" element={<RootChat />}>
-          <Route
-            index
-            element={<LoginChat onAuthSuccess={handleAuthSuccess} />}
-          />
-          <Route
-            path=":roomName"
-            element={
-              <ProtectedRoute isAuthenticated={isAuthenticated}>
-                <VideoRoom />
-              </ProtectedRoute>
-            }
-          />
+          <Route path="overview" element={<MainDash />} />
+          <Route path="videoCall" element={<RootChat />}>
+            <Route
+              index
+              element={<LoginChat onAuthSuccess={handleAuthSuccess} />}
+            />
+            <Route
+              path=":roomName"
+              element={
+                <ProtectedRoute isAuthenticated={isAuthenticated}>
+                  <VideoRoom />
+                </ProtectedRoute>
+              }
+            />
+          </Route>
         </Route>
       </Routes>
     </div>
