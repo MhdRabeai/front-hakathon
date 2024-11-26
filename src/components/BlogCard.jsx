@@ -1,3 +1,6 @@
+/* eslint-disable react/prop-types */
+/* eslint-disable no-unused-vars */
+
 const BlogCard = ({ id, date, CardTitle, CardDescription, image }) => {
   return (
     <div className="container mx-auto p-3">
@@ -15,7 +18,7 @@ const BlogCard = ({ id, date, CardTitle, CardDescription, image }) => {
                 By: John Doe
               </p>
             </div>
-            
+
             <div className="block sm:shrink-0">
               <img
                 alt=""
@@ -44,3 +47,5 @@ const BlogCard = ({ id, date, CardTitle, CardDescription, image }) => {
     </div>
   );
 };
+
+export default BlogCard;
