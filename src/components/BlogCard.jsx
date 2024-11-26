@@ -10,7 +10,8 @@ const BlogCard = ({ id, date, CardTitle, CardDescription, image, Button }) => {
 
             <div className="flex-col-reverse flex sm:justify-between gap-4">
               <div>
-                <h3 className="text-lg font-bold text-gray-900 sm:text-xl">
+
+                <h3 className="text-lg font-bold text-[#0B0B43] sm:text-xl">
                   {CardTitle}
                 </h3>
               </div>
@@ -30,22 +31,20 @@ const BlogCard = ({ id, date, CardTitle, CardDescription, image, Button }) => {
               </p>
             </div>
 
-            <div className="mt-6 flex gap-4 sm:gap-6">
+            <dl className="mt-6 flex gap-4 sm:gap-6">
               <div className="flex flex-col-reverse">
-                <dt className="text-sm font-medium text-gray-600">Published</dt>
                 <dd className="text-xs text-gray-500">{date}</dd>
               </div>
-            </div>
+            </dl>
 
             {Button && (
-              <div className="flex justify-center  mt-4">
-                <a
-                  href="#"
-                  className="inline-block rounded-full border border-gray-3 px-7 py-2 text-base font-medium text-body-color transition hover:border-primary hover:bg-primary hover:text-[#7d7cec]"
-                >
-                  {Button}
-                </a>
-              </div>
+              <a
+                href="#"
+                className="justify-center mt-4 rounded-full border border-gray-3 px-7 py-2 text-base font-medium text-body-color transition hover:border-primary hover:bg-primary text-[#0B0B43] hover:text-[#7D7CEC] "
+              >
+                {Button}
+              </a>
+
             )}
           </div>
         </div>
@@ -55,3 +54,4 @@ const BlogCard = ({ id, date, CardTitle, CardDescription, image, Button }) => {
 };
 
 export default BlogCard;
+

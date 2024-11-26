@@ -1,31 +1,24 @@
 import { Link } from "react-router-dom";
-import logo from '../../public/Logo.svg'
-import instagram from '../../public/instagram.svg'
-import facebook from '../../public/facebook.svg'
-import github from '../../public/github.svg'
-
-
 const Footer = () => {
   return (
     <footer className=" relative overflow-hidden bg-[#0B0B43] mt-10 rounded-[15px_15px_0px_0px]">
       <div className=" max-w-[86rem] w-full mx-auto px-4 sm:flex justify-center items-center sm:justify-between ">
-       
         <div className="flex flex-col">
-        <div className="relative z-10">
-        <div className="w-full max-w-5xl px-4 xl:px-0 py-2 mx-auto flex justify-center">
-          <div className="inline-flex items-center px-5 mx-5">
-            <Link to={"/"}>
-              <img src={logo} alt="logo" width={135} />
-            </Link>
+          <div className="relative z-10">
+            <div className="w-full max-w-5xl px-4 xl:px-0 py-2 mx-auto flex justify-center">
+              <div className="inline-flex items-center px-5 mx-5">
+                <Link to={"/"}>
+                  <img src="/Logo.svg" alt="logo" width={135} />
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-        </div>
         <div className="flex  mt-3 mb-3 px-5 justify-center">
-        <div className="flex gap-x-4 ">
-            <img src={facebook} />
-            <img src={github} />
-            <img src={instagram} />
+          <div className="flex gap-x-4 ">
+            <img src="/facebook.svg" />
+            <img src="/github.svg" />
+            <img src="/instagram.svg" />
           </div>
         </div>
       </div>
@@ -118,8 +111,6 @@ const Footer = () => {
           stroke="currentColor"
         />
       </svg>
-
-      
     </footer>
   );
 };
