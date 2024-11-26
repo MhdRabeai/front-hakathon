@@ -3,7 +3,11 @@
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx,css}"],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        custom: ['Bar Con', 'sans-serif'], // Add custom font here
+      },
+    },
   },
   plugins: [require("@tailwindcss/forms"), require("preline/plugin")],
 };
