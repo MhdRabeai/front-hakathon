@@ -15,6 +15,7 @@ import RootDash from "./pages/Dashbard/RootDash";
 import RootChat from "./pages/Chat/RootChat";
 import LoginChat from "./pages/Chat/LoginChat";
 import MainDash from "./pages/Dashbard/MainDash";
+import AdminLogin from "./pages/AdminLogin";
 // import { useEffect } from "react";
 function App() {
   // const location = useLocation();
@@ -39,6 +40,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Root />}>
           <Route index element={<Home />} />
+          <Route path="adminLogin" element={<AdminLogin />} />
           <Route path="register" element={<Register />} />
           <Route path="dashboard" element={<Dashboard />} />
           <Route path="*" element={<NotFound />} />
