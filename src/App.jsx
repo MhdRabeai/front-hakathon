@@ -19,7 +19,7 @@ function App() {
     window.HSStaticMethods.autoInit();
   }, [location.pathname]);
   return (
-    <div className="">
+    <div className="font-barcon">
       <ToastContainer
         position="bottom-right"
         autoClose={3000}

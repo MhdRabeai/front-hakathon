@@ -4,8 +4,10 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { IoChatbubbles } from "react-icons/io5";
 import { IoIosBook } from "react-icons/io";
-import { FaLeaf } from "react-icons/fa";
-import welcomeImage from "../images/welcome.avif";
+
+import { FaChartLine, FaLeaf } from "react-icons/fa";
+import welcomeImage from '../../public/welcome.avif'
+
 
 const Home = () => {
   return (
@@ -94,7 +96,12 @@ const Home = () => {
             </div>
           </div>
         </div>
+
+
+        {/* Our Projects */}
+
         <div className="w-full px-4 pb-6 mb-6 border-b-2 border-[#ddd]">
+
           <div className="mx-auto my-10  max-w-[510px] text-center ">
             <span className="mb-2 block text-lg font-semibold text-primary text-[#7D7CEC]">
               Our Projects{" "}
@@ -106,6 +113,7 @@ const Home = () => {
               There are many variations of passages of Lorem Ipsum available but
               the majority have suffered alteration in some form.{" "}
             </p>
+
           </div>
           <div
             data-hs-carousel='{
@@ -224,6 +232,7 @@ const Home = () => {
                 Expert Doctors
               </p>
             </div>
+
           </div>
         </div>
       </div>
