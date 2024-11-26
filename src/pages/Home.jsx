@@ -94,6 +94,8 @@ const Home = () => {
             </div>
           </div>
         </div>
+
+        {/* Our Projects */}
         <div className="w-full px-4">
           <div className="mx-auto my-10  max-w-[510px] text-center ">
             <span className="mb-2 block text-lg font-semibold text-primary text-[#7D7CEC]">
@@ -109,6 +111,7 @@ const Home = () => {
           </div>
         </div>
       </div>
+      {/* Fun Facts */}
       <div className={`relative Facts mb-10`}>
         <div className=" -inset-0 w-full h-full pt-8 pb-10">
           <div className="mx-auto  max-w-[510px] text-center ">
