@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 /* eslint-disable no-unused-vars */
 import React, { useState } from "react";
 import { FaUser, FaCheck } from "react-icons/fa";
@@ -9,8 +10,36 @@ const steps = [
 ];
 export const Register = () => {
   const [currentStep, setCurrentStep] = useState(1);
+  const [userInfo, setUserInfo] = useState({
+    id: 1,
+    firstName: "John Doe",
+    email: "john@example.com",
+    phone: "+1-234-567-8900",
+    jobTitle: "Senior Developer",
+    location: "New York, USA",
+    cvLink: "https://example.com/cv",
+    githubProfile: "https://github.com/johndoe",
+    date: "2024-01-20",
+  });
 
-  const handleNext = () => {
+  const handleSubmit = async () => {
+    try {
+      const response = await fetch("https://localhost:4000/api/", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(userInfo),
+      });
+      if (!response.ok) {
+        throw new Error("Failed to send data");
+      }
+      const result = await response.json();
+    } catch (error) {
+      console.error("Error sending data:", error);
+    }
+  };
+  const handleNext = async () => {
     if (currentStep < steps.length) {
       setCurrentStep((prevStep) => prevStep + 1);
     }
@@ -25,7 +54,7 @@ export const Register = () => {
     <div className=" container max-w-[86rem] w-full mx-auto px-4 ">
       <div className="flex justify-center items-center">
         <div className="w-[60%]  p-8 bg-white rounded-lg shadow-lg">
-          <div className="mb-8">
+          <div className="mb-8 text-center">
             <h2 className="text-xl font-bold text-gray-800 ">Employment</h2>
             <p className="text-sm text-gray-600 ">
               We are so happy to have you join us..
@@ -171,16 +200,16 @@ export const Register = () => {
                         <path
                           d="M13 1H3C1.89543 1 1 1.89543 1 3V19C1 20.1046 1.89543 21 3 21H13C14.1046 21 15 20.1046 15 19V3C15 1.89543 14.1046 1 13 1Z"
                           stroke="#6B7280"
-                          stroke-width="2"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
                         />
                         <path
                           d="M8 17H8.01"
                           stroke="#6B7280"
-                          stroke-width="2"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
                         />
                       </svg>
                     </div>
@@ -263,16 +292,16 @@ export const Register = () => {
                         <path
                           d="M19 5H3C1.89543 5 1 5.89543 1 7V17C1 18.1046 1.89543 19 3 19H19C20.1046 19 21 18.1046 21 17V7C21 5.89543 20.1046 5 19 5Z"
                           stroke="#6B7280"
-                          stroke-width="2"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
                         />
                         <path
                           d="M15 19V3C15 2.46957 14.7893 1.96086 14.4142 1.58579C14.0391 1.21071 13.5304 1 13 1H9C8.46957 1 7.96086 1.21071 7.58579 1.58579C7.21071 1.96086 7 2.46957 7 3V19"
                           stroke="#6B7280"
-                          stroke-width="2"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
                         />
                       </svg>
                     </div>
@@ -296,12 +325,12 @@ export const Register = () => {
                       className="peer py-2 px-4 ps-11 block w-full border-2 border-gray-200 rounded-lg text-sm focus:border-[#7D7CEC] focus:ring-0 disabled:opacity-50 disabled:pointer-events-none"
                       required
                     >
-                      <option className="text-gray-500" selected="">
+                      <option className="text-gray-200 text-sm" defaultValue="">
                         Select one of the following options
                       </option>
-                      <option>Onsite</option>
-                      <option>Remotely</option>
-                      <option>Hybrid</option>
+                      <option value={"Onsite"}>Onsite</option>
+                      <option value={"Remotely"}>Remotely</option>
+                      <option value={"Both"}>Both</option>
                     </select>
                   </div>
                 </div>
@@ -414,23 +443,23 @@ export const Register = () => {
                           <path
                             d="M19 13V17C19 17.5304 18.7893 18.0391 18.4142 18.4142C18.0391 18.7893 17.5304 19 17 19H3C2.46957 19 1.96086 18.7893 1.58579 18.4142C1.21071 18.0391 1 17.5304 1 17V13"
                             stroke="#6B7280"
-                            stroke-width="2"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
                           />
                           <path
                             d="M15 6L10 1L5 6"
                             stroke="#6B7280"
-                            stroke-width="2"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
                           />
                           <path
                             d="M10 1V13"
                             stroke="#6B7280"
-                            stroke-width="2"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
                           />
                         </svg>
                         Upload
@@ -451,9 +480,11 @@ export const Register = () => {
 
             {currentStep === 2 && (
               <div className="text-center text-[#7D7CEC]">
-                <p className="text-lg font-semibold">All steps completed!</p>
+                <p className="text-lg font-semibold">We're almost done!</p>
                 <p className="text-sm text-gray-700">
-                  You have successfully updated your profile settings.
+                  If you are sure of all the information you provided, please
+                  click Confirm, and you will receive a message on your email
+                  shortly.
                 </p>
               </div>
             )}
@@ -470,13 +501,28 @@ export const Register = () => {
             <button
               onClick={handleNext}
               disabled={currentStep === steps.length}
-              className="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-[#0B0B43] text-white 
+              className={`py-3 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-[#0B0B43] text-white 
                 hover:bg-white hover:text-[#7D7CEC] hover:border-[#7D7CEC] 
                 transition-transform duration-300 ease-in-out 
                 transform hover:scale-105 hover:shadow-lg 
-                focus:outline-none"
+                focus:outline-none ${
+                  currentStep === steps.length ? "hidden" : "block"
+                }`}
             >
               Next
+            </button>
+            <button
+              disabled={currentStep === steps.length}
+              onClick={handleSubmit}
+              className={`py-3 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-[#0B0B43] text-white 
+                hover:bg-white hover:text-[#7D7CEC] hover:border-[#7D7CEC] 
+                transition-transform duration-300 ease-in-out 
+                transform hover:scale-105 hover:shadow-lg 
+                focus:outline-none ${
+                  currentStep === steps.length ? "block" : "hidden"
+                }`}
+            >
+              Confirm
             </button>
           </div>
         </div>
