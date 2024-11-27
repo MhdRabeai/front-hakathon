@@ -1,6 +1,14 @@
+/* eslint-disable no-unused-vars */
 
 import React, { useState } from "react";
-import { FaGithub, FaFileAlt, FaSort, FaFilter, FaEdit, FaTrash } from "react-icons/fa";
+import {
+  FaGithub,
+  FaFileAlt,
+  FaSort,
+  FaFilter,
+  FaEdit,
+  FaTrash,
+} from "react-icons/fa";
 import { TooltipComponent } from "@syncfusion/ej2-react-popups";
 
 export const Employees = () => {
@@ -14,7 +22,7 @@ export const Employees = () => {
       location: "New York, USA",
       cvLink: "https://example.com/cv",
       githubProfile: "https://github.com/johndoe",
-      date: "2024-01-20"
+      date: "2024-01-20",
     },
     {
       id: 2,
@@ -25,12 +33,12 @@ export const Employees = () => {
       location: "San Francisco, USA",
       cvLink: "https://example.com/cv",
       githubProfile: "https://github.com/janesmith",
-      date: "2024-01-19"
-    }
+      date: "2024-01-19",
+    },
   ]);
 
   const [errors, setErrors] = useState({});
-  const [sortField, setSortField] = useState("")
+  const [sortField, setSortField] = useState("");
   const [filterQuery, setFilterQuery] = useState("");
 
   const handleSort = (field) => {
@@ -48,25 +56,27 @@ export const Employees = () => {
     setFilterQuery(query);
   };
 
-  const filteredUsers = users.filter(user =>
-    Object.values(user).some(value =>
+  const filteredUsers = users.filter((user) =>
+    Object.values(user).some((value) =>
       String(value).toLowerCase().includes(filterQuery)
     )
   );
 
   const validateField = (name, value) => {
     if (!value.trim()) {
-      setErrors(prev => ({ ...prev, [name]: "This field is required" }));
+      setErrors((prev) => ({ ...prev, [name]: "This field is required" }));
       return false;
     }
-    setErrors(prev => ({ ...prev, [name]: "" }));
+    setErrors((prev) => ({ ...prev, [name]: "" }));
     return true;
   };
 
   return (
     <div className="p-6 bg-gray-50 min-h-screen">
       <div className="max-w-7xl mx-auto bg-white rounded-lg shadow-lg p-8">
-        <h1 className="text-3xl font-bold text-gray-800 mb-6">User Dashboard</h1>
+        <h1 className="text-3xl font-bold text-gray-800 mb-6">
+          User Dashboard
+        </h1>
 
         <div className="mb-6 flex flex-col md:flex-row gap-4">
           <div className="relative flex-1">
@@ -94,7 +104,7 @@ export const Employees = () => {
                   "Location",
                   "Links",
                   "Date",
-                  "Actions"
+                  "Actions",
                 ].map((header) => (
                   <th
                     key={header}
@@ -111,13 +121,26 @@ export const Employees = () => {
             </thead>
             <tbody>
               {filteredUsers.map((user) => (
-                <tr key={user.id} className="border-b hover:bg-gray-50 transition-colors">
+                <tr
+                  key={user.id}
+                  className="border-b hover:bg-gray-50 transition-colors"
+                >
                   <td className="px-4 py-3 text-sm text-gray-600">{user.id}</td>
-                  <td className="px-4 py-3 text-sm text-gray-600">{user.firstName}</td>
-                  <td className="px-4 py-3 text-sm text-gray-600">{user.email}</td>
-                  <td className="px-4 py-3 text-sm text-gray-600">{user.phone}</td>
-                  <td className="px-4 py-3 text-sm text-gray-600">{user.jobTitle}</td>
-                  <td className="px-4 py-3 text-sm text-gray-600">{user.location}</td>
+                  <td className="px-4 py-3 text-sm text-gray-600">
+                    {user.firstName}
+                  </td>
+                  <td className="px-4 py-3 text-sm text-gray-600">
+                    {user.email}
+                  </td>
+                  <td className="px-4 py-3 text-sm text-gray-600">
+                    {user.phone}
+                  </td>
+                  <td className="px-4 py-3 text-sm text-gray-600">
+                    {user.jobTitle}
+                  </td>
+                  <td className="px-4 py-3 text-sm text-gray-600">
+                    {user.location}
+                  </td>
                   <td className="px-4 py-3 text-sm text-gray-600">
                     <div className="flex gap-3">
                       <TooltipComponent content="View CV" position="top">
@@ -144,7 +167,9 @@ export const Employees = () => {
                       </TooltipComponent>
                     </div>
                   </td>
-                  <td className="px-4 py-3 text-sm text-gray-600">{user.date}</td>
+                  <td className="px-4 py-3 text-sm text-gray-600">
+                    {user.date}
+                  </td>
                   <td className="px-4 py-3 text-sm text-gray-600">
                     <div className="flex gap-3">
                       <TooltipComponent content="Edit User" position="top">
