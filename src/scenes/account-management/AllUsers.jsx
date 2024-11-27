@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Box, Button, Typography, useTheme } from "@mui/material";
 import { DataGrid } from "@mui/x-data-grid";
 import { tokens } from "../../assets/styles/theme";
@@ -12,26 +12,23 @@ import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
 import HighlightOffIcon from "@mui/icons-material/HighlightOff";
 import UserDetailsDialog from "./UserDetailsDialog";
 
-
 const AllUsers = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   const [usersData, setUsersData] = useState([]);
 
-
-  const [selectedUser, setSelectedUser] = useState(null); 
-  const [isDialogOpen, setIsDialogOpen] = useState(false); 
+  const [selectedUser, setSelectedUser] = useState(null);
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
 
   const openDialog = (user) => {
-    setSelectedUser(user); 
-    setIsDialogOpen(true); 
-  };
-  
-  const closeDialog = () => {
-    setSelectedUser(null); 
-    setIsDialogOpen(false);
+    setSelectedUser(user);
+    setIsDialogOpen(true);
   };
 
+  const closeDialog = () => {
+    setSelectedUser(null);
+    setIsDialogOpen(false);
+  };
 
   useEffect(() => {
     const fetchData = async () => {
@@ -106,8 +103,8 @@ const AllUsers = () => {
             size="small"
             sx={{
               textTransform: "none",
-              backgroundColor: "#4CAF50", 
-              "&:hover": { backgroundColor: "#388E3C" }, 
+              backgroundColor: "#4CAF50",
+              "&:hover": { backgroundColor: "#388E3C" },
             }}
             onClick={() => {
               const osmUrl = `https://www.openstreetmap.org/?mlat=${latitude}&mlon=${longitude}&zoom=16`;
@@ -129,11 +126,7 @@ const AllUsers = () => {
           color={row.active ? "success" : "error"}
           size="small"
           startIcon={
-            row.active ? (
-              <CheckCircleOutlineIcon />
-            ) : (
-              <HighlightOffIcon />
-            )
+            row.active ? <CheckCircleOutlineIcon /> : <HighlightOffIcon />
           }
           sx={{
             textTransform: "none",
@@ -198,11 +191,10 @@ const AllUsers = () => {
       >
         <DataGrid rows={usersData} columns={columns} />
         <UserDetailsDialog
-  isOpen={isDialogOpen}
-  onClose={closeDialog}
-  user={selectedUser}
-/>
-
+          isOpen={isDialogOpen}
+          onClose={closeDialog}
+          user={selectedUser}
+        />
       </Box>
     </Box>
   );
