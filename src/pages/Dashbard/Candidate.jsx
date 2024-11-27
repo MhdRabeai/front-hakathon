@@ -145,17 +145,7 @@ export const Candidate = () => {
                           <FaFileAlt />
                         </a>
                       </TooltipComponent>
-                      <TooltipComponent content="GitHub Profile" position="top">
-                        <a
-                          href={user.githubProfile}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-[#0B0B43] hover:text-[#7D7CEC] transition-colors"
-                          aria-label="GitHub Profile"
-                        >
-                          <FaGithub />
-                        </a>
-                      </TooltipComponent>
+                      
                     </div>
                   </td>
                   <td className="px-4 py-3 text-sm text-gray-600">
