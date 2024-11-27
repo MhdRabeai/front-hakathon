@@ -10,42 +10,40 @@ const steps = [
 export const Register = () => {
   const [currentStep, setCurrentStep] = useState(1);
   const [userInfo, setUserInfo] = useState({
-    id: 1,
-    firstName: "John Doe",
-    email: "john@example.com",
+    firstName: "MHD Ahmad",
+    email: "mhdAhmad@example.com",
     phone: "+1-234-567-8900",
     jobTitle: "Senior Developer",
-    location: "New York, USA",
+    location: "On site",
     cvLink: "https://example.com/cv",
     githubProfile: "https://github.com/johndoe",
-    date: "2024-01-20",
   });
   const handleNext = async () => {
     if (currentStep < steps.length) {
       setCurrentStep((prevStep) => prevStep + 1);
-    }
-    else if (currentStep === steps.length) {
-     try{
-      const response = await fetch("https://localhost:4000/api/", {
-        method:'POST',
-        headers:{
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(userInfo)
-      });
-      if (!response.ok) {
-        throw new Error('Failed to send data')
+    } else if (currentStep === steps.length) {
+      try {
+        const response = await fetch("https://localhost:4000/api/", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(userInfo),
+        });
+        if (!response.ok) {
+          throw new Error("Failed to send data");
+        }
+        const result = await response.json();
+      } catch (error) {
+        console.error("Error sending data:", error);
       }
-      const result = await response.json()
-     }
-     catch(error) {
-      console.error('Error sending data:', error)
-     }
       alert("Your data has been saved!");
-      
     }
   };
-
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setUserInfo((prevState) => ({ ...prevState, name: value }));
+  };
   const handleBack = () => {
     if (currentStep > 1) {
       setCurrentStep((prevStep) => prevStep - 1);
@@ -115,6 +113,7 @@ export const Register = () => {
                   <div className="relative">
                     <input
                       id="registerForm"
+                      onChange={handleInputChange}
                       type="text"
                       className="peer py-2 px-4 ps-11 block w-full
                           border-2  border-gray-200 rounded-lg text-sm 
@@ -156,6 +155,7 @@ export const Register = () => {
                   <div className="relative">
                     <input
                       id="registerEmail"
+                      onChange={handleInputChange}
                       type="email"
                       className="peer py-2 px-4 ps-11 block w-full
                           border-2  border-gray-200 rounded-lg text-sm 
@@ -184,6 +184,7 @@ export const Register = () => {
                   <div className="relative">
                     <input
                       id="phoneNumber"
+                      onChange={handleInputChange}
                       type="text"
                       className="peer py-2 px-4 ps-11 block w-full border-2  border-gray-200 rounded-lg text-sm  focus:border-[#7D7CEC] focus:ring-0 disabled:opacity-50 disabled:pointer-events-none "
                       placeholder="Enter Number..."
@@ -274,6 +275,7 @@ export const Register = () => {
                   <div className="relative">
                     <input
                       id="registerJobTitle"
+                      onChange={handleInputChange}
                       type="text"
                       className="peer py-2 px-4 ps-11 block w-full
                           border-2  border-gray-200 rounded-lg text-sm 
@@ -384,6 +386,45 @@ export const Register = () => {
                 </div>
 
                 <div className="sm:col-span-3">
+                  <label
+                    htmlFor="registerGitHub"
+                    className="inline-block font-medium text-sm text-gray-800 mt-2.5 "
+                  >
+                    GitHub:
+                  </label>
+                </div>
+
+                <div className="sm:col-span-9">
+                  <div className="relative">
+                    <input
+                      id="registerGitHub"
+                      onChange={handleInputChange}
+                      type="text"
+                      className="peer py-2 px-4 ps-11 block w-full
+                          border-2  border-gray-200 rounded-lg text-sm 
+                          focus:border-[#7D7CEC] focus:ring-0 disabled:opacity-50 disabled:pointer-events-none "
+                      placeholder="Enter Email..."
+                      name="github"
+                      required
+                    />
+                    <div className="absolute inset-y-0 start-0 flex items-center pointer-events-none ps-4 peer-disabled:opacity-50 peer-disabled:pointer-events-none ">
+                      <svg
+                        width="18"
+                        height="18"
+                        viewBox="0 0 41 39"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M20.5 0C9.17375 0 0 8.94697 0 19.9932C0 28.8402 5.86812 36.3127 14.0169 38.9618C15.0419 39.1367 15.4263 38.5369 15.4263 38.0121C15.4263 37.5373 15.4006 35.9628 15.4006 34.2884C10.25 35.2131 8.9175 33.0638 8.5075 31.9392C8.27688 31.3644 7.2775 29.59 6.40625 29.1151C5.68875 28.7403 4.66375 27.8156 6.38063 27.7906C7.995 27.7656 9.14813 29.2401 9.5325 29.8399C11.3775 32.8639 14.3244 32.0142 15.5031 31.4893C15.6825 30.1898 16.2206 29.3151 16.81 28.8152C12.2488 28.3154 7.4825 26.591 7.4825 18.9436C7.4825 16.7693 8.27688 14.9699 9.58375 13.5704C9.37875 13.0706 8.66125 11.0213 9.78875 8.2722C9.78875 8.2722 11.5056 7.74738 15.4263 10.3215C17.0663 9.87166 18.8088 9.64673 20.5513 9.64673C22.2938 9.64673 24.0363 9.87166 25.6763 10.3215C29.5969 7.72238 31.3138 8.2722 31.3138 8.2722C32.4413 11.0213 31.7238 13.0706 31.5188 13.5704C32.8256 14.9699 33.62 16.7443 33.62 18.9436C33.62 26.616 28.8281 28.3154 24.2669 28.8152C25.01 29.44 25.6506 30.6396 25.6506 32.514C25.6506 35.1881 25.625 37.3374 25.625 38.0121C25.625 38.5369 26.0094 39.1617 27.0344 38.9618C31.1041 37.622 34.6403 35.0711 37.1456 31.6683C39.6508 28.2656 40.999 24.1824 41 19.9932C41 8.94697 31.8263 0 20.5 0Z"
+                          fill="#6B7280"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="sm:col-span-3">
                   <label className="inline-block text-sm text-gray-800 mt-2.5  font-medium">
                     CV:
                   </label>
@@ -428,6 +469,7 @@ export const Register = () => {
                         Upload
                         <input
                           type="file"
+                          onChange={handleInputChange}
                           id="uploadFile1"
                           className="hidden"
                           name="myfile"
@@ -469,9 +511,7 @@ export const Register = () => {
                 focus:outline-none"
             >
               {currentStep === steps.length ? "Done" : "Next"}
-
             </button>
-            
           </div>
         </div>
       </div>

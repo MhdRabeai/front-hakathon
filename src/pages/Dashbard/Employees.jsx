@@ -2,27 +2,28 @@
 import React, { useState } from "react";
 import { FaGithub, FaFileAlt, FaSort, FaFilter, FaEdit, FaTrash } from "react-icons/fa";
 import { TooltipComponent } from "@syncfusion/ej2-react-popups";
-
+import { SlCalender } from "react-icons/sl";
 export const Employees = () => {
   const [users, setUsers] = useState([
     {
       id: 1,
-      firstName: "John Doe",
-      email: "john@example.com",
+      firstName: "MHD Ahmad",
+      email: "mhdAhmad@example.com",
       phone: "+1-234-567-8900",
       jobTitle: "Senior Developer",
-      location: "New York, USA",
+      location: "On site",
       cvLink: "https://example.com/cv",
       githubProfile: "https://github.com/johndoe",
       date: "2024-01-20"
+    
     },
     {
       id: 2,
-      firstName: "Jane Smith",
-      email: "jane@example.com",
+      firstName: "Bassam jamal",
+      email: "Bassam.jamal@example.com",
       phone: "+1-987-654-3210",
       jobTitle: "UX Designer",
-      location: "San Francisco, USA",
+      location: "Remotly",
       cvLink: "https://example.com/cv",
       githubProfile: "https://github.com/janesmith",
       date: "2024-01-19"
@@ -66,7 +67,7 @@ export const Employees = () => {
   return (
     <div className="p-6 bg-gray-50 min-h-screen">
       <div className="max-w-7xl mx-auto bg-white rounded-lg shadow-lg p-8">
-        <h1 className="text-3xl font-bold text-gray-800 mb-6">User Dashboard</h1>
+        <h1 className="text-3xl font-bold text-gray-800 mb-6">Accepted employees</h1>
 
         <div className="mb-6 flex flex-col md:flex-row gap-4">
           <div className="relative flex-1">
@@ -125,7 +126,7 @@ export const Employees = () => {
                           href={user.cvLink}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-blue-500 hover:text-blue-700 transition-colors"
+                          className="text-[#0B0B43] hover:text-[#7D7CEC] transition-colors"
                           aria-label="View CV"
                         >
                           <FaFileAlt />
@@ -136,7 +137,7 @@ export const Employees = () => {
                           href={user.githubProfile}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-blue-500 hover:text-blue-700 transition-colors"
+                          className="text-[#0B0B43] hover:text-[#7D7CEC] transition-colors"
                           aria-label="GitHub Profile"
                         >
                           <FaGithub />
@@ -146,24 +147,17 @@ export const Employees = () => {
                   </td>
                   <td className="px-4 py-3 text-sm text-gray-600">{user.date}</td>
                   <td className="px-4 py-3 text-sm text-gray-600">
-                    <div className="flex gap-3">
+                    <div className="flex justify-center ">
                       <TooltipComponent content="Edit User" position="top">
                         <button
-                          className="text-blue-500 hover:text-blue-700 transition-colors"
+                          className="text-[#0B0B43] hover:text-[#7D7CEC] transition-colors text-lg "
                           aria-label="Edit user"
                         >
-                          <FaEdit />
+                         <SlCalender />
+
                         </button>
                       </TooltipComponent>
-                      <TooltipComponent content="Delete User" position="top">
-                        <button
-                          className="text-red-500 hover:text-red-700 transition-colors"
-                          aria-label="Delete user"
-                        >
-                          <FaTrash />
-                        </button>
-                      </TooltipComponent>
-                    </div>
+                                          </div>
                   </td>
                 </tr>
               ))}
