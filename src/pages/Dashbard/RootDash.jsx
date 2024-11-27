@@ -134,7 +134,7 @@ lg:block lg:translate-x-0 lg:end-auto lg:bottom-0
       </div>
 
       <div className="w-full lg:ps-64">
-        <div className="my-section p-4 pb-0  w-full">
+        <div className="my-section   w-full">
           <Outlet />
         </div>
       </div>
