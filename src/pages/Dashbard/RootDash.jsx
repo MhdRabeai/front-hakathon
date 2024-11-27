@@ -139,9 +139,11 @@ const RootDash = ({ isSidebar }) => {
         </div>
       </motion.div>
 
+
       {/* Main Content */}
       <div className="flex-grow p-6">
         <Outlet />
+
       </div>
     </div>
   );

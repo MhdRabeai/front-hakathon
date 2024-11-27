@@ -73,7 +73,9 @@ const MainDash = () => {
             <Button
               sx={{
                 backgroundColor: colors.icons.main,
+
                 color: colors.primary.main,
+
                 fontSize: "14px",
                 fontWeight: "bold",
                 padding: "10px 20px",
