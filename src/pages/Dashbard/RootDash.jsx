@@ -1,10 +1,17 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
-import { Link, Outlet,  } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 import { CiVideoOn } from "react-icons/ci";
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import {BarChart2, Menu, Users, ClipboardList, UserCheck, ChevronDown} from "lucide-react";
+import {
+  BarChart2,
+  Menu,
+  Users,
+  ClipboardList,
+  UserCheck,
+  ChevronDown,
+} from "lucide-react";
 
 // Sidebar items
 const SIDEBAR_ITEMS = [
@@ -12,25 +19,25 @@ const SIDEBAR_ITEMS = [
     name: "Main Dashboard",
     icon: BarChart2,
     color: "#6366f1",
-    href: "/newDashbard", 
+    href: "/newDashbard",
   },
   {
     name: "Candidate Management",
     icon: Users,
     color: "#F97316",
-    href: "/newDashbard/candidate", 
+    href: "/newDashbard/candidate",
   },
   {
     name: "Interviews Management",
     icon: ClipboardList,
     color: "#3B82F6",
-    href: "/newDashbard/interViews", 
+    href: "/newDashbard/interViews",
   },
   {
     name: "Employees Management",
     icon: UserCheck,
     color: "#4ADE80",
-    href: "/newDashbard/employees", 
+    href: "/newDashbard/employees",
   },
   {
     name: "Video Calls",
@@ -49,7 +56,7 @@ const RootDash = ({ isSidebar }) => {
   };
 
   return (
-    <div className="flex min-h-screen ">
+    <div className="flex h-screen ">
       {/* Sidebar */}
       <motion.div
         className={`relative z-10 transition-all duration-200 ease-in-out flex-shrink-0 ${

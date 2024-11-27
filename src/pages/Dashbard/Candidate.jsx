@@ -48,7 +48,7 @@ export const Candidate = () => {
     setFilterQuery1(query);
   };
 
-  const filteredUsers1 = users1.filter((user) =>
+  const filteredUsers1 = users1?.filter((user) =>
     Object.values(user).some((value) =>
       String(value).toLowerCase().includes(filterQuery1)
     )
@@ -106,13 +106,10 @@ export const Candidate = () => {
   }
   async function handleAcceptedCandidate() {
     try {
-      const res = await fetch(
-        "http://localhost:4000/getAcceptedCandidatesSortedByAllDate",
-        {
-          method: "GET",
-          credentials: "include",
-        }
-      );
+      const res = await fetch("http://localhost:4000/acceptedCandidateByDate", {
+        method: "GET",
+        credentials: "include",
+      });
       const data = await res.json();
       setUsers1(data["users"]);
     } catch (err) {

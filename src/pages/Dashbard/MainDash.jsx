@@ -67,7 +67,7 @@ const MainDash = () => {
   // ///////////////////////////////////////////////////////////////////////////////////////////////////
 
   return (
-    <div className="flex-1 transition-all duration-150">
+    <div className="flex-1 transition-all duration-150 h-full flex items-center">
       <Box m="20px">
         {/* HEADER */}
         <Box display="flex" justifyContent="space-between" alignItems="center">
@@ -147,7 +147,7 @@ const MainDash = () => {
           >
             <StatBox
               title={dashboardData.stats.candidatesInProcess}
-              subtitle="Candidates In Process"
+              subtitle="Candidates"
               icon={
                 <FaUser
                   style={{
