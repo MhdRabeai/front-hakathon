@@ -56,13 +56,13 @@ const RootDash = ({ isSidebar }) => {
   };
 
   return (
-    <div className="flex h-screen min-h-full ">
+    <div className="flex min-h-screen  ">
       {/* Sidebar */}
       <motion.div
         className={`relative z-10 transition-all duration-200 ease-in-out flex-shrink-0 ${
           isSidebarOpen ? "w-64" : "w-20"
         }`}
-        animate={{ width: isSidebarOpen ? 256 : 80 }}
+        animate={{ width: isSidebarOpen ? 256 : "6%" }}
       >
         <div className="h-full w-full mx-auto bg-[#E2E2EB] relative block overflow-hidden rounded-lg shadow-lg p-4 lg:p-6 border border-gray-200 transition-transform transform ">
           <motion.button
@@ -132,7 +132,7 @@ const RootDash = ({ isSidebar }) => {
       </motion.div>
 
       {/* Main Content */}
-      <div className="flex-grow ">
+      <div className="w-[93%] ">
         <Outlet />
       </div>
     </div>
