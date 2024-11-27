@@ -67,12 +67,14 @@ const MainDash = () => {
   // ///////////////////////////////////////////////////////////////////////////////////////////////////
 
   return (
-    <div className="flex-1 transition-all duration-150 h-full flex items-center">
-      <Box m="20px">
+    <div className="flex-1 transition-all duration-150 h-full flex items-center justify-center">
+      <Box m="20px" width={"100%"}>
         {/* HEADER */}
-        <Box display="flex" justifyContent="space-between" alignItems="center">
-          {/* <Header title="DASHBOARD" subtitle="Welcome to your dashboard" /> */}
-        </Box>
+        <Box
+          display="flex"
+          justifyContent="space-between"
+          alignItems="center"
+        ></Box>
 
         {/* GRID & CHARTS */}
         <Box
@@ -190,8 +192,9 @@ const MainDash = () => {
 
           <Box
             gridColumn="span 6"
-            gridRow="span 4"
+            gridRow="span 3"
             backgroundColor={colors.primary.main}
+            borderRadius={"12px"}
           >
             <Box
               mt="25px"
@@ -202,14 +205,14 @@ const MainDash = () => {
             >
               <Box>
                 <Typography
-                  variant="h5"
+                  variant="h7"
                   fontWeight="600"
                   color={colors.text.main}
                 >
                   Candidate Status:
                 </Typography>
                 <Typography
-                  variant="h4"
+                  variant="h6"
                   fontWeight="bold"
                   color={colors.primary.main}
                 >
@@ -231,19 +234,24 @@ const MainDash = () => {
 
           <Box
             gridColumn="span 6"
-            gridRow="span 4"
+            gridRow="span 3"
             backgroundColor={colors.primary.main}
+            borderRadius={"12px"}
           >
             <Typography
-              variant="h5"
+              variant="h6"
               fontWeight="600"
               color="#0B0B43"
-              sx={{ padding: "30px 30px 0 30px", marginBottom: "15px" }}
+              sx={{
+                padding: "10px 30px 0 30px",
+                marginBottom: "15px",
+                textAlign: "center",
+              }}
             >
-              Most Popular Programming Languages Through The Years
+              Most Popular
             </Typography>
 
-            <Box height="250px" mt="-20px">
+            <Box height="250px" mt="-30px">
               <BarChart isDashboard={true} />
             </Box>
           </Box>
