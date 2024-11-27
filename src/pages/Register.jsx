@@ -9,10 +9,40 @@ const steps = [
 ];
 export const Register = () => {
   const [currentStep, setCurrentStep] = useState(1);
-
-  const handleNext = () => {
+  const [userInfo, setUserInfo] = useState({
+    id: 1,
+    firstName: "John Doe",
+    email: "john@example.com",
+    phone: "+1-234-567-8900",
+    jobTitle: "Senior Developer",
+    location: "New York, USA",
+    cvLink: "https://example.com/cv",
+    githubProfile: "https://github.com/johndoe",
+    date: "2024-01-20",
+  });
+  const handleNext = async () => {
     if (currentStep < steps.length) {
       setCurrentStep((prevStep) => prevStep + 1);
+    }
+    else if (currentStep === steps.length) {
+     try{
+      const response = await fetch("https://localhost:4000/api/", {
+        method:'POST',
+        headers:{
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(userInfo)
+      });
+      if (!response.ok) {
+        throw new Error('Failed to send data')
+      }
+      const result = await response.json()
+     }
+     catch(error) {
+      console.error('Error sending data:', error)
+     }
+      alert("Your data has been saved!");
+      
     }
   };
 
@@ -438,8 +468,10 @@ export const Register = () => {
                 transform hover:scale-105 hover:shadow-lg 
                 focus:outline-none"
             >
-              Next
+              {currentStep === steps.length ? "Done" : "Next"}
+
             </button>
+            
           </div>
         </div>
       </div>

@@ -11,7 +11,7 @@ import { Register } from "./pages/Register";
 // import { useEffect } from "react";
 import { VideoRoom } from "./pages/Chat/VideoRoom";
 import "preline/preline";
-import OurDash from "./pages/Dashbard/OurDash";
+// import OurDash from "./pages/Dashbard/OurDash";
 import RootChat from "./pages/Chat/RootChat";
 import LoginChat from "./pages/Chat/LoginChat";
 import MainDash from "./pages/Dashbard/MainDash";
@@ -21,8 +21,8 @@ import { useState } from "react";
 import { Candidate } from "./pages/Dashbard/Candidate";
 import { InterViews } from "./pages/Dashbard/InterViews";
 import { Employees } from "./pages/Dashbard/Employees";
-
 import ProtectedRoom from "./pages/Chat/ProtectedRoom";
+import RootDash from "./pages/Dashbard/RootDash";
 
 // import { useEffect } from "react";
 function App() {
@@ -79,7 +79,7 @@ function App() {
           path="/newDashbard"
           element={
             <ProtectedRoute>
-              <OurDash />
+              <RootDash />
             </ProtectedRoute>
           }
         >
