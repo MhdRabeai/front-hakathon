@@ -6,7 +6,6 @@ import {
   FaUser,
   FaCheckCircle,
   FaDownload,
-  FaTimesCircle,
 } from "react-icons/fa";
 
 import LineChart from "../../components/Dashboard/LineChart";
@@ -74,8 +73,6 @@ const MainDash = () => {
         {/* HEADER */}
         <Box display="flex" justifyContent="space-between" alignItems="center">
           {/* <Header title="DASHBOARD" subtitle="Welcome to your dashboard" /> */}
-
-
         </Box>
 
         {/* GRID & CHARTS */}
@@ -88,7 +85,7 @@ const MainDash = () => {
           {/* ROW 1 */}
           <Box
             gridColumn="span 3"
-            backgroundColor={colors.blueAccent[500]}
+            backgroundColor={colors.purpleAccent[500]}
             boxShadow="0px 4px 10px rgba(0, 0, 0, 0.1)"
             borderRadius="12px"
             display="flex"
@@ -114,7 +111,7 @@ const MainDash = () => {
 
           <Box
             gridColumn="span 3"
-            backgroundColor={colors.blueAccent[500]}
+            backgroundColor={colors.purpleAccent[500]}
             boxShadow="0px 4px 10px rgba(0, 0, 0, 0.1)"
             borderRadius="12px"
             display="flex"
@@ -140,7 +137,7 @@ const MainDash = () => {
 
           <Box
             gridColumn="span 3"
-            backgroundColor={colors.blueAccent[500]}
+            backgroundColor={colors.purpleAccent[500]}
             boxShadow="0px 4px 10px rgba(0, 0, 0, 0.1)"
             borderRadius="12px"
             display="flex"
@@ -166,7 +163,7 @@ const MainDash = () => {
 
           <Box
             gridColumn="span 3"
-            backgroundColor={colors.blueAccent[500]}
+            backgroundColor={colors.purpleAccent[500]}
             boxShadow="0px 4px 10px rgba(0, 0, 0, 0.1)"
             borderRadius="12px"
             display="flex"
@@ -231,109 +228,6 @@ const MainDash = () => {
             </Box>
           </Box>
 
-          <Box
-            gridColumn="span 4"
-            gridRow="span 3"
-            backgroundColor={colors.primary.main}
-            overflow="auto"
-            borderRadius="8px"
-            className="scrollbar-thin scrollbar-thumb-green-500 scrollbar-track-gray-700"
-          >
-            <Box
-              display="flex"
-              justifyContent="space-between"
-              alignItems="center"
-              borderBottom={`4px solid ${colors.primary.main}`}
-              p="15px"
-            >
-              <Typography
-                color={colors.text.main}
-                variant="h5"
-                fontWeight="600"
-              >
-                Latest Users
-              </Typography>
-            </Box>
-
-            {dashboardData.latestUsers.map((user) => (
-              <Box
-                key={dashboardData.latestUsers.id}
-                display="flex"
-                justifyContent="space-between"
-                alignItems="center"
-                backgroundColor={colors.secondary}
-                borderRadius="8px"
-                p="15px"
-                m="10px"
-              >
-                <Box display="flex" alignItems="center" gap="15px">
-                  <FaUser
-                    style={{ color: colors.icons.main, fontSize: "30px" }}
-                  />
-                  <Box>
-                    <Typography
-                      color={colors.text.main}
-                      variant="h5"
-                      fontWeight="600"
-                    >
-                      {dashboardData.latestUsers.name}
-                    </Typography>
-                    <Typography
-                      color={colors.text[100]}
-                      display="flex"
-                      alignItems="center"
-                      gap="5px"
-                    >
-                      <fePhone fontSize="small" /> {user.phone}
-                    </Typography>
-                    <Typography
-                      color={colors.text[100]}
-                      display="flex"
-                      alignItems="center"
-                      gap="5px"
-                    >
-                      <feLocation fontSize="small" />{" "}
-                      {dashboardData.latestUsers.location}
-                    </Typography>
-                  </Box>
-                </Box>
-
-                <Box
-                  display="flex"
-                  alignItems="center"
-                  justifyContent="center"
-                  gap="10px"
-                >
-                  <Typography
-                    color={
-                      user.active === "Active"
-                        ? colors.blueAccent[500]
-                        : colors.redAccent[500]
-                    }
-                  >
-                    {dashboardData.latestUsers.active === "Active" ? (
-                      <FaCheckCircle
-                        style={{ color: colors.blueAccent[500] }}
-                      />
-                    ) : (
-                      <FaTimesCircle style={{ color: colors.redAccent[500] }} />
-                    )}
-                    {dashboardData.latestUsers.active}
-                  </Typography>
-                </Box>
-
-                <Typography
-                  color={colors.text.main}
-                  backgroundColor={colors.blueAccent[500]}
-                  p="5px 10px"
-                  borderRadius="4px"
-                >
-                  {dashboardData.latestUsers.accessLevel}
-                </Typography>
-              </Box>
-            ))}
-          </Box>
-
           {/* ROW 3 */}
           <Box
             gridColumn="span 6"
@@ -383,7 +277,7 @@ const MainDash = () => {
                       width: "10px",
                       height: "10px",
                       borderRadius: "50%",
-                      backgroundColor: colors.blueAccent[500],
+                      backgroundColor: colors.purpleAccent[500],
                     }}
                   />
                   <Typography variant="body1" color={colors.text.main}>
@@ -420,16 +314,12 @@ const MainDash = () => {
               sx={{ padding: "30px 30px 0 30px", marginBottom: "15px" }}
             >
               Most Popular Programming Languages Through The Years
-
             </Typography>
 
             <Box height="250px" mt="-20px">
               <BarChart isDashboard={true} />
             </Box>
           </Box>
-
-
-
         </Box>
       </Box>
     </div>
