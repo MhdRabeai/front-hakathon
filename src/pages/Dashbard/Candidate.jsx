@@ -1,10 +1,9 @@
 /* eslint-disable no-undef */
 /* eslint-disable no-unused-vars */
 import { TooltipComponent } from "@syncfusion/ej2-react-popups";
-import { CloudCog } from "lucide-react";
 import React, { useEffect, useState } from "react";
 import { FaEdit, FaFilter, FaRegFilePdf, FaSort } from "react-icons/fa";
-import { IoIosCloseCircleOutline } from "react-icons/io";
+import { IoIosCloseCircleOutline, IoIosSend } from "react-icons/io";
 
 export const Candidate = () => {
   const [users, setUsers] = useState([]);
@@ -26,32 +25,21 @@ export const Candidate = () => {
   };
 
   const filteredUsers = users.filter((user) =>
-    Object.values(user).some((value) =>
-      String(value).toLowerCase().includes(filterQuery)
-    )
+    user.name
+      .split("")
+      .some((val) => String(val).toLowerCase().includes(filterQuery))
   );
   const [users1, setUsers1] = useState([]);
   const [filterQuery1, setFilterQuery1] = useState("");
-  const [sortField1, setSortField1] = useState("");
-  const handleSort1 = (field) => {
-    setSortField(field);
-    const sortedUsers = [...users].sort((a, b) => {
-      if (a[field] < b[field]) return -1;
-      if (a[field] > b[field]) return 1;
-      return 0;
-    });
-    setUsers(sortedUsers);
-  };
-
   const handleFilter1 = (e) => {
     const query = e.target.value.toLowerCase();
     setFilterQuery1(query);
   };
 
   const filteredUsers1 = users1?.filter((user) =>
-    Object.values(user).some((value) =>
-      String(value).toLowerCase().includes(filterQuery1)
-    )
+    user.name
+      .split("")
+      .some((val) => String(val).toLowerCase().includes(filterQuery1))
   );
   async function handleCandidate() {
     try {
@@ -132,9 +120,9 @@ export const Candidate = () => {
       console.log(err);
     }
   }
-  async function handleRejectAfterInter(id) {
+  async function handleSendRoomDetails(id) {
     try {
-      const res = await fetch("http://localhost:4000/rejectAfterInter", {
+      const res = await fetch("http://localhost:4000/sendRoomDetails", {
         method: "POST",
         headers: {
           "Content-type": "application/json",
@@ -145,7 +133,7 @@ export const Candidate = () => {
       const data = await res.json();
       console.log(data["message"]);
     } catch (err) {
-      console.log(err);
+      console.log(err.message);
     }
   }
 
@@ -156,9 +144,9 @@ export const Candidate = () => {
 
   return (
     <div className="bg-gray-50  ">
-      <div className=" mx-auto min-h-screen">
-        <div className="p-6 ">
-          <div className="max-w-[90%]  bg-white rounded-lg shadow-lg p-8">
+      <div className=" mx-auto min-h-screen flex flex-col gap-8">
+        <div className=" ">
+          <div className="w-full  bg-white rounded-lg shadow-lg p-8">
             <h1 className="text-3xl font-bold text-gray-800 mb-6">
               All Candidate
             </h1>
@@ -181,7 +169,7 @@ export const Candidate = () => {
                 <thead>
                   <tr className="bg-gray-100">
                     {[
-                      "ID",
+                      "_ID",
                       "Name",
                       "Email",
                       "Phone",
@@ -215,7 +203,7 @@ export const Candidate = () => {
                       className="border-b hover:bg-gray-50 transition-colors"
                     >
                       <td className="px-4 py-3 text-sm text-gray-600">
-                        {user._id.slice(0, 3)}.
+                        {user._id.slice(-3)}.
                       </td>
                       <td className="px-4 py-3 text-sm text-gray-600">
                         {user.name}
@@ -267,29 +255,33 @@ export const Candidate = () => {
                         </div>
                       </td>
 
-                      <td className="px-4 py-3 text-sm text-gray-600">
-                        <div className="flex gap-3 justify-center">
-                          <TooltipComponent content="Accept" position="top">
-                            <button
-                              className="text-blue-500 hover:text-blue-700 transition-colors"
-                              onClick={() => handleFirstAccept(user._id)}
+                      {user.status !== "Before interview" ? (
+                        <td className="px-4 py-3 text-sm text-gray-600">
+                          <div className="flex gap-3 justify-center">
+                            <TooltipComponent content="Accept" position="top">
+                              <button
+                                className="text-blue-500 hover:text-blue-700 transition-colors"
+                                onClick={() => handleFirstAccept(user._id)}
+                              >
+                                <FaEdit />
+                              </button>
+                            </TooltipComponent>
+                            <TooltipComponent
+                              content="Delete User"
+                              position="top"
                             >
-                              <FaEdit />
-                            </button>
-                          </TooltipComponent>
-                          <TooltipComponent
-                            content="Delete User"
-                            position="top"
-                          >
-                            <button
-                              className="text-red-500 hover:text-red-700 transition-colors"
-                              onClick={() => handleFirstReject(user._id)}
-                            >
-                              <IoIosCloseCircleOutline />
-                            </button>
-                          </TooltipComponent>
-                        </div>
-                      </td>
+                              <button
+                                className="text-red-500 hover:text-red-700 transition-colors"
+                                onClick={() => handleFirstReject(user._id)}
+                              >
+                                <IoIosCloseCircleOutline />
+                              </button>
+                            </TooltipComponent>
+                          </div>
+                        </td>
+                      ) : (
+                        "  "
+                      )}
                     </tr>
                   ))}
                 </tbody>
@@ -297,8 +289,8 @@ export const Candidate = () => {
             </div>
           </div>
         </div>
-        <div className="p-6 ">
-          <div className="max-w-7xl mx-auto bg-white rounded-lg shadow-lg p-8">
+        <div className="">
+          <div className="w-full mx-auto bg-white rounded-lg shadow-lg p-8">
             <h1 className="text-3xl font-bold text-gray-800 mb-6">
               Accepted For interView
             </h1>
@@ -409,23 +401,12 @@ export const Candidate = () => {
 
                       <td className="px-4 py-3 text-sm text-gray-600">
                         <div className="flex gap-3 justify-center">
-                          <TooltipComponent content="Accept" position="top">
+                          <TooltipComponent content="Send Time" position="top">
                             <button
-                              className="text-blue-500 hover:text-blue-700 transition-colors"
-                              onClick={() => handleAcceptAfterInter(user._id)}
+                              className="text-blue-500 hover:text-blue-700 transition-colors scale-150"
+                              onClick={() => handleSendRoomDetails(user._id)}
                             >
-                              <FaEdit />
-                            </button>
-                          </TooltipComponent>
-                          <TooltipComponent
-                            content="Delete User"
-                            position="top"
-                          >
-                            <button
-                              className="text-red-500 hover:text-red-700 transition-colors"
-                              onClick={() => handleRejectAfterInter(user._id)}
-                            >
-                              <IoIosCloseCircleOutline />
+                              <IoIosSend />
                             </button>
                           </TooltipComponent>
                         </div>
