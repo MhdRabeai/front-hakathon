@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 import React, { useEffect } from "react";
 import { Link, Outlet, useNavigate } from "react-router-dom";
@@ -20,41 +21,39 @@ import {
   ChevronDown,
 } from "lucide-react";
 
-
 // Sidebar items
 const SIDEBAR_ITEMS = [
   {
     name: "Main Dashboard",
     icon: BarChart2,
     color: "#6366f1",
-    href: "/newDashbard", // الصفحة الرئيسية للداشبورد
+    href: "/newDashbard",
   },
   {
     name: "Candidate Management",
     icon: Users,
     color: "#F97316",
-    href: "/newDashbard/candidate", // صفحة Candidate
+    href: "/newDashbard/candidate",
   },
   {
     name: "Interviews Management",
     icon: ClipboardList,
     color: "#3B82F6",
-    href: "/newDashbard/interViews", // صفحة InterViews
+    href: "/newDashbard/interViews",
   },
   {
     name: "Employees Management",
     icon: UserCheck,
     color: "#4ADE80",
-    href: "/newDashbard/employees", // صفحة Employees
+    href: "/newDashbard/employees",
   },
   {
     name: "Video Calls",
     icon: CiVideoOn,
     color: "#10B981",
-    href: "/newDashbard/videoCall", // صفحة RootChat
+    href: "/newDashbard/videoCall",
   },
 ];
-
 
 const RootDash = ({ isSidebar }) => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(isSidebar);
@@ -65,14 +64,14 @@ const RootDash = ({ isSidebar }) => {
   };
 
   return (
-    <div className="flex h-screen">
+    <div className="flex min-h-screen ">
       {/* Sidebar */}
       <motion.div
-        className={`relative z-10 transition-all duration-200 ease-in-out flex-shrink-0 ${isSidebarOpen ? "w-64" : "w-20"
-          }`}
+        className={`relative z-10 transition-all duration-200 ease-in-out flex-shrink-0 ${
+          isSidebarOpen ? "w-64" : "w-20"
+        }`}
         animate={{ width: isSidebarOpen ? 256 : 80 }}
       >
-
         <div className="h-full w-full mx-auto bg-[#E2E2EB] relative block overflow-hidden rounded-lg shadow-lg p-4 lg:p-6 border border-gray-200 transition-transform transform ">
           <motion.button
             whileHover={{ scale: 1.1 }}
@@ -88,8 +87,9 @@ const RootDash = ({ isSidebar }) => {
               <div key={item.name}>
                 <div
                   onClick={() => item.children && toggleExpand(item.name)}
-                  className={`cursor-pointer flex items-center justify-between ${item.children ? "" : "mb-2"
-                    }`}
+                  className={`cursor-pointer flex items-center justify-between ${
+                    item.children ? "" : "mb-2"
+                  }`}
                 >
                   <Link to={item.href || "#"}>
                     <motion.div className="flex items-center p-4 text-sm font-medium rounded-lg hover:bg-[#7D7CEC] transition-colors">
@@ -115,8 +115,9 @@ const RootDash = ({ isSidebar }) => {
                   {item.children && isSidebarOpen && (
                     <ChevronDown
                       size={20}
-                      className={`transition-transform ${expandedItem === item.name ? "rotate-180" : ""
-                        }`}
+                      className={`transition-transform ${
+                        expandedItem === item.name ? "rotate-180" : ""
+                      }`}
                     />
                   )}
                 </div>
@@ -129,7 +130,6 @@ const RootDash = ({ isSidebar }) => {
                       <motion.div className="flex items-center ml-8 p-2 text-sm font-medium rounded-lg hover:bg-[#7D7CEC] transition-colors mb-1">
                         <child.icon size={16} className="text-gray-400 mr-2" />
                         <span className="text-gray-400">{child.name}</span>
-
                       </motion.div>
                     </Link>
                   ))}
@@ -139,11 +139,9 @@ const RootDash = ({ isSidebar }) => {
         </div>
       </motion.div>
 
-
       {/* Main Content */}
-      <div className="flex-grow p-6">
+      <div className="flex-grow ">
         <Outlet />
-
       </div>
     </div>
   );
