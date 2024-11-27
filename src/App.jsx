@@ -21,7 +21,9 @@ import { useState } from "react";
 import { Candidate } from "./pages/Dashbard/Candidate";
 import { InterViews } from "./pages/Dashbard/InterViews";
 import { Employees } from "./pages/Dashbard/Employees";
+
 import ProtectedRoom from "./pages/Chat/ProtectedRoom";
+
 // import { useEffect } from "react";
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -65,9 +67,11 @@ function App() {
             <Route
               path=":roomName"
               element={
+
                 <ProtectedRoom isAuthenticated={isAuthenticated}>
                   <VideoRoom />
                 </ProtectedRoom>
+
               }
             />
           </Route>

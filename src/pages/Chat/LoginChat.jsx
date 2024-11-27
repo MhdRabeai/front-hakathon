@@ -104,7 +104,9 @@ const LoginChat = ({ role, onAuthSuccess }) => {
   const [createName, setCreateName] = useState("");
   const [joinPassword, setJoinPassword] = useState("");
   const [createPassword, setCreatePassword] = useState("");
+
   const navigate = useNavigate();
+
   const handleJoinSubmit = async (e) => {
     e.preventDefault();
     console.log(joinName);
