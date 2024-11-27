@@ -11,7 +11,7 @@ import { Register } from "./pages/Register";
 // import { useEffect } from "react";
 import { VideoRoom } from "./pages/Chat/VideoRoom";
 import "preline/preline";
-import RootDash from "./pages/Dashbard/RootDash";
+import OurDash from "./pages/Dashbard/OurDash";
 import RootChat from "./pages/Chat/RootChat";
 import LoginChat from "./pages/Chat/LoginChat";
 import MainDash from "./pages/Dashbard/MainDash";
@@ -79,7 +79,7 @@ function App() {
           path="/newDashbard"
           element={
             <ProtectedRoute>
-              <RootDash />
+              <OurDash />
             </ProtectedRoute>
           }
         >
