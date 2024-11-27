@@ -133,17 +133,6 @@ const Navbar = () => {
             >
               Services
             </NavLink>
-            
-            <NavLink
-              className={({ isActive }) =>
-                isActive
-                  ? "active font-medium text-white focus:outline-none"
-                  : "font-medium text-gray-300 hover:text-white focus:outline-none focus:text-white transition"
-              }
-              to="#Projects"
-            >
-              Projects
-            </NavLink>
             <NavLink
               className={({ isActive }) =>
                 isActive
@@ -153,6 +142,16 @@ const Navbar = () => {
               to="#Features"
             >
               Features
+            </NavLink>
+            <NavLink
+              className={({ isActive }) =>
+                isActive
+                  ? "active font-medium text-white focus:outline-none"
+                  : "font-medium text-gray-300 hover:text-white focus:outline-none focus:text-white transition"
+              }
+              to="#Projects"
+            >
+              Projects
             </NavLink>
             <NavLink
               className={({ isActive }) =>
