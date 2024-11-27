@@ -93,23 +93,13 @@ export const VideoRoom = () => {
       client.current.on("user-published", async (user, mediaType) => {
         await client.current.subscribe(user, mediaType);
         if (mediaType === "video") {
-          const existingVideo = document.querySelector(
-            `video[data-uid="${user.uid}"]`
-          );
-          if (!existingVideo) {
-            const remoteVideo = document.createElement("video");
-            remoteVideo.autoplay = true;
-            remoteVideo.playsInline = true;
-            remoteVideo.style.width = "100%";
-            remoteVideo.dataset.uid = user.uid;
-            document.getElementById("remote-videos").append(remoteVideo);
-            user.videoTrack?.play(remoteVideo);
-          }
-          try {
-            await user.videoTrack.play(existingVideo);
-          } catch (error) {
-            console.error(`Error playing video for user ${user.uid}:`, error);
-          }
+          const remoteVideo = document.createElement("video");
+          remoteVideo.autoplay = true;
+          remoteVideo.playsInline = true;
+          remoteVideo.style.width = "100%";
+          remoteVideo.dataset.uid = user.uid;
+          document.getElementById("remote-videos").append(remoteVideo);
+          user.videoTrack?.play(remoteVideo);
         }
         if (mediaType === "audio") {
           user.audioTrack?.play();
@@ -177,71 +167,67 @@ export const VideoRoom = () => {
   };
 
   return (
-    <div className="flex flex-col md:flex-row items-center p-6 bg-gray-100 min-h-screen">
-      {/* الشات الجانبي */}
-      <div className="w-full md:w-1/4 bg-gray-50 p-4 rounded-lg shadow-inner space-y-6">
-        <h3 className="text-xl font-semibold text-center text-gray-700">
-          Chat
-        </h3>
-        <div
-          style={{ height: "150px", overflowY: "auto" }}
-          className="bg-white p-2 rounded-lg shadow-sm mb-4"
-        >
-          {messages.map((msg, idx) => (
-            <p key={idx} className="text-sm text-gray-700">
-              <strong>{msg.userName}:</strong> {msg.message}
-            </p>
-          ))}
-        </div>
-        <div className="flex items-center space-x-2">
-          <input
-            type="text"
-            value={message}
-            onChange={(e) => setMessage(e.target.value)}
-            placeholder="Type a message"
-            className="w-full p-2 rounded-lg border-2 border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-          />
-          <button
-            onClick={handleSendMessage}
-            className="px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-          >
-            Send
-          </button>
-        </div>
-      </div>
-
-      {/* شاشة المتصل */}
-      <div className="flex-grow p-6 bg-white shadow-lg rounded-lg">
+    <div className="flex flex-col items-center p-6 bg-gray-100 min-h-screen">
+      <div className="w-full max-w-4xl bg-white shadow-lg rounded-lg p-6 space-y-6">
         <div className="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-4">
-          <div className="flex-shrink-0 w-full md:w-2/3">
+          <div className="flex-shrink-0 w-full md:w-2/5">
             <video
               ref={localVideoRef}
               autoPlay
               muted
               className="w-full h-full object-cover rounded-lg border-4 border-indigo-600 shadow-lg"
             ></video>
+            <div className="flex justify-center space-x-4 mt-4">
+              <button
+                onClick={toggleAudio}
+                className="p-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700"
+              >
+                {isMuted ? <FaMicrophoneSlash /> : <FaMicrophone />}
+              </button>
+              <button
+                onClick={toggleVideo}
+                className="p-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700"
+              >
+                {isVideoOff ? <FaVideoSlash /> : <FaVideo />}
+              </button>
+            </div>
           </div>
           <div
             id="remote-videos"
             className="flex flex-wrap gap-4 justify-center w-full md:w-3/5"
           ></div>
         </div>
-      </div>
 
-      {/* زر التحكم بالفيديو والصوت */}
-      <div className="absolute bottom-4 right-4 flex space-x-4">
-        <button
-          onClick={toggleAudio}
-          className="p-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700"
-        >
-          {isMuted ? <FaMicrophoneSlash /> : <FaMicrophone />}
-        </button>
-        <button
-          onClick={toggleVideo}
-          className="p-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700"
-        >
-          {isVideoOff ? <FaVideoSlash /> : <FaVideo />}
-        </button>
+        <div className="bg-gray-50 p-4 rounded-lg shadow-inner">
+          <h3 className="text-xl font-semibold text-center text-gray-700">
+            Chat
+          </h3>
+          <div
+            style={{ height: "150px", overflowY: "auto" }}
+            className="bg-white p-2 rounded-lg shadow-sm mb-4"
+          >
+            {messages.map((msg, idx) => (
+              <p key={idx} className="text-sm text-gray-700">
+                <strong>{msg.userName}:</strong> {msg.message}
+              </p>
+            ))}
+          </div>
+          <div className="flex items-center space-x-2">
+            <input
+              type="text"
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+              placeholder="Type a message"
+              className="w-full p-2 rounded-lg border-2 border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            />
+            <button
+              onClick={handleSendMessage}
+              className="px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            >
+              Send
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   );
