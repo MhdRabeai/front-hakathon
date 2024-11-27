@@ -56,7 +56,7 @@ const RootDash = ({ isSidebar }) => {
   };
 
   return (
-    <div className="flex h-screen ">
+    <div className="flex h-screen h-full ">
       {/* Sidebar */}
       <motion.div
         className={`relative z-10 transition-all duration-200 ease-in-out flex-shrink-0 ${
