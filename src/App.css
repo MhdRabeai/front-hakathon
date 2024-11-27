@@ -3,7 +3,10 @@
   border: none;
 }
 .Facts {
-  background-image: url(/public/Facts.png);
+  background-image: url(/Facts.png);
   background-repeat: no-repeat;
   background-size: cover;
+}
+.my-section {
+  height: calc(100vh - 60px);
 }

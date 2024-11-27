@@ -4,7 +4,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { IoChatbubbles } from "react-icons/io5";
 import { IoIosBook } from "react-icons/io";
-import BlogCard from "../components/BlogCard" 
+import BlogCard from "../components/BlogCard";
 import { FaLeaf } from "react-icons/fa";
 
 const Home = () => {
@@ -27,7 +27,13 @@ const Home = () => {
               <li>Level Up Your Tech Team</li>
             </ul>
             <div className="mt-5 lg:mt-8 flex ">
-              <Link className="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-[#0B0B43] text-white hover:bg-white hover:text-[#7D7CEC] hover:border-[#7D7CEC] hover: focus:outline-none focus:bg-[#7D7CEC]  ">
+              <Link
+                className="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-[#0B0B43] text-white 
+                hover:bg-white hover:text-[#7D7CEC] hover:border-[#7D7CEC] 
+                transition-transform duration-300 ease-in-out 
+                transform hover:scale-105 hover:shadow-lg 
+                focus:outline-none"
+              >
                 Get Started
               </Link>
             </div>
@@ -129,16 +135,64 @@ const Home = () => {
 }'
             className="relative "
           >
-            <div className="hs-carousel w-full overflow-hidden rounded-lg">
-              <div className="relative min-h-[450px] -mx-1">
+            <div className="hs-carousel w-full overflow-hidden rounded-lg ">
+              <div className="relative min-h-[400px] -mx-1 mb-[7rem]">
                 <div className="hs-carousel-body  absolute top-0 bottom-0 start-0 flex flex-nowrap transition-transform duration-700 opacity-0">
-
-                  <div className="hs-carousel-slide px-1 "> <BlogCard  /></div>
-                  <div className="hs-carousel-slide px-1 "> <BlogCard  /></div>
-                  <div className="hs-carousel-slide px-1 "> <BlogCard  /></div>
-                  <div className="hs-carousel-slide px-1 "> <BlogCard  /></div>
-                  <div className="hs-carousel-slide px-1 "> <BlogCard  /></div>
-                
+                  <div className="hs-carousel-slide px-1 ">
+                    <BlogCard
+                      id={0}
+                      image={"https://i.ibb.co/r2zns1m/image-01.jpg"}
+                      CardTitle={"50+ Best creative website themes & templates"}
+                      CardDescription={"project 1"}
+                      Button={"View Details"}
+                    />
+                  </div>
+                  <div className="hs-carousel-slide px-1 ">
+                    {" "}
+                    <BlogCard
+                      id={1}
+                      image={"https://i.ibb.co/0nbbWM9/image-02-1.jpg"}
+                      CardTitle={
+                        "Creative Card Component designs graphic elements"
+                      }
+                      CardDescription={"project 2"}
+                      Button={"View Details"}
+                    />
+                  </div>
+                  <div className="hs-carousel-slide px-1 ">
+                    {" "}
+                    <BlogCard
+                      id={2}
+                      image={"https://i.ibb.co/dL9fH7N/image-03-1.jpg"}
+                      CardTitle={"The ultimate UX and UI guide to card design"}
+                      CardDescription={"project 3"}
+                      Button={"View Details"}
+                    />
+                  </div>
+                  <div className="hs-carousel-slide px-1 ">
+                    {" "}
+                    <BlogCard
+                      id={3}
+                      image={"https://i.ibb.co/0nbbWM9/image-02-1.jpg"}
+                      CardTitle={
+                        "Creative Card Component designs graphic elements"
+                      }
+                      CardDescription={"project 4 "}
+                      Button={"View Details"}
+                    />
+                  </div>
+                  <div className="hs-carousel-slide px-1 ">
+                    {" "}
+                    <BlogCard
+                      id={4}
+                      image={"https://i.ibb.co/dL9fH7N/image-03-1.jpg"}
+                      CardTitle={
+                        "Creative Card Component designs graphic elements"
+                      }
+                      CardDescription={"project 5 "}
+                      Button={"View Details"}
+                    />
+                  </div>
                 </div>
               </div>
             </div>
@@ -208,7 +262,7 @@ const Home = () => {
                 50+
               </h2>
               <p className="flex-1  text-light text-base leading-relaxed ">
-                Happy Patients
+                Happy Client
               </p>
             </div>
             <div className="flex flex-col  items-center">
@@ -216,7 +270,7 @@ const Home = () => {
                 15+
               </h2>
               <p className="flex-1  text-light text-base leading-relaxed ">
-                Campaign Complete
+                Project Complete
               </p>
             </div>
             <div className="flex flex-col items-center">
@@ -232,7 +286,7 @@ const Home = () => {
                 25+
               </h2>
               <p className="flex-1  text-light text-base leading-relaxed ">
-                Expert Doctors
+                Expert Developers
               </p>
             </div>
           </div>
@@ -279,7 +333,7 @@ const Home = () => {
                       Our Location
                     </h4>
                     <p className="text-base text-body-color ">
-                      Damascus, Syria, Marjeh Square
+                      Damascus, Syria, Al-Mazzeh
                     </p>
                   </div>
                 </div>

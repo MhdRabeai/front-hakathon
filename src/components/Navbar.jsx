@@ -1,8 +1,50 @@
 /* eslint-disable no-unused-vars */
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { NavLink } from "react-router-dom";
+import { useUserInfo } from "../Providers/UserContext";
+import { IoMdLogOut } from "react-icons/io";
+import { Bounce, toast } from "react-toastify";
 
 const Navbar = () => {
+  const { logoutUser, user } = useUserInfo();
+  const navigate = useNavigate();
+  const handleLogout = async () => {
+    try {
+      const res = await fetch("http://localhost:4000/logout", {
+        method: "GET",
+        credentials: "include",
+      });
+
+      if (res.ok) {
+        await logoutUser();
+        navigate("/");
+        return toast.success("Logout successful", {
+          position: "bottom-right",
+          autoClose: 2500,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: false,
+          draggable: false,
+          progress: undefined,
+          theme: "light",
+          transition: Bounce,
+        });
+      }
+    } catch (err) {
+      navigate("/");
+      return toast.error(err.message, {
+        position: "bottom-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        transition: Bounce,
+      });
+    }
+  };
   // const [isDark, setIsDark] = useState(false);
   // const toggleTheme = () => {
   //   setIsDark(!isDark);
@@ -10,9 +52,9 @@ const Navbar = () => {
   // };
 
   return (
-    <header className="flex flex-wrap sm:justify-start sm:flex-nowrap w-full bg-[#0B0B43] text-sm py-2 shadow-2xl mb-10 dark:drop-shadow-[0_5px_10px_rgba(255,255,255,0.5)] font-barcon">
-      <nav className="max-w-[86rem] w-full mx-auto px-4 sm:flex items-center sm:justify-between ">
-        <div className="flex justify-between items-center md:flex-none">
+    <header className=" rounded-b-3xl  flex flex-wrap sm:justify-start sm:flex-nowrap w-full bg-[#0B0B43] text-sm py-2 shadow-2xl mb-10 dark:drop-shadow-[0_5px_2px_rgba(165,165,174,0.5)] font-barcon">
+      <nav className="  max-w-[86rem] w-full mx-auto px-4 sm:flex items-center sm:justify-between ">
+        <div className=" flex justify-between items-center md:flex-none">
           <NavLink
             className="flex-none text-xl font-semibold text-white focus:outline-none focus:opacity-80"
             to="/"
@@ -130,14 +172,24 @@ const Navbar = () => {
               )}
             </button> */}
 
-            <NavLink
-              className={
-                "active font-medium text-white focus:outline-none  hover:text-white  focus:text-white transition"
-              }
-              to="/dashboard"
-            >
-              Dashboard
-            </NavLink>
+            {user && (
+              <>
+                <NavLink
+                  className={
+                    "active font-medium text-white focus:outline-none  hover:text-white  focus:text-white transition"
+                  }
+                  to="/dashboard"
+                >
+                  Dashboard
+                </NavLink>
+                <button
+                  className="font-medium text-white focus:outline-none"
+                  onClick={handleLogout}
+                >
+                  <IoMdLogOut />
+                </button>
+              </>
+            )}
 
             <div className="flex">
               <Link

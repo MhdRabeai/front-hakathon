@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
 
-export const VideoCall = () => {
-  return <div>VideoCall</div>;
+export const InterViews = () => {
+  return <div>InterViews</div>;
 };
