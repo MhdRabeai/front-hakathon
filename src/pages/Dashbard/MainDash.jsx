@@ -36,27 +36,33 @@ const MainDash = () => {
     primary: {
       main: "#E2E2EB",
     },
+    //7D7CEC
+    //0B0B43
+    //E2E2EB
+    //e2e8f0
+    //64748b
+    //ADA7B3
     secondary: {
-      main: "#7D7CEC",
+      main: "#0B0B43",
     },
     text: {
-      main: "#0B0B43",
+      main: "#E2E2EB",
       200: "#0B0B43",
     },
     icons: {
       main: "#0B0B43",
     },
     grey: {
-      100: "#e2e8f0",
+      100: "#E2E2EB",
       500: "#64748b",
     },
-    blueAccent: {
-      500: "#3b82f6",
+    purpleAccent: {
+      500: "#7D7CEC",
       700: "#1e40af",
       800: "#1e3a8a",
     },
     redAccent: {
-      500: "#ef4444",
+      500: "#64748b",
     },
   };
 
@@ -226,8 +232,185 @@ const MainDash = () => {
           </Box>
 
           <Box
+            gridColumn="span 4"
+            gridRow="span 3"
+            backgroundColor={colors.primary.main}
+            overflow="auto"
+            borderRadius="8px"
+            className="scrollbar-thin scrollbar-thumb-green-500 scrollbar-track-gray-700"
+          >
+            <Box
+              display="flex"
+              justifyContent="space-between"
+              alignItems="center"
+              borderBottom={`4px solid ${colors.primary.main}`}
+              p="15px"
+            >
+              <Typography
+                color={colors.text.main}
+                variant="h5"
+                fontWeight="600"
+              >
+                Latest Users
+              </Typography>
+            </Box>
+
+            {dashboardData.latestUsers.map((user) => (
+              <Box
+                key={dashboardData.latestUsers.id}
+                display="flex"
+                justifyContent="space-between"
+                alignItems="center"
+                backgroundColor={colors.secondary}
+                borderRadius="8px"
+                p="15px"
+                m="10px"
+              >
+                <Box display="flex" alignItems="center" gap="15px">
+                  <FaUser
+                    style={{ color: colors.icons.main, fontSize: "30px" }}
+                  />
+                  <Box>
+                    <Typography
+                      color={colors.text.main}
+                      variant="h5"
+                      fontWeight="600"
+                    >
+                      {dashboardData.latestUsers.name}
+                    </Typography>
+                    <Typography
+                      color={colors.text[100]}
+                      display="flex"
+                      alignItems="center"
+                      gap="5px"
+                    >
+                      <fePhone fontSize="small" /> {user.phone}
+                    </Typography>
+                    <Typography
+                      color={colors.text[100]}
+                      display="flex"
+                      alignItems="center"
+                      gap="5px"
+                    >
+                      <feLocation fontSize="small" />{" "}
+                      {dashboardData.latestUsers.location}
+                    </Typography>
+                  </Box>
+                </Box>
+
+                <Box
+                  display="flex"
+                  alignItems="center"
+                  justifyContent="center"
+                  gap="10px"
+                >
+                  <Typography
+                    color={
+                      user.active === "Active"
+                        ? colors.blueAccent[500]
+                        : colors.redAccent[500]
+                    }
+                  >
+                    {dashboardData.latestUsers.active === "Active" ? (
+                      <FaCheckCircle
+                        style={{ color: colors.blueAccent[500] }}
+                      />
+                    ) : (
+                      <FaTimesCircle style={{ color: colors.redAccent[500] }} />
+                    )}
+                    {dashboardData.latestUsers.active}
+                  </Typography>
+                </Box>
+
+                <Typography
+                  color={colors.text.main}
+                  backgroundColor={colors.blueAccent[500]}
+                  p="5px 10px"
+                  borderRadius="4px"
+                >
+                  {dashboardData.latestUsers.accessLevel}
+                </Typography>
+              </Box>
+            ))}
+          </Box>
+
+          {/* ROW 3 */}
+          <Box
             gridColumn="span 6"
-            gridRow="span 4"
+            gridRow="span 2"
+            backgroundColor={colors.primary.main}
+            p="30px"
+            borderRadius="8px"
+            boxShadow="0 4px 8px rgba(0, 0, 0, 0.1)"
+          >
+            {/* Title */}
+            <Typography
+              variant="h5"
+              fontWeight="600"
+              color={colors.text.main}
+              textAlign="center"
+            >
+              Active & Inactive
+            </Typography>
+            <Typography
+              variant="body2"
+              color={colors.text[100]}
+              textAlign="center"
+              mt="8px"
+            >
+              Overview of active vs inactive users
+            </Typography>
+
+            {/* Content */}
+            <Box
+              display="flex"
+              flexDirection="column"
+              alignItems="center"
+              mt="25px"
+            >
+              {/* Progress Circle */}
+              <ProgressCircle size="125" progress={0.75} />
+              <Box
+                display="flex"
+                justifyContent="space-between"
+                width="100%"
+                mt="20px"
+              >
+                {/* Active Users */}
+                <Box display="flex" alignItems="center" gap="10px">
+                  <Box
+                    sx={{
+                      width: "10px",
+                      height: "10px",
+                      borderRadius: "50%",
+                      backgroundColor: colors.blueAccent[500],
+                    }}
+                  />
+                  <Typography variant="body1" color={colors.text.main}>
+                    Active Users: 75%
+                  </Typography>
+                </Box>
+                {/* Inactive Users */}
+                <Box display="flex" alignItems="center" gap="10px">
+                  <Box
+                    sx={{
+                      width: "10px",
+                      height: "10px",
+                      borderRadius: "50%",
+                      backgroundColor: colors.grey[500],
+                    }}
+                  />
+                  <Typography variant="body1" color={colors.primary.main[100]}>
+                    Inactive Users: 25%
+                  </Typography>
+                </Box>
+              </Box>
+            </Box>
+          </Box>
+
+          <Box
+            gridColumn="span 6"
+            gridRow="span 2"
             backgroundColor={colors.primary.main}
           >
             <Typography
