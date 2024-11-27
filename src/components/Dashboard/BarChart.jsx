@@ -1,178 +1,218 @@
-import { ResponsiveBar } from "@nivo/bar";
-import { useEffect, useState } from "react";
-import axios from "axios";
-import PropTypes from "prop-types"; 
+import { ResponsiveAreaBump } from '@nivo/bump';
 
-
-const BarChart = ({ isDashboard = false }) => {
-  const colors = {
-    //7D7CEC
-    //0B0B43
-    //E2E2EB
-    //e2e8f0
-    //64748b
-    //ADA7B3
-    primary: {
-      400: "#1e293b",
-      100: "#f8fafc",
-    },
-    grey: {
-      100: "#e2e8f0",
-      500: "#64748b",
-    },
-    PurpleAccent: {
-      500: "#3b82f6",
-      700: "#1e40af",
-      800: "#1e3a8a",
-    },
-    redAccent: {
-      500: "#ef4444",
-    },
-    greenAccent: {
-      500: "#22c55e",
-    },
-  };
-  const [chartData, setChartData] = useState([]);
-
-  useEffect(() => {
-    axios
-      .get("/mockUsers.json")
-      .then((response) => {
-        const data = response.data; 
-        const requests = data.requests; // Assuming `requests` contains the application data.
-        
-        // Count requests per day in the past week
-        const today = new Date();
-        const lastWeek = Array.from({ length: 7 }, (_, i) => {
-          const date = new Date(today);
-          date.setDate(today.getDate() - i);
-          return date.toISOString().split("T")[0]; // Format: YYYY-MM-DD
-        });
-
-        const countsByDay = lastWeek.reduce((acc, date) => {
-          acc[date] = 0;
-          return acc;
-        }, {});
-
-        requests.forEach((request) => {
-          const requestDate = request.date.split("T")[0]; // Format: YYYY-MM-DD
-          if (countsByDay[requestDate] !== undefined) {
-            countsByDay[requestDate] += 1;
+const BarChart = () => {
+  const data = [
+      {
+        "id": "JavaScript",
+        "data": [
+          {
+            "x": 2019,
+            "y": 26
+          },
+          {
+            "x": 2020,
+            "y": 13
+          },
+          {
+            "x": 2021,
+            "y": 12
+          },
+          {
+            "x": 2022,
+            "y": 22
+          },
+          {
+            "x": 2023,
+            "y": 16
+          },
+          {
+            "x": 2024,
+            "y": 11
           }
-        });
-
-        const formattedData = Object.entries(countsByDay).map(([date, count]) => ({
-          day: date,
-          count,
-        }));
-
-        setChartData(formattedData);
-      })
-      .catch((error) => console.error("Error fetching data:", error));
-  }, []);
+        ]
+      },
+      {
+        "id": "ReasonML",
+        "data": [
+          {
+            "x": 2019,
+            "y": 10
+          },
+          {
+            "x": 2020,
+            "y": 17
+          },
+          {
+            "x": 2021,
+            "y": 21
+          },
+          {
+            "x": 2022,
+            "y": 21
+          },
+          {
+            "x": 2023,
+            "y": 12
+          },
+          {
+            "x": 2024,
+            "y": 26
+          }
+        ]
+      },
+      {
+        "id": "TypeScript",
+        "data": [
+          {
+            "x": 2019,
+            "y": 30
+          },
+          {
+            "x": 2020,
+            "y": 20
+          },
+          {
+            "x": 2021,
+            "y": 19
+          },
+          {
+            "x": 2020,
+            "y": 15
+          },
+          {
+            "x": 2022,
+            "y": 15
+          },
+          {
+            "x": 2024,
+            "y": 30
+          }
+        ]
+      },
+      {
+        "id": "Elm",
+        "data": [
+          {
+            "x": 2019,
+            "y": 20
+          },
+          {
+            "x": 2020,
+            "y": 25
+          },
+          {
+            "x": 2021,
+            "y": 16
+          },
+          {
+            "x": 2022,
+            "y": 24
+          },
+          {
+            "x": 2023,
+            "y": 15
+          },
+          {
+            "x": 2024,
+            "y": 11
+          }
+        ]
+      },
+      {
+        "id": "CoffeeScript",
+        "data": [
+          {
+            "x": 2019,
+            "y": 15
+          },
+          {
+            "x": 2020,
+            "y": 19
+          },
+          {
+            "x": 2021,
+            "y": 11
+          },
+          {
+            "x": 2022,
+            "y": 15
+          },
+          {
+            "x": 2023,
+            "y": 11
+          },
+          {
+            "x": 2024,
+            "y": 26
+          }
+        ]
+      }
+  
+  ];
 
   return (
-    <ResponsiveBar
-      data={chartData}
-      theme={{
-        axis: {
-          domain: {
-            line: {
-              stroke: colors.grey[500],
-            },
+    <div style={{ height: '500px' }}>
+      <ResponsiveAreaBump
+        data={data}
+        margin={{ top: 40, right: 100, bottom: 40, left: 100 }}
+        spacing={8}
+        colors={{ scheme: 'nivo' }}
+        blendMode="multiply"
+        defs={[
+          {
+            id: 'dots',
+            type: 'patternDots',
+            background: 'inherit',
+            color: '#38bcb2',
+            size: 4,
+            padding: 1,
+            stagger: true,
           },
-          legend: {
-            text: {
-              fill: colors.grey[400],
-            },
+          {
+            id: 'lines',
+            type: 'patternLines',
+            background: 'inherit',
+            color: '#eed312',
+            rotation: -45,
+            lineWidth: 6,
+            spacing: 10,
           },
-          ticks: {
-            line: {
-              stroke: colors.grey[300],
-              strokeWidth: 1,
+        ]}
+        fill={[
+          {
+            match: {
+              id: 'CoffeeScript',
             },
-            text: {
-              fill: colors.grey[200],
-            },
+            id: 'dots',
           },
-        },
-        legends: {
-          text: {
-            fill: colors.grey[100],
-          },
-        },
-      }}
-      keys={["count"]}
-      indexBy="day"
-      margin={{ top: 50, right: 130, bottom: 50, left: 60 }}
-      padding={0.3}
-      valueScale={{ type: "linear" }}
-      indexScale={{ type: "band", round: true }}
-      colors={{ scheme: "nivo" }}
-      borderColor={{
-        from: "color",
-        modifiers: [["darker", "1.6"]],
-      }}
-      axisTop={null}
-      axisRight={null}
-      axisBottom={{
-        tickSize: 5,
-        tickPadding: 5,
-        tickRotation: -45,
-        legend: isDashboard ? undefined : "Day",
-        legendPosition: "middle",
-        legendOffset: 40,
-      }}
-      axisLeft={{
-        tickSize: 5,
-        tickPadding: 5,
-        tickRotation: 0,
-        legend: isDashboard ? undefined : "Applications Count",
-        legendPosition: "middle",
-        legendOffset: -40,
-      }}
-      enableLabel={true}
-      labelSkipWidth={12}
-      labelSkipHeight={12}
-      labelTextColor={{
-        from: "color",
-        modifiers: [["darker", 1.6]],
-      }}
-      legends={[
-        {
-          dataFrom: "keys",
-          anchor: "bottom-right",
-          direction: "column",
-          justify: false,
-          translateX: 120,
-          translateY: 0,
-          itemsSpacing: 2,
-          itemWidth: 100,
-          itemHeight: 20,
-          itemDirection: "left-to-right",
-          itemOpacity: 0.85,
-          symbolSize: 20,
-          effects: [
-            {
-              on: "hover",
-              style: {
-                itemOpacity: 1,
-              },
+          {
+            match: {
+              id: 'TypeScript',
             },
-          ],
-        },
-      ]}
-      role="application"
-      barAriaLabel={(e) => {
-        return `${e.id}: ${e.formattedValue} applications on ${e.indexValue}`;
-      }}
-    />
+            id: 'lines',
+          },
+        ]}
+        startLabel="id"
+        endLabel="id"
+        axisTop={{
+          tickSize: 5,
+          tickPadding: 5,
+          tickRotation: 0,
+          legend: '',
+          legendPosition: 'middle',
+          legendOffset: -36,
+        }}
+        axisBottom={{
+          tickSize: 5,
+          tickPadding: 5,
+          tickRotation: 0,
+          legend: '',
+          legendPosition: 'middle',
+          legendOffset: 32,
+        }}
+      />
+    </div>
   );
 };
-
-BarChart.propTypes = {
-  isDashboard: PropTypes.bool,
-};
-
 
 export default BarChart;

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Box, Button, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import {
   FaBriefcase,
   FaFileAlt,
@@ -46,7 +46,7 @@ const MainDash = () => {
       main: "#0B0B43",
     },
     text: {
-      main: "#7D7CEC",
+      main: "#E2E2EB",
       200: "#0B0B43",
     },
     icons: {
@@ -75,22 +75,7 @@ const MainDash = () => {
         <Box display="flex" justifyContent="space-between" alignItems="center">
           {/* <Header title="DASHBOARD" subtitle="Welcome to your dashboard" /> */}
 
-          <Box>
-            <Button
-              sx={{
-                backgroundColor: colors.icons.main,
 
-                color: colors.primary.main,
-
-                fontSize: "14px",
-                fontWeight: "bold",
-                padding: "10px 20px",
-              }}
-            >
-              <FaDownload sx={{ mr: "10px" }} />
-              Download Reports
-            </Button>
-          </Box>
         </Box>
 
         {/* GRID & CHARTS */}
@@ -103,7 +88,7 @@ const MainDash = () => {
           {/* ROW 1 */}
           <Box
             gridColumn="span 3"
-            backgroundColor={colors.primary.main}
+            backgroundColor={colors.blueAccent[500]}
             boxShadow="0px 4px 10px rgba(0, 0, 0, 0.1)"
             borderRadius="12px"
             display="flex"
@@ -129,7 +114,7 @@ const MainDash = () => {
 
           <Box
             gridColumn="span 3"
-            backgroundColor={colors.primary.main}
+            backgroundColor={colors.blueAccent[500]}
             boxShadow="0px 4px 10px rgba(0, 0, 0, 0.1)"
             borderRadius="12px"
             display="flex"
@@ -155,7 +140,7 @@ const MainDash = () => {
 
           <Box
             gridColumn="span 3"
-            backgroundColor={colors.primary.main}
+            backgroundColor={colors.blueAccent[500]}
             boxShadow="0px 4px 10px rgba(0, 0, 0, 0.1)"
             borderRadius="12px"
             display="flex"
@@ -181,7 +166,7 @@ const MainDash = () => {
 
           <Box
             gridColumn="span 3"
-            backgroundColor={colors.primary.main}
+            backgroundColor={colors.blueAccent[500]}
             boxShadow="0px 4px 10px rgba(0, 0, 0, 0.1)"
             borderRadius="12px"
             display="flex"
@@ -198,7 +183,7 @@ const MainDash = () => {
                   style={{
                     color: colors.icons.main,
                     fontSize: "36px",
-                    marginBottom: "10px",
+                    marginBottom: "15px",
                   }}
                 />
               }
@@ -208,8 +193,8 @@ const MainDash = () => {
           {/* ROW 2 */}
 
           <Box
-            gridColumn="span 8"
-            gridRow="span 3"
+            gridColumn="span 6"
+            gridRow="span 4"
             backgroundColor={colors.primary.main}
           >
             <Box
@@ -225,14 +210,14 @@ const MainDash = () => {
                   fontWeight="600"
                   color={colors.text.main}
                 >
-                  Order Status:
+                  Candidate Status:
                 </Typography>
                 <Typography
-                  variant="h3"
+                  variant="h4"
                   fontWeight="bold"
-                  color={colors.text[100]}
+                  color={colors.primary.main}
                 >
-                  Statistics on requests by status
+                  Statistics on candidates: progress by status over time.
                 </Typography>
               </Box>
               <Box>
@@ -322,13 +307,13 @@ const MainDash = () => {
                   <Typography
                     color={
                       user.active === "Active"
-                        ? colors.purpleAccent[500]
+                        ? colors.blueAccent[500]
                         : colors.redAccent[500]
                     }
                   >
                     {dashboardData.latestUsers.active === "Active" ? (
                       <FaCheckCircle
-                        style={{ color: colors.purpleAccent[500] }}
+                        style={{ color: colors.blueAccent[500] }}
                       />
                     ) : (
                       <FaTimesCircle style={{ color: colors.redAccent[500] }} />
@@ -339,7 +324,7 @@ const MainDash = () => {
 
                 <Typography
                   color={colors.text.main}
-                  backgroundColor={colors.purpleAccent[500]}
+                  backgroundColor={colors.blueAccent[500]}
                   p="5px 10px"
                   borderRadius="4px"
                 >
@@ -398,7 +383,7 @@ const MainDash = () => {
                       width: "10px",
                       height: "10px",
                       borderRadius: "50%",
-                      backgroundColor: colors.purpleAccent[500],
+                      backgroundColor: colors.blueAccent[500],
                     }}
                   />
                   <Typography variant="body1" color={colors.text.main}>
@@ -431,14 +416,20 @@ const MainDash = () => {
             <Typography
               variant="h5"
               fontWeight="600"
-              sx={{ padding: "30px 30px 0 30px" }}
+              color="#0B0B43"
+              sx={{ padding: "30px 30px 0 30px", marginBottom: "15px" }}
             >
-              Applications Received This Week
+              Most Popular Programming Languages Through The Years
+
             </Typography>
+
             <Box height="250px" mt="-20px">
               <BarChart isDashboard={true} />
             </Box>
           </Box>
+
+
+
         </Box>
       </Box>
     </div>

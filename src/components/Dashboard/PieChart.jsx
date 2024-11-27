@@ -10,7 +10,6 @@ const PieChart = () => {
   return (
     <div style={{ height: "400px" }}>
       <h2 style={{ textAlign: "center", color: colors.grey[100] }}>
-        
       </h2>
       <ResponsivePie
         data={data}

@@ -1,8 +1,8 @@
 import { Box, Typography } from "@mui/material";
-import ProgressCircle from "./ProgressCirde";
+// import ProgressCircle from "./ProgressCirde";
 import PropTypes from "prop-types"; 
 
-const StatBox = ({ title, subtitle, icon, progress, increase }) => {
+const StatBox = ({ title, subtitle, icon, increase }) => {
   const colors = {
     primary: {
       400: "#1e293b",
@@ -43,7 +43,7 @@ const StatBox = ({ title, subtitle, icon, progress, increase }) => {
           </Typography>
         </Box>
         <Box>
-          <ProgressCircle progress={progress} />
+          {/* <ProgressCircle progress={progress} /> */}
         </Box>
       </Box>
       <Box display="flex" justifyContent="space-between" mt="2px">
@@ -70,10 +70,10 @@ StatBox.propTypes = {
   increase: PropTypes.string, 
 };
 
-StatBox.defaultProps = {
-  icon: null,
-  progress: "0.5",
-  increase: "0%", 
-};
+// StatBox.defaultProps = {
+//   icon: null,
+//   progress: "0.5",
+//   increase: "0%", 
+// };
 
 export default StatBox;
