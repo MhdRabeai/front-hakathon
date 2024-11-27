@@ -37,6 +37,255 @@
       "location": "São Paulo, Brazil",
       "active": true,
       "accessLevel": "Manager"
+    },
+    {
+      "candidate": [
+  {
+    "_id": "6489f1278fca5b34e1e27d91",
+    "name": "Ahmed Ali",
+    "status": "rejected",
+    "experience": 2,
+    "allDate": {
+      "date": "2024-11-26",
+      "time": "14:30:00"
+    },
+    "createdAt": "2024-11-25T10:00:00Z"
+  },
+  {
+    "_id": "6489f1278fca5b34e1e27d91",
+    "name": "Ahmed Ali",
+    "status": "rejected",
+    "experience": 2,
+    "allDate": {
+      "date": "2024-11-26",
+      "time": "14:30:00"
+    },
+    "createdAt": "2024-11-25T10:00:00Z"
+  },
+  {
+    "_id": "6489f1278fca5b34e1e27d92",
+    "name": "Mona Hassan",
+    "status": "Rejected after interview",
+    "experience": 5,
+    "allDate": {
+      "date": "2024-11-24",
+      "time": "12:00:00"
+    },
+    "createdAt": "2024-11-24T11:00:00Z"
+  },
+  {
+    "_id": "6489f1278fca5b34e1e27d93",
+    "name": "Omar Khaled",
+    "status": "final approval",
+    "experience": 3,
+    "allDate": {
+      "date": "2024-11-23",
+      "time": "16:00:00"
+    },
+    "createdAt": "2024-11-23T09:00:00Z"
+  },
+  {
+    "_id": "6489f1278fca5b34e1e27d94",
+    "name": "Layla Youssef",
+    "status": "Before interview",
+    "experience": 1,
+    "allDate": {
+      "date": "2024-11-27",
+      "time": "09:00:00"
+    },
+    "createdAt": "2024-11-26T10:00:00Z"
+  },
+  {
+    "_id": "6489f1278fca5b34e1e27d95",
+    "name": "Tarek Mahmoud",
+    "status": "final approval",
+    "experience": 7,
+    "allDate": {
+      "date": "2024-11-20",
+      "time": "15:00:00"
+    },
+    "createdAt": "2024-11-19T08:30:00Z"
+  },
+  {
+    "_id": "6489f1278fca5b34e1e27d96",
+    "name": "Sara Ibrahim",
+    "status": "rejected",
+    "experience": 4,
+    "allDate": {
+      "date": "2024-11-21",
+      "time": "13:00:00"
+    },
+    "createdAt": "2024-11-20T09:15:00Z"
+  },
+  {
+    "_id": "6489f1278fca5b34e1e27d97",
+    "name": "Hassan Omar",
+    "status": "Before interview",
+    "experience": 0,
+    "allDate": {
+      "date": "2024-11-22",
+      "time": "10:00:00"
+    },
+    "createdAt": "2024-11-21T12:00:00Z"
+  },
+  {
+    "_id": "6489f1278fca5b34e1e27d98",
+    "name": "Nadia Farouk",
+    "status": "Rejected after interview",
+    "experience": 6,
+    "allDate": {
+      "date": "2024-11-25",
+      "time": "18:00:00"
+    },
+    "createdAt": "2024-11-24T14:00:00Z"
+  },
+  {
+    "_id": "6489f1278fca5b34e1e27d99",
+    "name": "Ali Ghanem",
+    "status": "Before interview",
+    "experience": 8,
+    "allDate": {
+      "date": "2024-11-19",
+      "time": "17:00:00"
+    },
+    "createdAt": "2024-11-18T08:45:00Z"
+  },
+  {
+    "_id": "6489f1278fca5b34e1e27d100",
+    "name": "Reem Saad",
+    "status": "Before interview",
+    "experience": 1,
+    "allDate": {
+      "date": "2024-11-27",
+      "time": "11:30:00"
+    },
+    "createdAt": "2024-11-26T09:00:00Z"
+  },
+  {
+    "_id": "6489f1278fca5b34e1e27d92",
+    "name": "Mona Hassan",
+    "status": "Rejected after interview",
+    "experience": 5,
+    "allDate": {
+      "date": "2024-11-24",
+      "time": "12:00:00"
+    },
+    "createdAt": "2024-11-24T11:00:00Z"
+  },
+  {
+    "_id": "6489f1278fca5b34e1e27d93",
+    "name": "Omar Khaled",
+    "status": "Before interview",
+    "experience": 3,
+    "allDate": {
+      "date": "2024-11-23",
+      "time": "16:00:00"
+    },
+    "createdAt": "2024-11-23T09:00:00Z"
+  },
+  {
+    "_id": "6489f1278fca5b34e1e27d94",
+    "name": "Layla Youssef",
+    "status": "Before interview",
+    "experience": 1,
+    "allDate": {
+      "date": "2024-11-27",
+      "time": "09:00:00"
+    },
+    "createdAt": "2024-11-26T10:00:00Z"
+  },
+  {
+    "_id": "6489f1278fca5b34e1e27d95",
+    "name": "Tarek Mahmoud",
+    "status": "final approval",
+    "experience": 7,
+    "allDate": {
+      "date": "2024-11-20",
+      "time": "15:00:00"
+    },
+    "createdAt": "2024-11-19T08:30:00Z"
+  },
+  {
+    "_id": "6489f1278fca5b34e1e27d96",
+    "name": "Sara Ibrahim",
+    "status": "rejected",
+    "experience": 4,
+    "allDate": {
+      "date": "2024-11-21",
+      "time": "13:00:00"
+    },
+    "createdAt": "2024-11-20T09:15:00Z"
+  },
+  {
+    "_id": "6489f1278fca5b34e1e27d97",
+    "name": "Hassan Omar",
+    "status": "Before interview",
+    "experience": 0,
+    "allDate": {
+      "date": "2024-11-22",
+      "time": "10:00:00"
+    },
+    "createdAt": "2024-11-21T12:00:00Z"
+  },
+  {
+    "_id": "6489f1278fca5b34e1e27d98",
+    "name": "Nadia Farouk",
+    "status": "Rejected after interview",
+    "experience": 6,
+    "allDate": {
+      "date": "2024-11-25",
+      "time": "18:00:00"
+    },
+    "createdAt": "2024-11-24T14:00:00Z"
+  },
+  {
+    "_id": "6489f1278fca5b34e1e27d99",
+    "name": "Ali Ghanem",
+    "status": "final approval",
+    "experience": 8,
+    "allDate": {
+      "date": "2024-11-19",
+      "time": "17:00:00"
+    },
+    "createdAt": "2024-11-18T08:45:00Z"
+  },
+  {
+    "_id": "6489f1278fca5b34e1e27d100",
+    "name": "Reem Saad",
+    "status": "Before interview",
+    "experience": 1,
+    "allDate": {
+      "date": "2024-11-27",
+      "time": "11:30:00"
+    },
+    "createdAt": "2024-11-26T09:00:00Z"
+  }
+],
+
+      "rooms": [
+        {
+          "_id": "7489f1278fca5b34e1e27d91",
+          "channelName": "Room1",
+          "password": "123456",
+          "createdAt": "2024-11-25T08:00:00Z"
+        },
+        {
+          "_id": "7489f1278fca5b34e1e27d92",
+          "channelName": "Room2",
+          "password": "654321",
+          "createdAt": "2024-11-26T15:00:00Z"
+        }
+      ],
+      "admin": [
+        {
+          "_id": "8489f1278fca5b34e1e27d91",
+          "email": "admin@example.com",
+          "password": "admin123",
+          "role": "superadmin",
+          "createdAt": "2024-11-01T09:00:00Z"
+        }
+      ]
     }
+    
   ]
 }
