@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 /* eslint-disable no-unused-vars */
 import React, { useState } from "react";
 import { FaUser, FaCheck } from "react-icons/fa";
@@ -20,26 +21,27 @@ export const Register = () => {
     githubProfile: "https://github.com/johndoe",
     date: "2024-01-20",
   });
+
+  const handleSubmit = async () => {
+    try {
+      const response = await fetch("https://localhost:4000/api/", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(userInfo),
+      });
+      if (!response.ok) {
+        throw new Error("Failed to send data");
+      }
+      const result = await response.json();
+    } catch (error) {
+      console.error("Error sending data:", error);
+    }
+  };
   const handleNext = async () => {
     if (currentStep < steps.length) {
       setCurrentStep((prevStep) => prevStep + 1);
-    } else if (currentStep === steps.length) {
-      try {
-        const response = await fetch("https://localhost:4000/api/", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(userInfo),
-        });
-        if (!response.ok) {
-          throw new Error("Failed to send data");
-        }
-        const result = await response.json();
-      } catch (error) {
-        console.error("Error sending data:", error);
-      }
-      alert("Your data has been saved!");
     }
   };
 
@@ -52,7 +54,7 @@ export const Register = () => {
     <div className=" container max-w-[86rem] w-full mx-auto px-4 ">
       <div className="flex justify-center items-center">
         <div className="w-[60%]  p-8 bg-white rounded-lg shadow-lg">
-          <div className="mb-8">
+          <div className="mb-8 text-center">
             <h2 className="text-xl font-bold text-gray-800 ">Employment</h2>
             <p className="text-sm text-gray-600 ">
               We are so happy to have you join us..
@@ -440,9 +442,11 @@ export const Register = () => {
 
             {currentStep === 2 && (
               <div className="text-center text-[#7D7CEC]">
-                <p className="text-lg font-semibold">All steps completed!</p>
+                <p className="text-lg font-semibold">We're almost done!</p>
                 <p className="text-sm text-gray-700">
-                  You have successfully updated your profile settings.
+                  If you are sure of all the information you provided, please
+                  click Confirm, and you will receive a message on your email
+                  shortly.
                 </p>
               </div>
             )}
@@ -470,8 +474,8 @@ export const Register = () => {
               Next
             </button>
             <button
-              onClick={handleNext}
               disabled={currentStep === steps.length}
+              onClick={handleSubmit}
               className={`py-3 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-[#0B0B43] text-white 
                 hover:bg-white hover:text-[#7D7CEC] hover:border-[#7D7CEC] 
                 transition-transform duration-300 ease-in-out 
