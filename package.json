@@ -10,12 +10,15 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emotion/react": "^11.13.5",
     "@emotion/styled": "^11.13.5",
     "@mui/material": "^6.1.8",
+    "@mui/x-date-pickers": "^7.22.3",
     "@nivo/bar": "^0.88.0",
     "agora-rtc-sdk-ng": "^4.22.2",
     "axios": "^1.7.8",
     "chart.js": "^4.4.6",
+    "dayjs": "^1.11.13",
     "framer-motion": "^11.11.17",
     "lucide-react": "^0.461.0",
     "path": "^0.12.7",

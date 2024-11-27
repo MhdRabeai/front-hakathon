@@ -1,24 +1,9 @@
 /* eslint-disable no-unused-vars */
-import React, { useEffect } from "react";
-import { Link, Outlet, useNavigate } from "react-router-dom";
-import { useUserInfo } from "../../Providers/UserContext";
-import { FaPills } from "react-icons/fa";
+import { Link, Outlet,  } from "react-router-dom";
 import { CiVideoOn } from "react-icons/ci";
-import { MdOutlineDashboard } from "react-icons/md";
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import {
-  BarChart2,
-  Menu,
-  Settings,
-  Users,
-  ClipboardList,
-  FileText,
-  PieChart,
-  UserCheck,
-  UserPlus,
-  ChevronDown,
-} from "lucide-react";
+import {BarChart2, Menu, Users, ClipboardList, UserCheck, ChevronDown} from "lucide-react";
 
 
 // Sidebar items
@@ -27,31 +12,31 @@ const SIDEBAR_ITEMS = [
     name: "Main Dashboard",
     icon: BarChart2,
     color: "#6366f1",
-    href: "/newDashbard", // الصفحة الرئيسية للداشبورد
+    href: "/newDashbard", 
   },
   {
     name: "Candidate Management",
     icon: Users,
     color: "#F97316",
-    href: "/newDashbard/candidate", // صفحة Candidate
+    href: "/newDashbard/candidate", 
   },
   {
     name: "Interviews Management",
     icon: ClipboardList,
     color: "#3B82F6",
-    href: "/newDashbard/interViews", // صفحة InterViews
+    href: "/newDashbard/interViews", 
   },
   {
     name: "Employees Management",
     icon: UserCheck,
     color: "#4ADE80",
-    href: "/newDashbard/employees", // صفحة Employees
+    href: "/newDashbard/employees", 
   },
   {
     name: "Video Calls",
     icon: CiVideoOn,
     color: "#10B981",
-    href: "/newDashbard/videoCall", // صفحة RootChat
+    href: "/newDashbard/videoCall",
   },
 ];
 
