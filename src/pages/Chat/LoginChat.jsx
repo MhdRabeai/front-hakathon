@@ -9,6 +9,8 @@ import { IoEnterOutline, IoKeyOutline } from "react-icons/io5";
 // import { useUserInfo } from "../Services/UserContext";
 import { useEffect, useState } from "react";
 import { IoMdAddCircleOutline } from "react-icons/io";
+import { Bounce, toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 const TabContent = ({
   title,
   desc,
@@ -103,103 +105,105 @@ const LoginChat = ({ role, onAuthSuccess }) => {
   const [joinPassword, setJoinPassword] = useState("");
   const [createPassword, setCreatePassword] = useState("");
 
+  const navigate = useNavigate();
+
   const handleJoinSubmit = async (e) => {
     e.preventDefault();
     console.log(joinName);
     console.log(joinPassword);
-    // try {
-    //   const res = await fetch("http://localhost:4000/login", {
-    //     method: "POST",
-    //     headers: {
-    //       "Content-Type": "application/json",
-    //     },
-    //     credentials: "include",
-    //     body: JSON.stringify({ email, password }),
-    //   });
+    try {
+      const res = await fetch("http://localhost:4000/joinRoom", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        credentials: "include",
+        body: JSON.stringify({
+          channelName: joinName,
+          password: joinPassword,
+        }),
+      });
 
-    //   const msg = await res.json();
-    //   console.log(res);
-    //   if (res.ok) {
-    //     await loginUser();
-    //     navigate("/");
-    //     return toast.success(msg["message"], {
-    //       position: "bottom-right",
-    //       autoClose: 1000,
-    //       closeOnClick: true,
-    //       pauseOnHover: false,
-    //       draggable: true,
-    //       progress: undefined,
-    //       theme: "light",
-    //       transition: Bounce,
-    //     });
-    //   } else {
-    //     setIsLoading(false);
-    //     navigate("/login");
+      const msg = await res.json();
+      if (res.ok) {
+        onAuthSuccess();
+        navigate(`${joinName}`);
+        return toast.success(msg["message"], {
+          position: "bottom-right",
+          autoClose: 1000,
+          closeOnClick: true,
+          pauseOnHover: false,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+          transition: Bounce,
+        });
+      } else {
+        // setIsLoading(false);
 
-    //     return toast.error(msg["message"], {
-    //       position: "bottom-right",
-    //       autoClose: 750,
-    //       hideProgressBar: false,
-    //       closeOnClick: true,
-    //       pauseOnHover: false,
-    //       draggable: true,
-    //       progress: undefined,
-    //       theme: "light",
-    //       transition: Bounce,
-    //     });
-    //   }
-    // } catch (err) {
-    //   console.log(err.message);
-    // }
+        return toast.error(msg["message"], {
+          position: "bottom-right",
+          autoClose: 750,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: false,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+          transition: Bounce,
+        });
+      }
+    } catch (err) {
+      console.log(err.message);
+    }
   };
   const handleCreateSubmit = async (e) => {
     e.preventDefault();
-    console.log(createName);
-    console.log(createPassword);
-    // try {
-    //   const res = await fetch("http://localhost:4000/login", {
-    //     method: "POST",
-    //     headers: {
-    //       "Content-Type": "application/json",
-    //     },
-    //     credentials: "include",
-    //     body: JSON.stringify({ email, password }),
-    //   });
+    try {
+      const res = await fetch("http://localhost:4000/createRoom", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        credentials: "include",
+        body: JSON.stringify({
+          channelName: createName,
+          password: createPassword,
+        }),
+      });
 
-    //   const msg = await res.json();
-    //   console.log(res);
-    //   if (res.ok) {
-    //     await loginUser();
-    //     navigate("/");
-    //     return toast.success(msg["message"], {
-    //       position: "bottom-right",
-    //       autoClose: 1000,
-    //       closeOnClick: true,
-    //       pauseOnHover: false,
-    //       draggable: true,
-    //       progress: undefined,
-    //       theme: "light",
-    //       transition: Bounce,
-    //     });
-    //   } else {
-    //     setIsLoading(false);
-    //     navigate("/login");
+      const msg = await res.json();
+      console.log(res);
+      if (res.ok) {
+        navigate(`${createName}`);
+        return toast.success(msg["message"], {
+          position: "bottom-right",
+          autoClose: 1000,
+          closeOnClick: true,
+          pauseOnHover: false,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+          transition: Bounce,
+        });
+      } else {
+        // setIsLoading(false);
 
-    //     return toast.error(msg["message"], {
-    //       position: "bottom-right",
-    //       autoClose: 750,
-    //       hideProgressBar: false,
-    //       closeOnClick: true,
-    //       pauseOnHover: false,
-    //       draggable: true,
-    //       progress: undefined,
-    //       theme: "light",
-    //       transition: Bounce,
-    //     });
-    //   }
-    // } catch (err) {
-    //   console.log(err.message);
-    // }
+        return toast.error(msg["message"], {
+          position: "bottom-right",
+          autoClose: 750,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: false,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+          transition: Bounce,
+        });
+      }
+    } catch (err) {
+      console.log(err.message);
+    }
   };
   let tabs;
   {
