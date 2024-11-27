@@ -314,7 +314,7 @@ export const Register = () => {
                           className="shrink-0 mt-0.5 ring-0 border-gray-200 rounded-full focus:ring-[#C4C4C4]  text-[#7D7CEC]  focus:bg-[#7D7CEC] checked:bg-[#7D7CEC]   disabled:opacity-50 disabled:pointer-events-none  focus:ring-0"
                           id="af-account-job-checkbox-Front"
                           value="FrontEnd"
-                          checked={formData.job === "FrontEnd"}
+                          checked={formData.jobTitle === "FrontEnd"}
                           onChange={handleInputChange}
                         />
                         <span className="text-sm text-gray-500 ms-3 ">
@@ -332,7 +332,7 @@ export const Register = () => {
                           className="shrink-0 mt-0.5 ring-0 border-gray-200 rounded-full focus:ring-[#C4C4C4]  text-[#7D7CEC]  focus:bg-[#7D7CEC] checked:bg-[#7D7CEC]   disabled:opacity-50 disabled:pointer-events-none  focus:ring-0"
                           id="af-account-job-checkbox-other-Back"
                           value="BackEnd"
-                          checked={formData.job === "BackEnd"}
+                          checked={formData.jobTitle === "BackEnd"}
                           onChange={handleInputChange}
                         />
                         <span className="text-sm text-gray-500 ms-3 ">
@@ -348,8 +348,8 @@ export const Register = () => {
                           name="jobTitle"
                           className="shrink-0 mt-0.5 ring-0 border-gray-200 rounded-full focus:ring-[#C4C4C4]  text-[#7D7CEC]  focus:bg-[#7D7CEC] checked:bg-[#7D7CEC]   disabled:opacity-50 disabled:pointer-events-none  focus:ring-0"
                           id="af-account-job-checkbox-otherrr"
-                          value="Full-Stack"
-                          checked={formData.job === "Full-Stack"}
+                          value="FullStack"
+                          checked={formData.jobTitle === "FullStack"}
                           onChange={handleInputChange}
                         />
                         <span className="text-sm text-gray-500 ms-3 ">
@@ -410,6 +410,7 @@ export const Register = () => {
                         className="flex py-2 px-3 w-full border border-gray-200 shadow-sm -mt-px -ms-px first:rounded-t-lg last:rounded-b-lg sm:first:rounded-s-lg sm:mt-0 sm:first:ms-0 sm:first:rounded-se-none sm:last:rounded-es-none sm:last:rounded-e-lg text-sm relative focus:z-10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none "
                       >
                         <input
+                          id="fullTime"
                           type="radio"
                           name="employmentType"
                           className="shrink-0 mt-0.5 ring-0 border-gray-200 rounded-full focus:ring-[#C4C4C4]  text-[#7D7CEC]  focus:bg-[#7D7CEC] checked:bg-[#7D7CEC]   disabled:opacity-50 disabled:pointer-events-none  focus:ring-0"
@@ -427,6 +428,7 @@ export const Register = () => {
                         className="flex py-2 px-3 w-full border border-gray-200 shadow-sm -mt-px -ms-px first:rounded-t-lg last:rounded-b-lg sm:first:rounded-s-lg sm:mt-0 sm:first:ms-0 sm:first:rounded-se-none sm:last:rounded-es-none sm:last:rounded-e-lg text-sm relative focus:z-10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none "
                       >
                         <input
+                          id="partTime"
                           type="radio"
                           name="employmentType"
                           className="shrink-0 mt-0.5 ring-0 border-gray-200 rounded-full focus:ring-[#C4C4C4]  text-[#7D7CEC]  focus:bg-[#7D7CEC] checked:bg-[#7D7CEC]   disabled:opacity-50 disabled:pointer-events-none  focus:ring-0"
