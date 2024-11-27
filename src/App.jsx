@@ -6,7 +6,7 @@ import "react-toastify/dist/ReactToastify.css";
 import NotFound from "./components/NotFound";
 import Root from "./pages/Root";
 import Home from "./pages/Home";
-import { Dashboard } from "./pages/Dashboard";
+// import { Dashboard } from "./pages/Dashboard";
 import { Register } from "./pages/Register";
 // import { useEffect } from "react";
 import { VideoRoom } from "./pages/Chat/VideoRoom";
@@ -56,7 +56,7 @@ function App() {
           <Route index element={<Home />} />
           <Route path="adminLogin" element={<AdminLogin />} />
           <Route path="register" element={<Register />} />
-          <Route path="dashboard" element={<Dashboard />} />
+          {/* <Route path="dashboard" element={<Dashboard />} /> */}
           <Route path="videoCall" element={<RootChat />}>
             <Route
               index
@@ -67,11 +67,9 @@ function App() {
             <Route
               path=":roomName"
               element={
-
                 <ProtectedRoom isAuthenticated={isAuthenticated}>
                   <VideoRoom />
                 </ProtectedRoom>
-
               }
             />
           </Route>
