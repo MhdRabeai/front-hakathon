@@ -64,7 +64,7 @@ export const Register = () => {
                     htmlFor="registerForm"
                     className="inline-block text-sm text-gray-800 mt-2.5  font-medium"
                   >
-                    Full name:
+                    Full Name:
                   </label>
                   <div className="hs-tooltip inline-block">
                     <svg
@@ -88,9 +88,10 @@ export const Register = () => {
                       type="text"
                       className="peer py-2 px-4 ps-11 block w-full
                           border-2  border-gray-200 rounded-lg text-sm 
-                          focus:border-[#4f9451] focus:ring-0 disabled:opacity-50 disabled:pointer-events-none "
+                          focus:border-[#7D7CEC] focus:ring-0 disabled:opacity-50 disabled:pointer-events-none "
                       placeholder="Enter Name..."
-                      name="name"
+                      name="fullName"
+                      required
                     />
                     <div className="absolute inset-y-0 start-0 flex items-center pointer-events-none ps-4 peer-disabled:opacity-50 peer-disabled:pointer-events-none ">
                       <svg
@@ -128,9 +129,10 @@ export const Register = () => {
                       type="email"
                       className="peer py-2 px-4 ps-11 block w-full
                           border-2  border-gray-200 rounded-lg text-sm 
-                          focus:border-[#4f9451] focus:ring-0 disabled:opacity-50 disabled:pointer-events-none "
+                          focus:border-[#7D7CEC] focus:ring-0 disabled:opacity-50 disabled:pointer-events-none "
                       placeholder="Enter Email..."
                       name="email"
+                      required
                     />
                     <div className="absolute inset-y-0 start-0 flex items-center pointer-events-none ps-4 peer-disabled:opacity-50 peer-disabled:pointer-events-none ">
                       <MdOutlineEmail className="fill-gray-500" />
@@ -140,10 +142,10 @@ export const Register = () => {
                 <div className="sm:col-span-3">
                   <div className="inline-block">
                     <label
-                      htmlFor="af-account-phone"
+                      htmlFor="phoneNumber"
                       className="inline-block text-sm font-medium text-gray-800 mt-2.5 "
                     >
-                      Phone:
+                      Phone Number:
                     </label>
                   </div>
                 </div>
@@ -151,138 +153,40 @@ export const Register = () => {
                 <div className="sm:col-span-9">
                   <div className="relative">
                     <input
-                      id="account"
+                      id="phoneNumber"
                       type="text"
-                      className="peer py-2 px-4 ps-11 block w-full
-border-2  border-gray-200 rounded-lg text-sm 
-focus:border-[#4f9451] focus:ring-0 disabled:opacity-50 disabled:pointer-events-none "
+                      className="peer py-2 px-4 ps-11 block w-full border-2  border-gray-200 rounded-lg text-sm  focus:border-[#7D7CEC] focus:ring-0 disabled:opacity-50 disabled:pointer-events-none "
                       placeholder="Enter Number..."
                       name="phone"
+                      required
                     />
                     <div className="absolute inset-y-0 start-0 flex items-center pointer-events-none ps-4 peer-disabled:opacity-50 peer-disabled:pointer-events-none ">
-                      <IoPhonePortraitOutline className="fill-gray-500" />
-                    </div>
-                  </div>
-                </div>
-                <div className="sm:col-span-3">
-                  <label className="inline-block text-sm text-gray-800 mt-2.5  font-medium">
-                    Cv:
-                  </label>
-                </div>
-
-                <div className="sm:col-span-9">
-                  <div className="flex gap-x-2">
-                    <div>
-                      <label
-                        htmlFor="uploadFile1"
-                        className="cursor-pointer py-2 px-3 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none focus:outline-none focus:bg-gray-50 "
+                      <svg
+                        width="10"
+                        height="18"
+                        viewBox="0 0 16 22"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
                       >
-                        <svg
-                          className="shrink-0 size-4"
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="24"
-                          height="24"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        >
-                          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                          <polyline points="17 8 12 3 7 8" />
-                          <line x1="12" x2="12" y1="3" y2="15" />
-                        </svg>
-                        Upload
-                        <input
-                          type="file"
-                          id="uploadFile1"
-                          className="hidden"
-                          name="myfile"
-                          accept="application/pdf"
+                        <path
+                          d="M13 1H3C1.89543 1 1 1.89543 1 3V19C1 20.1046 1.89543 21 3 21H13C14.1046 21 15 20.1046 15 19V3C15 1.89543 14.1046 1 13 1Z"
+                          stroke="#6B7280"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
                         />
-                      </label>
+                        <path
+                          d="M8 17H8.01"
+                          stroke="#6B7280"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
                     </div>
                   </div>
                 </div>
 
-                <div className="sm:col-span-3 ">
-                  <label
-                    htmlFor="registerAge"
-                    className="inline-block text-sm font-medium text-gray-800 mt-2.5 "
-                  >
-                    Age:
-                  </label>
-                </div>
-
-                <div className="sm:col-span-9">
-                  <div
-                    className="
-                          "
-                    data-hs-input-number=""
-                  >
-                    <div className="relative">
-                      <input
-                        id="registerAge"
-                        className="w-full peer py-2 px-4  
-                          border-2  border-gray-200 rounded-lg text-sm  focus:border-[#4f9451] focus:ring-0 flex justify-between items-center gap-x-5 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none "
-                        style={{ appearance: "textfield" }}
-                        type="number"
-                        aria-roledescription="Number field"
-                        defaultValue="18"
-                        data-hs-input-number-input=""
-                        name="age"
-                      />
-                      <div className="absolute right-4 top-2 flex justify-end items-center gap-x-1.5">
-                        <button
-                          type="button"
-                          className="size-6 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-md border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 focus:outline-none focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none "
-                          tabIndex="-1"
-                          aria-label="Decrease"
-                          data-hs-input-number-decrement=""
-                        >
-                          <svg
-                            className="shrink-0 size-3.5"
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="24"
-                            height="24"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="2"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                          >
-                            <path d="M5 12h14"></path>
-                          </svg>
-                        </button>
-                        <button
-                          type="button"
-                          className="size-6 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-md border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 focus:outline-none focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none "
-                          tabIndex="-1"
-                          aria-label="Increase"
-                          data-hs-input-number-increment=""
-                        >
-                          <svg
-                            className="shrink-0 size-3.5"
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="24"
-                            height="24"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="2"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                          >
-                            <path d="M5 12h14"></path>
-                            <path d="M12 5v14"></path>
-                          </svg>
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
                 <div className="sm:col-span-3">
                   <label
                     htmlFor="af-account-gender-checkbox"
@@ -301,7 +205,7 @@ focus:border-[#4f9451] focus:ring-0 disabled:opacity-50 disabled:pointer-events-
                       <input
                         type="radio"
                         name="gender"
-                        className="shrink-0 mt-0.5 ring-0 border-gray-200 rounded-full focus:ring-offset-[#4f9451]  text-[#4f9451]  focus:bg-[#4f9451] checked:bg-[#4f9451]   disabled:opacity-50 disabled:pointer-events-none  focus:ring-0"
+                        className="shrink-0 mt-0.5 ring-0 border-gray-200 rounded-full focus:ring-[#C4C4C4]  text-[#7D7CEC]  focus:bg-[#7D7CEC] checked:bg-[#7D7CEC]   disabled:opacity-50 disabled:pointer-events-none  focus:ring-0"
                         id="af-account-gender-checkbox"
                         value={"Male"}
                         defaultChecked
@@ -316,7 +220,7 @@ focus:border-[#4f9451] focus:ring-0 disabled:opacity-50 disabled:pointer-events-
                       <input
                         type="radio"
                         name="gender"
-                        className="shrink-0 mt-0.5 ring-0 border-gray-200 rounded-full focus:ring-offset-[#4f9451]  text-[#4f9451]  focus:bg-[#4f9451] checked:bg-[#4f9451]   disabled:opacity-50 disabled:pointer-events-none  focus:ring-0"
+                        className="shrink-0 mt-0.5 ring-0 border-gray-200 rounded-full focus:ring-[#C4C4C4]  text-[#7D7CEC]  focus:bg-[#7D7CEC] checked:bg-[#7D7CEC]   disabled:opacity-50 disabled:pointer-events-none  focus:ring-0"
                         id="af-account-gender-checkbox-other"
                         value={"female"}
                       />
@@ -326,11 +230,189 @@ focus:border-[#4f9451] focus:ring-0 disabled:opacity-50 disabled:pointer-events-
                     </label>
                   </div>
                 </div>
+
+                <div className="sm:col-span-3">
+                  <label
+                    htmlFor="registerJobTitle"
+                    className="inline-block text-sm text-gray-800 mt-2.5  font-medium"
+                  >
+                    Job Title:
+                  </label>
+                </div>
+
+                <div className="sm:col-span-9">
+                  <div className="relative">
+                    <input
+                      id="registerJobTitle"
+                      type="text"
+                      className="peer py-2 px-4 ps-11 block w-full
+                          border-2  border-gray-200 rounded-lg text-sm 
+                          focus:border-[#7D7CEC] focus:ring-0 disabled:opacity-50 disabled:pointer-events-none "
+                      placeholder="Enter Job Title..."
+                      name="jobTitle"
+                      required
+                    />
+                    <div className="absolute inset-y-0 start-0 flex items-center pointer-events-none ps-4 peer-disabled:opacity-50 peer-disabled:pointer-events-none ">
+                      <svg
+                        width="15"
+                        height="15"
+                        viewBox="0 0 22 20"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M19 5H3C1.89543 5 1 5.89543 1 7V17C1 18.1046 1.89543 19 3 19H19C20.1046 19 21 18.1046 21 17V7C21 5.89543 20.1046 5 19 5Z"
+                          stroke="#6B7280"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M15 19V3C15 2.46957 14.7893 1.96086 14.4142 1.58579C14.0391 1.21071 13.5304 1 13 1H9C8.46957 1 7.96086 1.21071 7.58579 1.58579C7.21071 1.96086 7 2.46957 7 3V19"
+                          stroke="#6B7280"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="sm:col-span-3">
+                  <label
+                    htmlFor="registerLocationType"
+                    className="inline-block font-medium text-sm text-gray-800 mt-2.5 "
+                  >
+                    Location type:
+                  </label>
+                </div>
+
+                <div className="sm:col-span-9">
+                  <div className="relative">
+                    <select
+                      id="registerLocationType"
+                      name="locationType"
+                      className="peer py-2 px-4 ps-11 block w-full border-2 border-gray-200 rounded-lg text-sm focus:border-[#7D7CEC] focus:ring-0 disabled:opacity-50 disabled:pointer-events-none"
+                      required
+                    >
+                      <option className="text-gray-500" selected="">
+                        Select one of the following options
+                      </option>
+                      <option>Onsite</option>
+                      <option>Remotely</option>
+                      <option>Hybrid</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div className="sm:col-span-3">
+                  <label
+                    htmlFor="employmentType"
+                    className="inline-block text-sm  font-medium text-gray-800 mt-2.5 "
+                  >
+                    Employment Type:
+                  </label>
+                </div>
+
+                <div className="sm:col-span-9">
+                  <div className="sm:flex">
+                    <label
+                      htmlFor="fullTime"
+                      className="flex py-2 px-3 w-full border border-gray-200 shadow-sm -mt-px -ms-px first:rounded-t-lg last:rounded-b-lg sm:first:rounded-s-lg sm:mt-0 sm:first:ms-0 sm:first:rounded-se-none sm:last:rounded-es-none sm:last:rounded-e-lg text-sm relative focus:z-10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none "
+                    >
+                      <input
+                        type="radio"
+                        name="employment"
+                        className="shrink-0 mt-0.5 ring-0 border-gray-200 rounded-full focus:ring-[#C4C4C4]  text-[#7D7CEC]  focus:bg-[#7D7CEC] checked:bg-[#7D7CEC]   disabled:opacity-50 disabled:pointer-events-none  focus:ring-0"
+                        id="fullTime"
+                        value={"Full Time"}
+                        defaultChecked
+                        required
+                      />
+                      <span className="text-sm text-gray-500 ms-3 ">
+                        Full Time
+                      </span>
+                    </label>
+
+                    <label
+                      htmlFor="partTime"
+                      className="flex py-2 px-3 w-full border border-gray-200 shadow-sm -mt-px -ms-px first:rounded-t-lg last:rounded-b-lg sm:first:rounded-s-lg sm:mt-0 sm:first:ms-0 sm:first:rounded-se-none sm:last:rounded-es-none sm:last:rounded-e-lg text-sm relative focus:z-10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none "
+                    >
+                      <input
+                        type="radio"
+                        name="employment"
+                        className="shrink-0 mt-0.5 ring-0 border-gray-200 rounded-full focus:ring-[#C4C4C4]  text-[#7D7CEC]  focus:bg-[#7D7CEC] checked:bg-[#7D7CEC]   disabled:opacity-50 disabled:pointer-events-none  focus:ring-0"
+                        id="partTime"
+                        value={"Part Time"}
+                      />
+                      <span className="text-sm text-gray-500 ms-3 ">
+                        Part Time
+                      </span>
+                    </label>
+                  </div>
+                </div>
+
+                <div className="sm:col-span-3">
+                  <label className="inline-block text-sm text-gray-800 mt-2.5  font-medium">
+                    CV:
+                  </label>
+                </div>
+
+                <div className="sm:col-span-9">
+                  <div className="flex gap-x-2">
+                    <div>
+                      <label
+                        htmlFor="uploadFile1"
+                        className="cursor-pointer py-2 px-3 inline-flex items-center gap-x-2 text-sm text-gray-500 rounded-lg border border-gray-200 bg-white text-[#] shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none focus:outline-none focus:bg-gray-50 "
+                      >
+                        <svg
+                          width="12"
+                          height="12"
+                          viewBox="0 0 20 20"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M19 13V17C19 17.5304 18.7893 18.0391 18.4142 18.4142C18.0391 18.7893 17.5304 19 17 19H3C2.46957 19 1.96086 18.7893 1.58579 18.4142C1.21071 18.0391 1 17.5304 1 17V13"
+                            stroke="#6B7280"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <path
+                            d="M15 6L10 1L5 6"
+                            stroke="#6B7280"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <path
+                            d="M10 1V13"
+                            stroke="#6B7280"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                        Upload
+                        <input
+                          type="file"
+                          id="uploadFile1"
+                          className="hidden"
+                          name="myfile"
+                          accept="application/pdf"
+                          required
+                        />
+                      </label>
+                    </div>
+                  </div>
+                </div>
               </form>
             )}
 
             {currentStep === 2 && (
-              <div className="text-center text-green-700">
+              <div className="text-center text-[#7D7CEC]">
                 <p className="text-lg font-semibold">All steps completed!</p>
                 <p className="text-sm text-gray-700">
                   You have successfully updated your profile settings.
@@ -343,14 +425,18 @@ focus:border-[#4f9451] focus:ring-0 disabled:opacity-50 disabled:pointer-events-
             <button
               onClick={handleBack}
               disabled={currentStep === 1}
-              className="px-4 py-2 bg-gray-400 text-white rounded disabled:opacity-70 hover:bg-gray-500"
+              className="px-4 py-2 bg-gray-400 text-white rounded disabled:opacity-70 hover:bg-gray-500 hover:cursor-pointer duration-300"
             >
               Back
             </button>
             <button
               onClick={handleNext}
               disabled={currentStep === steps.length}
-              className="px-4 py-2 bg-blue-600 text-white rounded disabled:opacity-70 hover:bg-blue-700"
+              className="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-[#0B0B43] text-white 
+                hover:bg-white hover:text-[#7D7CEC] hover:border-[#7D7CEC] 
+                transition-transform duration-300 ease-in-out 
+                transform hover:scale-105 hover:shadow-lg 
+                focus:outline-none"
             >
               Next
             </button>
