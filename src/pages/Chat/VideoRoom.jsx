@@ -167,7 +167,7 @@ export const VideoRoom = () => {
   };
 
   return (
-    <div className="flex flex-col items-center p-6 bg-gray-100 min-h-screen">
+    <div className="flex flex-col items-center justify-center p-6 bg-gray-100 min-h-screen">
       <div className="w-full max-w-4xl bg-white shadow-lg rounded-lg p-6 space-y-6">
         <div className="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-4">
           <div className="flex-shrink-0 w-full md:w-2/5">
