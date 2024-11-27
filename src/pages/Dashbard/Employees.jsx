@@ -1,14 +1,8 @@
 /* eslint-disable no-unused-vars */
 
 import React, { useState } from "react";
-import {
-  FaGithub,
-  FaFileAlt,
-  FaSort,
-  FaFilter,
-  FaEdit,
-  FaTrash,
-} from "react-icons/fa";
+import { FaFileAlt, FaSort, FaFilter, FaEdit } from "react-icons/fa";
+import { IoIosCloseCircleOutline } from "react-icons/io";
 import { TooltipComponent } from "@syncfusion/ej2-react-popups";
 
 export const Employees = () => {
@@ -142,7 +136,7 @@ export const Employees = () => {
                     {user.location}
                   </td>
                   <td className="px-4 py-3 text-sm text-gray-600">
-                    <div className="flex gap-3">
+                    <div className="flex justify-center">
                       <TooltipComponent content="View CV" position="top">
                         <a
                           href={user.cvLink}
@@ -154,38 +148,21 @@ export const Employees = () => {
                           <FaFileAlt />
                         </a>
                       </TooltipComponent>
-                      <TooltipComponent content="GitHub Profile" position="top">
-                        <a
-                          href={user.githubProfile}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-blue-500 hover:text-blue-700 transition-colors"
-                          aria-label="GitHub Profile"
-                        >
-                          <FaGithub />
-                        </a>
-                      </TooltipComponent>
                     </div>
                   </td>
                   <td className="px-4 py-3 text-sm text-gray-600">
                     {user.date}
                   </td>
                   <td className="px-4 py-3 text-sm text-gray-600">
-                    <div className="flex gap-3">
+                    <div className="flex gap-3 justify-center">
                       <TooltipComponent content="Edit User" position="top">
-                        <button
-                          className="text-blue-500 hover:text-blue-700 transition-colors"
-                          aria-label="Edit user"
-                        >
+                        <button className="text-blue-500 hover:text-blue-700 transition-colors">
                           <FaEdit />
                         </button>
                       </TooltipComponent>
                       <TooltipComponent content="Delete User" position="top">
-                        <button
-                          className="text-red-500 hover:text-red-700 transition-colors"
-                          aria-label="Delete user"
-                        >
-                          <FaTrash />
+                        <button className="text-red-500 hover:text-red-700 transition-colors">
+                          <IoIosCloseCircleOutline />
                         </button>
                       </TooltipComponent>
                     </div>
