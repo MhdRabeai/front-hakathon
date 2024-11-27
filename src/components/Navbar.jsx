@@ -171,17 +171,17 @@ const Navbar = () => {
                 <GoSun className="fill-white scale-150 transition" />
               )}
             </button> */}
-
-            {user && (
+            <NavLink
+              className={
+                "active font-medium text-white focus:outline-none  hover:text-white  focus:text-white transition"
+              }
+              to="/videoCall"
+            >
+              Call
+            </NavLink>
+            {/* {user && (
               <>
-                <NavLink
-                  className={
-                    "active font-medium text-white focus:outline-none  hover:text-white  focus:text-white transition"
-                  }
-                  to="/dashboard"
-                >
-                  Dashboard
-                </NavLink>
+               
                 <button
                   className="font-medium text-white focus:outline-none"
                   onClick={handleLogout}
@@ -189,7 +189,7 @@ const Navbar = () => {
                   <IoMdLogOut />
                 </button>
               </>
-            )}
+            )} */}
 
             <div className="flex">
               <Link
