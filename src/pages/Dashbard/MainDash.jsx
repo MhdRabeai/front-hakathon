@@ -34,29 +34,35 @@ const MainDash = () => {
 
   const colors = {
     primary: {
+      main: "#E2E2EB",
+    },
+    //7D7CEC
+    //0B0B43
+    //E2E2EB
+    //e2e8f0
+    //64748b
+    //ADA7B3
+    secondary: {
       main: "#0B0B43",
     },
-    secondary: {
-      main: "#7D7CEC",
-    },
     text: {
-      main: "#E2E2EB",
+      main: "#7D7CEC",
       200: "#0B0B43",
     },
     icons: {
-      main: "#E2E2EB",
+      main: "#0B0B43",
     },
     grey: {
-      100: "#e2e8f0",
+      100: "#E2E2EB",
       500: "#64748b",
     },
-    blueAccent: {
-      500: "#3b82f6",
+    purpleAccent: {
+      500: "#7D7CEC",
       700: "#1e40af",
       800: "#1e3a8a",
     },
     redAccent: {
-      500: "#ef4444",
+      500: "#64748b",
     },
   };
 
@@ -314,13 +320,13 @@ const MainDash = () => {
                   <Typography
                     color={
                       user.active === "Active"
-                        ? colors.blueAccent[500]
+                        ? colors.purpleAccent[500]
                         : colors.redAccent[500]
                     }
                   >
                     {dashboardData.latestUsers.active === "Active" ? (
                       <FaCheckCircle
-                        style={{ color: colors.blueAccent[500] }}
+                        style={{ color: colors.purpleAccent[500] }}
                       />
                     ) : (
                       <FaTimesCircle style={{ color: colors.redAccent[500] }} />
@@ -331,7 +337,7 @@ const MainDash = () => {
 
                 <Typography
                   color={colors.text.main}
-                  backgroundColor={colors.blueAccent[500]}
+                  backgroundColor={colors.purpleAccent[500]}
                   p="5px 10px"
                   borderRadius="4px"
                 >
@@ -390,7 +396,7 @@ const MainDash = () => {
                       width: "10px",
                       height: "10px",
                       borderRadius: "50%",
-                      backgroundColor: colors.blueAccent[500],
+                      backgroundColor: colors.purpleAccent[500],
                     }}
                   />
                   <Typography variant="body1" color={colors.text.main}>
