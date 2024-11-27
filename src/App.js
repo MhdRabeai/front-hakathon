@@ -1,57 +1,49 @@
-import { useState } from "react";
-import { Routes, Route } from "react-router-dom";
+// import { useState } from "react";
 
-import AllUsers from "./scenes/account-management/AllUsers.jsx";
-import AddUser from "./scenes/account-management/AddUser.jsx";
-import OrdersManagement from "./scenes/orders-management/index.jsx";
-import OfferManagement from "./scenes/offer-management/index.jsx";
-import InvoiceManagement from "./scenes/invoice-management/index.jsx";
-import PostsManagement from "./scenes/posts-management/index.jsx";
-import Analytics from "./scenes/analytics/index.jsx";
-import Settings from "./scenes/settings/index.jsx";
-import { CssBaseline, ThemeProvider } from "@mui/material";
-import { ColorModeContext, useMode } from "./assets/styles/theme.js";
-import MainDash from "./pages/Dashbard/MainDash.jsx";
-import KamelSideBar from "./components/Dashboard/kamelSideBar.jsx";
-import KamelTopBar from "./components/Dashboard/KamelTopBar.jsx";
+// import AllUsers from "./scenes/account-management/AllUsers.jsx";
+// import AddUser from "./scenes/account-management/AddUser.jsx";
+// import OrdersManagement from "./scenes/orders-management/index.jsx";
+// import OfferManagement from "./scenes/offer-management/index.jsx";
+// import InvoiceManagement from "./scenes/invoice-management/index.jsx";
+// import PostsManagement from "./scenes/posts-management/index.jsx";
+// import Analytics from "./scenes/analytics/index.jsx";
+// import Settings from "./scenes/settings/index.jsx";
+// import { CssBaseline } from "@mui/material";
 
-function App() {
-  const [theme, colorMode] = useMode();
-  const [isSidebar] = useState(true);
+// import MainDash from "./pages/Dashbard/MainDash.jsx";
+// import KamelSideBar from "./components/Dashboard/kamelSideBar.jsx";
+// import KamelTopBar from "./components/Dashboard/KamelTopBar.jsx";
 
-  return (
-    <ColorModeContext.Provider value={colorMode}>
-      <ThemeProvider theme={theme}>
-        <CssBaseline />
-        <div className="flex">
-          <KamelSideBar isSidebar={isSidebar} />
+// function App() {
+//   const [isSidebar] = useState(true);
 
-          <div className="flex-1 transition-all duration-150">
-            <KamelTopBar />
-            <main className="p-4">
-              <Routes>
-                <Route path="/" element={<MainDash />} />
-                <Route path="/account/all-users" element={<AllUsers />} />
-                <Route path="/account/add-user" element={<AddUser />} />
-                <Route
-                  path="/orders-management"
-                  element={<OrdersManagement />}
-                />
-                <Route path="/offer-management" element={<OfferManagement />} />
-                <Route
-                  path="/invoice-management"
-                  element={<InvoiceManagement />}
-                />
-                <Route path="/posts-management" element={<PostsManagement />} />
-                <Route path="/analytics" element={<Analytics />} />
-                <Route path="/settings" element={<Settings />} />
-              </Routes>
-            </main>
-          </div>
-        </div>
-      </ThemeProvider>
-    </ColorModeContext.Provider>
-  );
-}
+//   return (
+//     <>
+//       <CssBaseline />
+//       <div className="flex">
+//         <KamelSideBar isSidebar={isSidebar} />
 
-export default App;
+//         <div className="flex-1 transition-all duration-150">
+//           <KamelTopBar />
+//           <main className="p-4">
+//             {/* هادد الاب تبعهن */}
+//             <MainDash />
+
+//             {/* لتحت بس عملو كمبوننت جديد و حطوه بمجلد الكمبوننتس و مسحو هادد يلي نسختو منو  */}
+//             <AllUsers />
+//             <AddUser />
+
+//             <OrdersManagement />
+//             <OfferManagement />
+//             <InvoiceManagement />
+//             <PostsManagement />
+//             <Analytics />
+//             <Settings />
+//           </main>
+//         </div>
+//       </div>
+//     </>
+//   );
+// }
+
+// export default App;
