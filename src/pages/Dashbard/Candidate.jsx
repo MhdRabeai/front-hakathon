@@ -156,9 +156,9 @@ export const Candidate = () => {
 
   return (
     <div className="bg-gray-50  ">
-      <div className="container mx-auto min-h-screen">
+      <div className=" mx-auto min-h-screen">
         <div className="p-6 ">
-          <div className="max-w-7xl mx-auto bg-white rounded-lg shadow-lg p-8">
+          <div className="max-w-[90%]  bg-white rounded-lg shadow-lg p-8">
             <h1 className="text-3xl font-bold text-gray-800 mb-6">
               All Candidate
             </h1>

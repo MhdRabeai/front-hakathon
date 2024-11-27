@@ -27,7 +27,7 @@ export const VideoRoom = () => {
   const [isVideoOff, setIsVideoOff] = useState(false);
 
   useEffect(() => {
-    socket.current = io("http://localhost:4001", {
+    socket.current = io("http://localhost:4040", {
       transports: ["websocket"],
       reconnectionAttempts: 3,
       timeout: 5000,
