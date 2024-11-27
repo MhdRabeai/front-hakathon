@@ -11,7 +11,6 @@ import {
 import LineChart from "../../components/Dashboard/LineChart";
 import BarChart from "../../components/Dashboard/BarChart";
 import StatBox from "../../components/Dashboard/StartBox";
-import ProgressCircle from "../../components/Dashboard/ProgressCirde";
 
 const MainDash = () => {
   const [dashboardData, setDashboardData] = useState({
@@ -229,82 +228,10 @@ const MainDash = () => {
           </Box>
 
           {/* ROW 3 */}
-          <Box
-            gridColumn="span 6"
-            gridRow="span 2"
-            backgroundColor={colors.primary.main}
-            p="30px"
-            borderRadius="8px"
-            boxShadow="0 4px 8px rgba(0, 0, 0, 0.1)"
-          >
-            {/* Title */}
-            <Typography
-              variant="h5"
-              fontWeight="600"
-              color={colors.text.main}
-              textAlign="center"
-            >
-              Active & Inactive
-            </Typography>
-            <Typography
-              variant="body2"
-              color={colors.text[100]}
-              textAlign="center"
-              mt="8px"
-            >
-              Overview of active vs inactive users
-            </Typography>
-
-            {/* Content */}
-            <Box
-              display="flex"
-              flexDirection="column"
-              alignItems="center"
-              mt="25px"
-            >
-              {/* Progress Circle */}
-              <ProgressCircle size="125" progress={0.75} />
-              <Box
-                display="flex"
-                justifyContent="space-between"
-                width="100%"
-                mt="20px"
-              >
-                {/* Active Users */}
-                <Box display="flex" alignItems="center" gap="10px">
-                  <Box
-                    sx={{
-                      width: "10px",
-                      height: "10px",
-                      borderRadius: "50%",
-                      backgroundColor: colors.purpleAccent[500],
-                    }}
-                  />
-                  <Typography variant="body1" color={colors.text.main}>
-                    Active Users: 75%
-                  </Typography>
-                </Box>
-                {/* Inactive Users */}
-                <Box display="flex" alignItems="center" gap="10px">
-                  <Box
-                    sx={{
-                      width: "10px",
-                      height: "10px",
-                      borderRadius: "50%",
-                      backgroundColor: colors.grey[500],
-                    }}
-                  />
-                  <Typography variant="body1" color={colors.primary.main[100]}>
-                    Inactive Users: 25%
-                  </Typography>
-                </Box>
-              </Box>
-            </Box>
-          </Box>
 
           <Box
             gridColumn="span 6"
-            gridRow="span 2"
+            gridRow="span 4"
             backgroundColor={colors.primary.main}
           >
             <Typography
