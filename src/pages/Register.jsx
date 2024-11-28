@@ -5,11 +5,14 @@ import { FaUser, FaCheck } from "react-icons/fa";
 import { FaMapLocationDot } from "react-icons/fa6";
 
 import { MdOutlineEmail } from "react-icons/md";
+import { useNavigate } from "react-router-dom";
+import { Bounce, toast } from "react-toastify";
 const steps = [
   { id: 1, title: "Info", icon: FaUser },
   { id: 2, title: "Confirm", icon: FaCheck },
 ];
 export const Register = () => {
+  const navigate = useNavigate();
   const [currentStep, setCurrentStep] = useState(1);
   const [formData, setFormData] = useState({
     name: "",
@@ -56,10 +59,30 @@ export const Register = () => {
       if (!res.ok) {
         throw new Error("Failed to send data");
       }
-      const result = await res.json();
-      console.log(await result);
-    } catch (error) {
-      console.error("Error sending data:", error);
+      const data = await res.json();
+      navigate("/");
+      return toast.success(data["message"], {
+        position: "bottom-right",
+        autoClose: 1000,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        transition: Bounce,
+      });
+    } catch (err) {
+      return toast.error(err.message, {
+        position: "bottom-right",
+        autoClose: 750,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        transition: Bounce,
+      });
     }
   };
   const handleNext = async () => {

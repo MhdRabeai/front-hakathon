@@ -208,6 +208,8 @@ export const Candidate = () => {
       });
     }
   }
+  const handleChangeTime = (time) =>
+    `${time.split(":")[0]}:${time.split(":")[1]} ${time.slice(-2)}`;
 
   useEffect(() => {
     handleCandidate();
@@ -337,7 +339,7 @@ export const Candidate = () => {
                         </div>
                       </td>
 
-                      {user.status === "Before interview" && (
+                      {user.status !== "Before interview" && (
                         <td className="px-2 text-center py-3 text-sm text-gray-600">
                           <div className="flex gap-3 justify-center">
                             <TooltipComponent content="Accept" position="top">
@@ -388,7 +390,7 @@ export const Candidate = () => {
               </div>
             </div>
 
-            <div className="overflow-x-auto">
+            <div className="">
               <table className="w-full table-auto">
                 <thead>
                   <tr className="bg-gray-100">
@@ -402,6 +404,8 @@ export const Candidate = () => {
                       "Skills",
                       "location",
                       "Employment",
+                      "Date",
+                      "Time",
                       "exp",
                       "status",
                       "Cv",
@@ -467,6 +471,12 @@ export const Candidate = () => {
                         {user.employmentType}
                       </td>
                       <td className="px-2 text-center py-3 text-sm text-gray-600">
+                        {user.interview.date}
+                      </td>
+                      <td className="px-2 text-center py-3 text-sm text-gray-600">
+                        {handleChangeTime(user.interview.time)}
+                      </td>
+                      <td className="px-2 text-center py-3 text-sm text-gray-600">
                         {user.experience} Year
                       </td>
                       <td className="px-2 text-center py-3 text-sm text-gray-600">
@@ -510,7 +520,7 @@ export const Candidate = () => {
         <div className="">
           <div className="w-full mx-auto bg-white rounded-lg shadow-lg p-8">
             <h1 className="text-3xl font-bold text-gray-800 mb-6">
-              Accepted After interView
+              InterView Done..
             </h1>
 
             <div className="mb-6 flex flex-col md:flex-row gap-4">
@@ -526,7 +536,7 @@ export const Candidate = () => {
               </div>
             </div>
 
-            <div className="overflow-x-auto">
+            <div className="">
               <table className="w-full table-auto">
                 <thead>
                   <tr className="bg-gray-100">
